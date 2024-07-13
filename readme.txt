@@ -106,7 +106,7 @@ SOURCES AND CREDITS:
 I've used the following resources as listed.
 
 Fonts:
- - Lora Font (https://fonts.google.com/specimen/Lora)
+ - Arial Font (https://fonts.google.com/specimen/Arial)
  - Roboto Font (https://fonts.google.com/specimen/Roboto) 
  - Frank Ruhl Libre Font (https://fonts.google.com/specimen/Frank+Ruhl+Libre)
 

@@ -16,7 +16,7 @@ body {
 
 body {
   background: black;
-  font-family: "Lora", serif;
+  font-family: "Arial", serif;
   font-size: 1.7rem;
   font-style: normal;
   font-weight: normal;
@@ -130,7 +130,7 @@ p img {
 }
 
 p.lead {
-  font-family: "Lora", serif;
+  font-family: "Arial", serif;
   font-weight: 300;
   font-size: 2.4rem;
   line-height: 1.833;
@@ -155,13 +155,13 @@ b {
 
 em,
 i {
-  font-family: "Lora", serif;
+  font-family: "Arial", serif;
   font-style: italic;
 }
 
 strong,
 b {
-  font-family: "Lora", serif;
+  font-family: "Arial", serif;
   font-weight: 700;
 }
 
@@ -217,7 +217,7 @@ blockquote cite a:visited {
 }
 
 abbr {
-  font-family: "Lora", serif;
+  font-family: "Arial", serif;
   font-weight: 700;
   font-variant: small-caps;
   text-transform: lowercase;
@@ -385,7 +385,7 @@ table {
   border-width: 0;
   width: 100%;
   max-width: 100%;
-  font-family: "Lora", serif;
+  font-family: "Arial", serif;
   border-collapse: collapse;
 }
 
@@ -398,7 +398,7 @@ td {
 
 th {
   color: #000000;
-  font-family: "Lora", serif;
+  font-family: "Arial", serif;
   font-weight: 700;
 }
 
@@ -1294,7 +1294,7 @@ input::-moz-focus-inner {
 }
 
 .pgn__num {
-  font-family: "Lora", serif;
+  font-family: "Arial", serif;
   font-weight: 700;
   font-size: 1.7rem;
   line-height: 3.2rem;
@@ -1676,7 +1676,7 @@ input::-moz-focus-inner {
   height: 42px;
   width: 42px;
   line-height: 42px;
-  font-family: "Lora", serif;
+  font-family: "Arial", serif;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
@@ -1957,6 +1957,10 @@ input::-moz-focus-inner {
   color: rgba(255, 255, 255, 0.3);
   position: relative;
   padding-right: 8.8rem;
+}
+
+.intro-scroll a:hover {
+  color: #ffd11a;
 }
 
 .intro-scroll a::after {
