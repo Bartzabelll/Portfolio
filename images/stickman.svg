@@ -1,8 +1,0 @@
-<svg id="stickman" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-  <circle cx="50" cy="20" r="10" stroke="white" stroke-width="2" fill="none"/>
-  <line x1="50" y1="30" x2="50" y2="60" stroke="white" stroke-width="2"/>
-  <line x1="50" y1="45" x2="35" y2="40" stroke="white" stroke-width="2"/>
-  <line x1="50" y1="45" x2="65" y2="40" stroke="white" stroke-width="2"/>
-  <line x1="50" y1="60" x2="35" y2="80" stroke="white" stroke-width="2"/>
-  <line x1="50" y1="60" x2="65" y2="80" stroke="white" stroke-width="2"/>
-</svg>

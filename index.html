@@ -1,462 +1,196 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-
-    <meta charset="utf-8">
-    <title>Jhenrich Roquios</title>
-
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/main.css">
-
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="images/jr.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/jr.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/jr.png">
-    <link rel="manifest" href="site.webmanifest">
-
-</head>
-
-<body id="top">
-
-    <div id="preloader">
-        <div id="loader"></div>
-    </div>
-
-    <header class="s-header">
-
-        <div class="header-logo">
-            <a class="site-logo" href="index.html">
-                <img src="images/jr.png" width="4000" height="5000">
-            </a>
+<html>
+    <head>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            'arial': ['Arial', 'sans-serif'],
+                            'roboto': ['Roboto', 'sans-serif'],
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body class="font-roboto" x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: true, gallery:false }">
+        <div class="bg-gradient-to-b from-gray-500 via-gray-300 to-gray-100 w-full h-full flex justify-center items-center relative">
+            <button 
+                :class="move ? 'fixed m-5 transition-transform duration-1000 transform translate-y-[-250px] translate-x-[-125px]' : 'relative transition-transform px-16 py-10 rounded-full bg-amber-200 duration-1000 transform translate-y-0'"
+                class="z-10"
+                @click="move = !move">
+                <img 
+                    src="img/face-button.png" 
+                    alt="Button Face" 
+                    :class="move ? 'w-28 h-auto' : 'relative' "
+                    class="ml-3 w-40 h-auto">
+                <span class="" x-html="move ? '' : 'Welcome to My Personal<br>Space'"></span>
+            </button>
         </div>
-
-        <nav class="header-nav-wrap">
-            <ul class="header-main-nav">
-                <li class="current"><a class="smoothscroll" href="#intro" title="intro">Intro</a></li>
-                <li><a class="smoothscroll" href="#about" title="about">About</a></li>
-                <li><a class="smoothscroll" href="#works" title="works">Projects</a></li>
-                <li><a class="smoothscroll" href="#contact" title="contact us">Contact Me</a></li>	
-            </ul>
-
-            <ul class="header-social">
-                <li><a href="https://www.facebook.com/bartzabell.bartzabel"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                <li><a href="https://github.com/Bartzabell"><i class="fab fa-github" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.instagram.com/bulbasau_r_r/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-            </ul>
-        </nav>
-
-        <a class="header-menu-toggle" href="#"><span>Menu</span></a>
-
-    </header> 
-
-    <section id="intro" class="s-intro target-section">
-
-        <div class="row intro-content">
-    
-            <div class="column large-9 mob-full intro-text">
-                <h3>Hello, I'm</h3>
-                <h1>Jhenrich Roquios</h1>
-                <h3>
-                    Aspiring Developer <br>
-                </h3>
-                <img id="changing-image" src="images/avatar.png" alt="Changing Image">
-                <div class="intro-scroll">
-                    <a href="#about" class="intro-scroll-link smoothscroll">
-                        Click Here For More
-                    </a>
-                </div>
-                <div class="intro-scroll">
-                    <a href="#resumecv" class="intro-scroll-link smoothscroll">
-                        Click Here For My Resume 
-                    </a>
-                </div>
-            </div>
-    
-            
-    
-            <div class="intro-grid"></div>
-            <div class="intro-pic"></div>
-    
-        </div> 
-    
-    </section>
-
-    <section id="about" class="s-about target-section">
-
-        <div class="about-me">
-
-            <div class="row heading-block" data-aos="fade-up">
-                <div class="column large-full">
-                    <h2 class="section-heading">About Me</h2>
-                </div>
-            </div>
-
-            <div class="row about-me__content" data-aos="fade-up">
-                <div class="column large-full about-me__text">
-                    <p class="lead">
-                        A graduate with a Bachelor's degree in Computer Science, with prior knowledge and experience in the development field. I have knowledge of both computer hardware and software, along with a strong foundation in computer programming, technology, software development, and web development. I also have experience with version control and collaborative development.
+        <div x-show="move" class="grid grid-cols-2 fixed inset-0 bg-amber-200" 
+            x-transition:enter="transition ease-out duration-1000" 
+            x-transition:enter-start="transform scale-50 opacity-0" 
+            x-transition:enter-end="transform scale-100 opacity-100" 
+            x-transition:leave="transition ease-in duration-500" 
+            x-transition:leave-start="transform scale-100 opacity-100" 
+            x-transition:leave-end="transform scale-50 opacity-0">
+            <div class="m-10">
+                <div x-show="move">
+                    <h3 class="font-bold text-2xl mb-2">Hello, I'm</h3>
+                    <h1 class="font-black text-5xl mb-1 underline tracking-widest"><span class="text-6xl font-black">J</span>henrich <span class="text-6xl font-black">D</span>. <span class="text-6xl font-black">R</span>oquios</h1>
+                    <h3 class="mb-5">I am a Web Developer</h3>
+                    <p x-show="!drop && !drop2 && !drop3" class="indent-5 text-justify p-3 text-xl leading-loose bg-white rounded-lg" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5" >
+                        <span class="text-3xl font-black">A</span> graduate with a Bachelor's Degree in Computer Science, has a strong passion for the field of development. Currently working as a web developer, with extensive experience in collaborative development and version control. Eager to learn new technologies and continuously adapting to updates in technologies and AI, aiming to expand my knowledge in development and contribute significantly to innovative projects.
                     </p>
-                    
-                    <p>
-                        During my On-the-Job Training (OJT), I gained a lot of knowledge, practices and experience in web development. I was exposed in using Laravel Framework in TALLstack (tailwind CSS, Alpine.js, Laravel, Livewire) approach where i placed as a back-end developer. Those experiences help me a lot in real-world situation where i now use my experiences and knowledge for our capstone project. I also learn how to use Github repositories for version control and collaborative development, learned to work with the SDLC approach, learned to use Object-Oriented Programming (OOP) principles, and create user stories using taiga.io.
+                </div>
+                <div class="mt-5 space-x-5 mx-2 items-center justify-center flex">
+                    <button @click="drop = !drop; drop2 = false; drop3 = false" title="About Me"
+                        class="bg-white p-2 rounded-full hover:bg-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                        </svg>
+                    </button>
+                
+                    <button @click="drop2 = !drop2; drop = false; drop3 = false" title="Education"
+                        class="bg-white p-2 rounded-full hover:bg-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                        </svg>   
+                    </button>
+                
+                    <button @click="drop3 = !drop3; drop = false; drop2 = false" title="Experiences"
+                        class="mt-2 bg-white p-2 rounded-full hover:bg-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
+                        </svg> 
+                    </button>
+                </div>
+                
+                <div x-show="drop" class="bg-white p-3 mt-2 rounded-lg" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5" >
+                    <p class="indent-5 text-justify leading-relaxed ">
+                        <span class="text-3xl font-black">M</span>y interest in the IT field began in high school when I took ICT as my TLE subject in 9th grade. That’s where I learned my first IT skills, such as computer troubleshooting, hardware basics, and gained insights into various areas of IT.
+                
+                        When I went to college, I chose to study Computer Science to further expand my knowledge in software development and programming. There, I learned different programming languages like Java and Python, as well as basic HTML, CSS, and some database querying.
+                        
+                        During my OJT, my journey into web development began. I was introduced to Agile-Scrum development, which involved fast-paced work with weekly reports and deliverables. I also learned Laravel development using the TALL stack, worked with version control, and experienced collaborative development using GitHub. Additionally, I gained skills in database management, migrations, and setting up new projects.
                     </p>
-
+                    <p class="indent-5 justify-center text-center font-black pt-5">
+                        "This is how I started my journey as a web developer."
+                    </p>
                 </div>
-                <div id="resumecv"></div>
+                
+                <div x-show="drop2" class=" bg-white rounded-lg grid grid-cols-2 border my-2 pb-5" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
+                    <h1 class="font-black text-3xl border-b-2 border-amber-200 p-2 col-span-2 text-center">Education</h1>
+                    <h2 class="font-black text-xl p-2 ml-10 my-10 ">2020-2024</h1>
+                    <div class="mb-2 my-10 mr-10">
+                        <h2 class=" text-xl font-bold">Cavite State University-Carmona</h2>
+                        <p>Bachelor of Science in Computer Science</p>
+                    </div>
+                    <h2 class="font-black text-xl p-2 ml-10 mb-10">2018-2020</h1>
+                    <div class="mb-10">
+                        <h2 class=" text-lg font-bold">Bulihan Integrated National High School</h2>
+                        <p class="text-sm">Science Technology Engineering and Mathematics</p>
+                    </div>
+                    <h2 class="font-black text-xl p-2 ml-10 mb-5">2014-2018</h1>
+                    <h2 class=" text-lg font-bold my-2 mb-5">Bulihan Integrated National High School</h2>
+                    <h2 class="font-black text-xl p-2 ml-10">2008-2014</h1>
+                    <h2 class=" text-lg font-bold my-2 mr-10">San Gabriel II Elementary School</h2>
+                </div>
+                
+                <div x-show="drop3" class=" bg-white rounded-lg border my-2 pb-5" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
+                    <h1 class="font-black text-3xl border-b-2 border-amber-200 p-2 text-center">Experience/s</h1>
+                    <table class="min-w-full bg-white border border-gray-300">
+                        <thead>
+                            <tr class="text-black uppercase text-sm">
+                                <th class="py-2 px-4 border">Year</th>
+                                <th class="py-2 px-4 border">Company</th>
+                                <th class="py-2 px-4 border">Position</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-gray-100 text-center">
+                                <td class="py-2 px-4 border">2023</td>
+                                <td class="py-2 px-4 border">Philippian Marketing Corporation</td>
+                                <td class="py-2 px-4 border">OJT - Web Developer (Back End)</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 text-center">
+                                <td class="py-2 px-4 border">2024</td>
+                                <td class="py-2 px-4 border">Betafoam Corporation</td>
+                                <td class="py-2 px-4 border">IT Programmer</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>            
             </div>
-            <div  class="row about-me__buttons">
-                <div class="column large-half tab-full" data-aos="fade-up">
-                    <a href="Resume_.pdf" class="btn btn--stroke full-width">Open Resume</a>
+            <div class="p-5 mt-4">
+                <div class="mt-5 space-x-5 mx-2 items-center justify-center flex">
+                    <button @click="project = !project; gallery = false; contact = false"
+                        class="bg-white p-2 rounded-full hover:bg-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+                          </svg>                          
+                    </button>
+                
+                    <button @click="contact = !contact; project = false; gallery = false"
+                        class="bg-white p-2 rounded-full hover:bg-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
+                          </svg>                            
+                    </button>
+                
+                    <button @click="gallery = !gallery; project = false; contact = false"
+                        class="mt-2 bg-white p-2 rounded-full hover:bg-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                          </svg>                          
+                    </button>
                 </div>
-                <div class="column large-half tab-full" data-aos="fade-up">
-                    <a href="Jhenrich De Vera Roquios - cv.pdf" class="btn btn--stroke full-width" >Open CV</a>
-                    
+                <div x-show="project" class=" bg-white rounded-lg grid grid-cols-2 border my-2 pb-5" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
+                    <h1 class="font-black text-3xl border-b-2 border-amber-200 p-2 col-span-2 text-center">Project</h1>
                 </div>
-            </div>
-
-        </div> <!-- end about-me -->
-
-        <div class="about-experience">
-
-            <div class="row heading-block" data-aos="fade-up">
-                <div class="column large-full">
-                    <h2 class="section-heading">Education</h2>
-                </div>
-            </div>
-
-            <div class="row about-experience__timeline">
-
-                <div class="column large-half tab-full" data-aos="fade-up">
-                    <div class="timeline">
-
-                        <div class="timeline__icon-wrap">
-                            <span class="timeline__icon timeline__icon--education"></span>
-                        </div>
-
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">2020 - Present</p>
-                                <h3 class="item-title">Cavite State University - Carmona</h3>
-                                <h5>BS Computer Science</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <p>I am currently enrolled at Cavite State University - Carmona Campus, 4th year college pursuing BS Computer Science Program.</p>
-                            </div>
-                        </div>
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">2014 - 2018</p>
-                                <h3 class="item-title">Bulihan National High School</h3>
-                                <h5>Grade 9 & 10 TLE: ICT</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <p>In my Junior High School, I studied ICT in grade 9 and 10 and learn basic software and hardware computer troubleshooting.</p>
-                            </div>
-                        </div>
-
+                
+                <div x-show="contact" class=" bg-white rounded-lg grid grid-cols-2 border my-2 pb-5" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
+                    <h1 class="font-black text-3xl border-b-2 border-amber-200 p-2 col-span-2 text-center">Contact</h1>
+                    <div class="m-5 flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                        </svg>
+                        <a href="mailto:jhenrichroquios000@gmail.com" class="text-gray-700 hover:underline">jhenrichroquios000@gmail.com</a>
                     </div>
-                </div>
-
-                <div class="column large-half tab-full" data-aos="fade-up">
-                    <div class="timeline">
-
-                        <div class="timeline__icon-wrap">
-                            <span class="timeline__icon timeline__icon--education"></span>
-                        </div>
-
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">2018 - 2020</p>
-                                <h3 class="item-title">Bulihan National High School</h3>
-                                <h5>Science and Technology Engineering and Mathematics (STEM)</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <p>In my Senior high School, I took an academic strand major in Science and Technology Enginieering and Mathematics (STEM) on  year 2018-2020 at Bulihan National High School. </p>
-                            </div>
-                        </div>
+                    <div class="m-5 flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" stroke-width="25" stroke="currentColor" class="size-6" version="1.1" id="Layer_1" viewBox="0 0 310 310" xml:space="preserve">
+                            <path id="XMLID_835_" d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064   c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996   V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545   C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703   c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z"/>
+                        </svg>
+                        <a href="www.facebook.com" class="text-gray-700 hover:underline">www.facebook.com</a>
+                    </div>
+                    <div class="m-5 flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="800px" class="size-6" viewBox="0 0 24 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#0F0F0F"/>
+                            <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#0F0F0F"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#0F0F0F"/>
+                        </svg>
+                        <a href="www.instagram.com" class="text-gray-700 hover:underline">www.instagram.com</a>
+                    </div>
+                    <div class="m-5 flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="size-6" viewBox="0 0 20 20" version="1.1">
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#000000">
+                            <g id="icons" transform="translate(56.000000, 160.000000)">
+                            <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]"></path>
+                            </g></g></g>
+                        </svg>
+                        <a href="www.github.com" class="text-gray-700 hover:underline">www.github.com</a>
                     </div>
                 </div>
-            </div>
-
-        </div> <!-- end about-experience -->
-
-    </section> <!-- end s-about -->
-
-    <!-- works
-    ================================================== -->
-    <section id="works" class="s-works target-section">
-
-        <div class="row heading-block heading-block--center" data-aos="fade-up">
-            <div class="column large-full">
-                <h2 class="section-heading section-heading--centerbottom">Selected Projects</h2>
-                <p class="section-desc">
-                    Here are some of my selected projects I have done lately. 
-                </p>
-            </div>
-        </div> <!-- end heading-block -->
-
-        <div class="masonry-wrap">
-
-            <div class="masonry">
-                <div class="grid-sizer"></div>
-    
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/scheduling.jpg" class="thumb-link" title="Scheduling Algorithm using Python" data-size="1050x700">
-                                <img src="images/portfolio/scheduling.jpg" 
-                                     srcset="images/portfolio/scheduling.jpg 1x, images/portfolio/sjf.png 2x" alt="">
-                            </a>    
-                        </div>
-    
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                Scheduling Algorithm
-                            </h4>
-                            <p class="item-folio__cat">
-                                Programming
-                            </p>
-                        </div>
-    
-                        <div class="item-folio__caption">
-                            <p>Job Scheduling Algorithm representation using Python Language .</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-    
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/back.png" class="thumb-link" title="Java GUI" data-size="1050x700">
-                                <img src="images/portfolio/front.png" 
-                                     srcset="images/portfolio/front.png 1x, images/portfolio/front.png 1x" alt="">
-                            </a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                College Students Grading System
-                            </h4>
-                            <p class="item-folio__cat">
-                                Java GUI
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                            <p>College Students Grading System using Java and SQL database</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                            
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/bistro.PNG" class="thumb-link" title="The Black Goose Bistro" data-size="1050x700">
-                                <img src="images/portfolio/bistro.PNG"
-                                     srcset="images/portfolio/website.png 1x, images/portfolio/website.png 2x" alt="">
-                            </a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                The Black Goose Bistro
-                            </h4>
-                            <p class="item-folio__cat">
-                                Web Development
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                            <p>First web development project that is assigned to be developed. </p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/Snake.png" class="thumb-link" title="Round" data-size="1050x700">
-                                <img src="images/portfolio/Round.png" 
-                                     srcset="images/portfolio/Round.png 1x, images/portfolio/Round.png 2x" alt="">
-                            </a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                Round
-                            </h4>
-                            <p class="item-folio__cat">
-                                Game Development
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                            <p>Round is a personalized game adapted from the famous game Snake. It was developed using Python programming.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                            
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/rpg1.PNG" class="thumb-link" title="Scholar's Journey" data-size="1050x700">
-                                <img src="images/portfolio/rpg1.PNG" 
-                                     srcset="images/portfolio/rpg.PNG 1x, images/portfolio/rpg.PNG 2x" alt="">
-                            </a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                Scholar's Journey
-                            </h4>
-                            <p class="item-folio__cat">
-                                Game Development
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                            <p>Scholar's Journey is a Role Playing Game (RPG) developed using RPGMaker MV.(Group Project)</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                            
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/champ.png" class="thumb-link" title="Scholar's Journey" data-size="1050x700">
-                                <img src="images/portfolio/champ.png" 
-                                     srcset="images/portfolio/champ.png 1x, images/portfolio/champ.png 2x" alt="">
-                            </a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                CHAMP
-                            </h4>
-                            <p class="item-folio__cat">
-                                Web Development (Laravel)
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                            <p>CHAMP Hub is a website that aims to create a online hub for the employees of the company where they can share their problems, share and read God's words and wisdom, and connect to other employee and champ groups.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-
-            </div> <!-- end masonry -->
-
-        </div> <!-- end masonry-wrap -->
-
-    </section> <!-- end s-work -->
-    <!-- contact
-    ================================================== -->
-    <section id="contact" class="s-contact ss-dark target-section">
-
-        <div class="row heading-block" data-aos="fade-up">
-            <div class="column large-full">
-                <h2 class="section-heading">Get In Touch</h2>
+                
+                <div x-show="gallery" class=" bg-white rounded-lg border my-2 pb-5" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
+                    <h1 class="font-black text-3xl border-b-2 border-amber-200 p-2 text-center">Gallery</h1>
+                </div>     
             </div>
         </div>
-
-        <div class="row contact-main" data-aos="fade-up">
-            <div class="column large-full">
-                <p class="contact-email">
-                    <a href="mailto:#0">jhenrichroquios000@gmail.com</a>
-                </p>
-            </div>
-        </div>
-
-        <div class="row contact-infos" data-aos="fade-up" data-aos-anchor=".contact-main">
-
-            <div class="column large-5 medium-full contact-phone">
-                <h4>Call Me</h4>
-                <a href="tel:197-543-2345">+63 950 473 8498</a>
-            </div>
-
-            <div class="column large-7 medium-full contact-social">
-                <h4>Social</h4>
-                <ul>
-                    <li><a href="https://www.facebook.com/bartzabell.bartzabel" title="Facebook">Facebook</a></li>
-                    <li><a href="https://github.com/Bartzabell" title="Github">Github</a></li>
-                    <li><a href="https://www.instagram.com/bulbasau_r_r/" title="Instagram">Instagram</a></li>
-                </ul>
-            </div>
-
-        </div> <!-- end contact-infos -->
-
-    </section> <!-- end s-contact -->
-
-
-    <!-- footer
-    ================================================== -->
-    <footer>
-        <div class="row">
-            <div class="ss-go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top"></a>
-            </div>
-        </div>
-    </footer>
-
-
-    <!-- photoswipe background
-    ================================================== -->
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
-                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
-                    "Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
-                "Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-
-        </div>
-
-    </div><!-- end photoSwipe background -->
-
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        const images = [
-            'images/avatar-kb.png',
-            'images/avatar-kbhi.png',
-        ];
-        let currentIndex = 0;
-    
-        function changeImage() {
-            const imgElement = document.getElementById('changing-image');
-            currentIndex = (currentIndex + 1) % images.length;
-            imgElement.src = images[currentIndex];
-        }
-    
-        setInterval(changeImage, 2000);
-    </script>
-</body>
+        
+    </body>
+</html>
