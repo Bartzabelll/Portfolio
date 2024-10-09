@@ -15,6 +15,26 @@
                 }
             }
         </script>
+        <style>
+            @keyframes walk {
+                0% {
+                    transform: translateX(-50px); /* Start just off-screen left */
+                }
+                50% {
+                    transform: translateX(calc(100vw - 50px)); /* Move to just off-screen right */
+                }
+                100% {
+                    transform: translateX(-50px); /* Return to just off-screen left */
+                }
+            }
+    
+            .stickman {
+                width: 50px; /* Adjust size as needed */
+                position: absolute;
+                bottom: 20px; /* Adjust position as needed */
+                animation: walk 20s linear infinite; /* Adjust speed as needed */
+            }
+        </style>
     </head>
     <body class="font-roboto" x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: true, gallery:false }">
         <div class="bg-gradient-to-b from-gray-500 via-gray-300 to-gray-100 w-full h-full flex justify-center items-center relative">
@@ -244,6 +264,18 @@
                     <h1 class="font-black text-3xl border-b-2 border-teal-200 p-2 text-center">Gallery</h1>
                 </div>     
             </div>
+        </div>
+        <div x-data="{ direction: 'goright' }"
+            class="stickman"
+            x-init="
+                const changeDirection = () => {
+                    direction = (direction === 'goright') ? 'goleft' : 'goright';
+                };
+                setInterval(() => {
+                    changeDirection();
+                }, 9900); 
+            ">
+            <img :src="'img/' + direction + '.svg'" alt="Stickman walking" style="width: 100%; height: auto;">
         </div>
     </body>
 </html>
