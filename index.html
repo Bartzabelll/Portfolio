@@ -40,7 +40,7 @@
         <div class="bg-gradient-to-b from-gray-500 via-gray-300 to-gray-100 w-full h-full flex justify-center items-center relative">
             <button 
                 :class="move ? 'fixed m-5 transition-transform duration-1000 transform translate-y-[-250px] translate-x-[-125px]' 
-                    : 'relative transition-transform duration-1000 transform rotate-0 px-16 py-10 rounded-full bg-slate-700'"
+                    : 'relative transition-transform duration-1000 transform rotate-0 px-16 py-14 rounded-full bg-slate-700'"
                 class="z-10"
                 @click="move = !move">
                 <img 
@@ -48,7 +48,6 @@
                     alt="Button Face" 
                     :class="move ? 'w-28 h-auto' : 'relative'"
                     class="ml-3 w-40 h-auto">
-                <span class="" x-html="move ? '' : 'Welcome to My Personal<br>Space'"></span>
             </button>
         </div>
         <div x-show="move" class="grid grid-cols-2 fixed inset-0 bg-slate-800" 
@@ -265,7 +264,7 @@
                 </div>     
             </div>
         </div>
-        <div x-data="{ direction: 'goright' }"
+        <div x-show="move" x-data="{ direction: 'goright' }"
             class="stickman"
             x-init="
                 const changeDirection = () => {
@@ -273,7 +272,7 @@
                 };
                 setInterval(() => {
                     changeDirection();
-                }, 9900); 
+                }, 10000); 
             ">
             <img :src="'img/' + direction + '.svg'" alt="Stickman walking" style="width: 100%; height: auto;">
         </div>
