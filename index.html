@@ -14,35 +14,7 @@
                     }
                 }
             }
-            function rotateButton() {
-                const button = document.querySelector('button');
-                let count = 0;
-        
-                const rotateInterval = setInterval(() => {
-                    button.classList.add('rotate-5'); // Add a class that defines a rotation
-                    count++;
-        
-                    if (count >= 5) {
-                        clearInterval(rotateInterval);
-                        button.classList.remove('rotate-5'); // Remove rotation class after the rotation
-                    }
-                }, 200); // Adjust timing as needed
-            }
         </script>
-        <style>
-            .rotate-5 {
-                animation: rotate 1s linear;
-            }
-        
-            @keyframes rotate {
-                from {
-                    transform: rotate(0deg);
-                }
-                to {
-                    transform: rotate(3240deg);
-                }
-            }
-        </style>
     </head>
     <body class="font-roboto" x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: true, gallery:false }">
         <div class="bg-gradient-to-b from-gray-500 via-gray-300 to-gray-100 w-full h-full flex justify-center items-center relative">
@@ -50,7 +22,7 @@
                 :class="move ? 'fixed m-5 transition-transform duration-1000 transform translate-y-[-250px] translate-x-[-125px]' 
                     : 'relative transition-transform duration-1000 transform rotate-0 px-16 py-10 rounded-full bg-slate-700'"
                 class="z-10"
-                @click="move = !move; if (move) { rotateButton() }">
+                @click="move = !move">
                 <img 
                     src="img/face-button.png" 
                     alt="Button Face" 
@@ -58,7 +30,7 @@
                     class="ml-3 w-40 h-auto">
                 <span class="" x-html="move ? '' : 'Welcome to My Personal<br>Space'"></span>
             </button>
-        </div> 
+        </div>
         <div x-show="move" class="grid grid-cols-2 fixed inset-0 bg-slate-800" 
             x-transition:enter="transition ease-out duration-1000" 
             x-transition:enter-start="transform scale-50 opacity-0" 
