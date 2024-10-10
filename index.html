@@ -12,7 +12,7 @@
         <div class="bg-gradient-to-b from-violet-500 via-fuchsia-300 to-fuchsia-100 w-full h-full flex justify-center items-center relative">
             <button 
                 :class="move ? 'fixed m-5 transition-transform duration-1000 transform translate-y-[-300px] translate-x-[-5px]' 
-                    : 'relative transition-transform duration-1000 transform rotate-0 px-16 py-14 rounded-full bg-gradient-to-b from-indigo-900 to-violet-500 shadow-md shadow-fuchsia-100'"
+                    : 'relative transition-transform duration-1000 transform rotate-0 px-16 py-14 rounded-full bg-gradient-to-b from-indigo-900 via-violet-500 to-violet-200 shadow-md shadow-fuchsia-100'"
                 class="z-10"
                 @click="move = !move">
                 <img 
@@ -162,10 +162,10 @@
                             <h1 class="font-bold">Appointment Scheduling System</h1>
                         </div>
                         <div class="bg-violet-500 bg-opacity-50 p-5 ">
-                            <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true ; jumpingCar = false">
+                            <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true">
                         </div>
                         <div class="bg-violet-500 bg-opacity-50 p-5 ">
-                            <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true ; jumpingCar = false">
+                            <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true">
                         </div>
                         <div class="flex p-2 justify-center align-center items-center">
                             <h1 class="font-bold">Production Report System</h1>
@@ -174,7 +174,7 @@
                             <h1 class="font-bold">Production Report System</h1>
                         </div>
                         <div class="bg-violet-500 bg-opacity-50 p-5 ">
-                            <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true ; jumpingCar = false">
+                            <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true">
                         </div>
                     </div>
                 </div>
@@ -209,6 +209,9 @@
                 
                 <div x-show="gallery" class=" bg-white rounded-lg border my-2 pb-5 bg-opacity-75" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
                     <h1 class="font-black text-3xl border-b-2 border-violet-200 p-2 text-center">Gallery</h1>
+                    <div class="p-2">
+                        <img class="h-96 w-auto" src="img/toga.png" >
+                    </div>
                 </div>     
             </div>
         </div>
@@ -228,7 +231,7 @@
                     <h1 class="text-center">Create</h1>
                     <img src="img/qa-system.png" class="max-w-2xl h-auto border border-black">
                 </div>
-                <button @click="isModalOpen = false; jumpingCar = true" class="mt-3 bg-violet-600 text-white p-2 rounded-lg">Close</button>
+                <button @click="isModalOpen = false" class="mt-3 bg-violet-600 text-white p-2 rounded-lg">Close</button>
             </div>
         </div>                
         <div x-show="move">
