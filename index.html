@@ -8,7 +8,7 @@
         <link rel="icon" href="img/face-button.png" type="image/png">
         <title>JDR Portfolio</title>
     </head>
-    <body class="font-roboto" x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: true, gallery:false }">
+    <body class="font-roboto" x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: true, gallery:false, isModalOpen: false }">
         <div class="bg-gradient-to-b from-violet-500 via-fuchsia-300 to-fuchsia-100 w-full h-full flex justify-center items-center relative">
             <button 
                 :class="move ? 'fixed m-5 transition-transform duration-1000 transform translate-y-[-300px] translate-x-[-5px]' 
@@ -158,8 +158,8 @@
                     <div class="flex p-2 justify-center align-top">
                         <h1>Quality Assurance System</h1>
                     </div>
-                    <div class=" m-2 shadow-md">
-                        <img src="img/qa-system.png" alt="QA - System" >
+                    <div class="m-2 shadow-md">
+                        <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true">
                     </div>
                 </div>
                 
@@ -196,6 +196,15 @@
                 </div>     
             </div>
         </div>
+        <div 
+            x-show="isModalOpen" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <!-- Modal Content -->
+            <div class="bg-white p-5 rounded-lg shadow-lg max-w-md w-full mx-4" @click.outside="isModalOpen = false">
+                <h2 class="text-2xl">Modal Title</h2>
+                <p>Modal content goes here...</p>
+            </div>
+        </div>
+
         <div x-show="move" x-data="{ direction: 'goright' }"
             class="car"
             x-init="
