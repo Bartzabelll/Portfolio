@@ -210,8 +210,37 @@
                 
                 <div x-show="gallery" class=" bg-white rounded-lg border my-2 pb-5 bg-opacity-75" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
                     <h1 class="font-black text-3xl border-b-2 border-violet-200 p-2 text-center">Gallery</h1>
-                    <div class="p-2">
-                        <img class="h-96 w-auto" src="img/toga.png" >
+                    <div class="p-2 grid grid-cols-2">
+                        <img class="h-96 w-auto p-2 bg-fuchsia-200 rounded-full" src="img/toga.png" >
+                        <table class="min-w-full bg-white border border-gray-300">
+                            <thead>
+                                <tr class="text-black uppercase text-sm bg-violet-300">
+                                    <th class="py-2 px-4 border" colspan="2">Personal Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="hover:bg-gray-100 text-center">
+                                    <td class="border">Name</td>
+                                    <td class="border">Jhenrich D. Roquios</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100 text-center">
+                                    <td class="border">Birthday</td>
+                                    <td class="border">07 July 2002</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100 text-center">
+                                    <td class="border">Address</td>
+                                    <td class="border">Cavite</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100 text-center">
+                                    <td class="border">College Program</td>
+                                    <td class="border">BS Computer Science</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100 text-center">
+                                    <td class="border">Job Positions</td>
+                                    <td class="border">IT Programmer</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>     
             </div>
