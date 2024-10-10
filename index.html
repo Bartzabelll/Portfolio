@@ -38,11 +38,13 @@
                         <p class="font-arial font-medium">
                             <span class="text-5xl font-bold font-engravers">A</span> graduate with a <span class="font-bold text-indigo-900">Bachelor's Degree in Computer Science</span>, has a strong passion for the field of development. Currently working as a web developer, with extensive experience in collaborative development and version control. Eager to learn new technologies and continuously adapting to updates in technologies and AI, aiming to expand my knowledge in development and contribute significantly to innovative projects.
                         </p>
-                        <a href="Resume_.pdf" target="_blank">
-                            <button class="m-5 flex items-center space-x-2 bg-violet-500 hover:bg-indigo-900 rounded-full font-bold p-1">
-                                <img src="img/resume-icon.svg"  class="size-10">
-                            </button>
-                        </a>
+                        <div class="items-center justify-center flex">
+                            <a href="Resume_.pdf" target="_blank">
+                                <button class="m-5 flex items-center space-x-2 bg-violet-500 hover:bg-indigo-900 rounded-full font-bold p-1">
+                                    <img src="img/resume-icon.svg"  class="size-10">
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="mt-5 space-x-5 mx-2 items-center justify-center flex" x-data="{ activeButton: null }">
@@ -155,8 +157,8 @@
                 </div>
                 <div x-show="project" class=" bg-white bg-opacity-75 rounded-lg grid grid-cols-2 border my-2 pb-5" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
                     <h1 class="font-black text-3xl border-b-2 border-violet-200 p-2 col-span-2 text-center">Project</h1>
-                    <div class="flex p-2 justify-center align-top">
-                        <h1>Quality Assurance System</h1>
+                    <div class="flex p-2 justify-center align-center items-center">
+                        <h1 class="font-bold">Quality Assurance System</h1>
                     </div>
                     <div class="m-2 shadow-md">
                         <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true ; jumpingCar = false">
@@ -205,9 +207,9 @@
             x-transition:leave-end="opacity-0 transform scale-90"
             x-cloak>
             <div class="bg-white p-5 rounded-lg shadow-lg h-auto mx-4 overflow-auto max-h-screen">
-                <h2 class="text-2xl text-center">Quality Assurance System</h2>
+                <h2 class="text-2xl text-center font-bold">Quality Assurance System</h2>
                 <div class="overflow-y-auto h-64 p-5">
-                    <h1 class="text-center">Dashboard</h1>
+                    <h1 class="text-center font-bold">Dashboard</h1>
                     <img src="img/qa-system.png" class="max-w-2xl h-auto border border-black">
                     <h1 class="text-center">Create</h1>
                     <img src="img/qa-system.png" class="max-w-2xl h-auto border border-black">
