@@ -8,7 +8,8 @@
         <link rel="icon" href="img/face-button.png" type="image/png">
         <title>JDR Portfolio</title>
     </head>
-    <body class="font-roboto" x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: true, gallery:false, isModalOpen: false, jumpingCar: true }">
+    <body class="font-roboto" 
+        x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: true, gallery:false, isModalOpen: false, project1: false, project2:false, jumpingCar: true }">
         <div class="bg-gradient-to-b from-violet-500 via-fuchsia-300 to-fuchsia-100 w-full h-full flex justify-center items-center relative">
             <button 
                 :class="move ? 'fixed m-5 transition-transform duration-1000 transform translate-y-[-300px] translate-x-[-5px]' 
@@ -157,24 +158,24 @@
                 </div>
                 <div x-show="project" class="bg-white bg-opacity-75 rounded-lg border my-2 pb-5" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
                     <h1 class="font-black text-3xl border-b-2 border-violet-200 p-2 col-span-2 text-center">Project</h1>
-                    <div class="overflow-y-auto h-96 grid grid-cols-2">
+                    <div class="overflow-y-auto h-128 grid grid-cols-2">
                         <div class="flex p-2 justify-center align-center items-center">
                             <h1 class="font-bold">Appointment Scheduling System</h1>
                         </div>
                         <div class="bg-violet-500 bg-opacity-50 p-5 ">
-                            <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true">
+                            <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true ; project1 = true ; project2 = false">
                         </div>
                         <div class="bg-violet-500 bg-opacity-50 p-5 ">
-                            <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true">
+                            <img src="img/EPR.png" alt="QA - System" @click="isModalOpen = true ; project2 = true ; project1 = false">
                         </div>
                         <div class="flex p-2 justify-center align-center items-center">
                             <h1 class="font-bold">Production Report System</h1>
                         </div>
                         <div class="flex p-2 justify-center align-center items-center">
-                            <h1 class="font-bold">Production Report System</h1>
+                            <h1 class="font-bold">Quality Assurance System</h1>
                         </div>
                         <div class="bg-violet-500 bg-opacity-50 p-5 ">
-                            <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true">
+                            <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true ; project1 = true ; project2 = false">
                         </div>
                     </div>
                 </div>
@@ -224,12 +225,21 @@
             x-transition:leave-end="opacity-0 transform scale-90"
             x-cloak>
             <div class="bg-white p-5 rounded-lg shadow-lg h-auto mx-4 overflow-auto max-h-screen">
-                <h2 class="text-2xl text-center font-bold">Quality Assurance System</h2>
-                <div class="overflow-y-auto h-64 p-5">
-                    <h1 class="text-center font-bold">Dashboard</h1>
-                    <img src="img/qa-system.png" class="max-w-2xl h-auto border border-black">
-                    <h1 class="text-center">Create</h1>
-                    <img src="img/qa-system.png" class="max-w-2xl h-auto border border-black">
+                <div x-show="project1">
+                    <h2 class="text-2xl text-center font-bold">Quality Assurance System</h2>
+                    <div class="overflow-y-auto h-96 p-5">
+                        <h1 class="text-center font-bold">Dashboard</h1>
+                        <img src="img/qa-system.png" class="max-w-2xl h-auto border border-black">
+                        <h1 class="text-center">Create</h1>
+                        <img src="img/qa-system.png" class="max-w-2xl h-auto border border-black">
+                    </div>
+                </div>
+                <div x-show="project2">
+                    <h2 class="text-2xl text-center font-bold">Production Report System</h2>
+                    <div class="overflow-y-auto h-96 p-5">
+                        <h1 class="text-center font-bold">Dashboard</h1>
+                        <img src="img/EPR.png" class="max-w-2xl h-auto border border-black">
+                    </div>
                 </div>
                 <button @click="isModalOpen = false" class="mt-3 bg-violet-600 text-white p-2 rounded-lg">Close</button>
             </div>
