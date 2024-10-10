@@ -1,0 +1,17 @@
+@keyframes walk {
+    0% {
+        transform: translateX(-50px); /* Start just off-screen left */
+    }
+    50% {
+        transform: translateX(calc(100vw - 50px)); /* Move to just off-screen right */
+    }
+    100% {
+        transform: translateX(-50px); /* Return to just off-screen left */
+    }
+}
+.car {
+    width: 50px; /* Adjust size as needed */
+    position: absolute;
+    bottom: 20px; /* Adjust position as needed */
+    animation: walk 20s linear infinite; /* Adjust speed as needed */
+}
