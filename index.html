@@ -223,7 +223,7 @@
         </div>
         <div x-show="move" x-data="{ go: true, direction: 'goright' }"
             :class="go ? 'car' : 'car stopped'"
-            @click="go = !go" 
+            @click="go = !go ; jumpingCar = !jumpingCar" 
             x-init="
                 const changeDirection = () => {
                     direction = (direction === 'goright') ? 'goleft' : 'goright';
