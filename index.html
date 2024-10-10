@@ -23,13 +23,10 @@
                     class="ml-3 w-40 h-auto">
             </button>
         </div>
-        <div x-show="move" class="grid grid-cols-2 fixed inset-0 bg-gradient-to-r from-fuchsia-100 via-fuchsia-300 to-violet-500" 
-            x-transition:enter="transition ease-out duration-1000" 
-            x-transition:enter-start="transform scale-50 opacity-0" 
-            x-transition:enter-end="transform scale-100 opacity-100" 
-            x-transition:leave="transition ease-in duration-500" 
-            x-transition:leave-start="transform scale-100 opacity-100" 
-            x-transition:leave-end="transform scale-50 opacity-0">
+        <div x-show="move" class="grid grid-cols-2 fixed inset-0 bg-gradient-to-r from-fuchsia-100 via-fuchsia-300 to-violet-500"
+            x-transition:enter="transition ease-in-out duration-1000" x-transition:enter-start="transform scale-x-50 scale-y-0 opacity-0" 
+            x-transition:enter-end="transform scale-x-100 scale-y-100 opacity-100" x-transition:leave="transition ease-in-out duration-500" 
+            x-transition:leave-start="transform scale-x-100 scale-y-100 opacity-100" x-transition:leave-end="transform scale-x-50 scale-y-0 opacity-0">
             <div class="m-10">
                 <div x-show="move">
                     <h3 class="font-bold text-2xl mb-2 text-violet-500">Hello, I'm</h3>
@@ -89,19 +86,19 @@
                 
                 <div x-show="drop2" class=" bg-white rounded-lg grid grid-cols-2 border my-2 pb-5" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
                     <h1 class="font-black text-3xl border-b-2 border-violet-200 p-2 col-span-2 text-center">Education</h1>
-                    <h2 class="font-black text-xl p-2 ml-10 my-10 ">2020-2024</h1>
+                    <h2 class="font-black text-xl p-2 ml-10 my-10 ">2020-2024</h2>
                     <div class="mb-2 my-10 mr-10">
                         <h2 class=" text-xl font-bold text-indigo-900">Cavite State University-Carmona</h2>
                         <p>Bachelor of Science in Computer Science</p>
                     </div>
-                    <h2 class="font-black text-xl p-2 ml-10 mb-10">2018-2020</h1>
+                    <h2 class="font-black text-xl p-2 ml-10 mb-10">2018-2020</h2>
                     <div class="mb-10">
                         <h2 class=" text-lg font-bold text-indigo-900">Bulihan Integrated National High School</h2>
                         <p class="text-sm">Science Technology Engineering and Mathematics</p>
                     </div>
-                    <h2 class="font-black text-xl p-2 ml-10 mb-5">2014-2018</h1>
+                    <h2 class="font-black text-xl p-2 ml-10 mb-5">2014-2018</h2>
                     <h2 class=" text-lg font-bold my-2 mb-5 text-indigo-900">Bulihan Integrated National High School</h2>
-                    <h2 class="font-black text-xl p-2 ml-10">2008-2014</h1>
+                    <h2 class="font-black text-xl p-2 ml-10">2008-2014</h2>
                     <h2 class=" text-lg font-bold my-2 mr-10 text-indigo-900">San Gabriel II Elementary School</h2>
                 </div>
                 
@@ -294,5 +291,5 @@
             ">
             <img :src="'img/' + direction + '.svg'" alt="car walking" style="width: 100%; height: auto;">
         </div>
-    </body>
+    </body> 
 </html>
