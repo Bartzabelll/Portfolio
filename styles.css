@@ -1,9 +1,18 @@
 @keyframes walk {
     0% {
-        transform: translateX(-50px); /* Start just off-screen left */
+        transform: translateX(-50px); 
     }
     100% {
-        transform: translateX(calc(100vw)); /* Move to just off-screen right */
+        transform: translateX(calc(100vw));
+    }
+}
+
+@keyframes reverseWalk {
+    0% {
+        transform: translateX(calc(100vw)); 
+    }
+    100% {
+        transform: translateX(-50px);
     }
 }
 
@@ -46,7 +55,15 @@
     animation: walk 20s linear infinite;
 }
 
-.big-shape {
+.to-left {
+    /* border-radius: 50%; 
+    background: radial-gradient(circle at 50% 50%, rgba(110, 19, 138, 0.8) 30%, rgba(10, 64, 243, 0) 100%); */
+    animation: reverseWalk 20s linear infinite;
+}
+
+
+
+/* .big-shape {
     width: 150px;
     height: 100px;
     opacity: 0.8;
@@ -56,4 +73,4 @@
     width: 100px;
     height: 70px;
     opacity: 0.5;
-}
+} */
