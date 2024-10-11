@@ -2,11 +2,8 @@
     0% {
         transform: translateX(-50px); /* Start just off-screen left */
     }
-    50% {
-        transform: translateX(calc(100vw - 50px)); /* Move to just off-screen right */
-    }
     100% {
-        transform: translateX(-50px); /* Return to just off-screen left */
+        transform: translateX(calc(100vw)); /* Move to just off-screen right */
     }
 }
 
@@ -19,4 +16,22 @@
 
 .stopped {
     animation: none; /* Stop animation */
+}
+
+.germ-shape {
+    /* border-radius: 50%; 
+    background: radial-gradient(circle at 50% 50%, rgba(110, 19, 138, 0.8) 30%, rgba(10, 64, 243, 0) 100%); */
+    animation: walk 20s linear infinite;
+}
+
+.big-shape {
+    width: 150px;
+    height: 100px;
+    opacity: 0.8;
+}
+
+.small-shape {
+    width: 100px;
+    height: 70px;
+    opacity: 0.5;
 }

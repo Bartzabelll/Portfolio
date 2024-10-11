@@ -8,7 +8,7 @@
         <link rel="icon" href="img/face-button.png" type="image/png">
         <title>JDR Portfolio</title>
     </head>
-    <body class="font-roboto" 
+    <body class="z-10 font-roboto" 
         x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: true, gallery:false, isModalOpen: false, project1: false, project2:false, jumpingCar: true }">
         <div class="bg-gradient-to-b from-violet-500 via-fuchsia-300 to-fuchsia-100 w-full h-full flex justify-center items-center relative">
             <button 
@@ -22,6 +22,14 @@
                     :class="move ? 'w-16 h-auto' : 'relative'"
                     class="ml-3 w-40 h-auto">
             </button>
+            
+            <!-- Rotating Germ Shapes -->
+            <div x-show="!move" class="z-0 grid grid-cols-4 pl-20 absolute inset-0 flex justify-center items-center">
+                <div class="">
+                    <div class="germ-shape big-shape z-20">Jhenrich Roquios</div>
+                    <div class="germ-shape small-shape z-10"></div>
+                </div>
+            </div>
         </div>
         <div x-show="move" class="grid grid-cols-2 fixed inset-0 bg-gradient-to-r from-fuchsia-100 via-fuchsia-300 to-violet-500"
             x-transition:enter="transition ease-in-out duration-1000" x-transition:enter-start="transform scale-x-50 scale-y-0 opacity-0" 
@@ -276,20 +284,10 @@
                 </div>
             </div>
         </div>
-        <div x-show="move" x-data="{ go: true, direction: 'goright' }"
+        <div x-show="move" x-data="{ go: true }"
             :class="go ? 'car' : 'car stopped'"
-            @click="go = !go ; jumpingCar = !jumpingCar" 
-            x-init="
-                const changeDirection = () => {
-                    direction = (direction === 'goright') ? 'goleft' : 'goright';
-                };
-                setInterval(() => {
-                    if (go) {
-                        changeDirection();
-                    }
-                }, 10000);
-            ">
-            <img :src="'img/' + direction + '.svg'" alt="car walking" style="width: 100%; height: auto;">
+            @click="go = !go ; jumpingCar = !jumpingCar" >
+            <img src="img/motor.svg" alt="car walking" style="width: 120%; height: auto;">
         </div>
     </body> 
 </html>
