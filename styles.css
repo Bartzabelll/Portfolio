@@ -7,11 +7,33 @@
     }
 }
 
+@keyframes wheelie {
+    0% {
+        transform: translateX(-50px) rotate(0deg);
+    }
+    20% {
+        transform: translateX(calc(20vw)) rotate(-45deg); 
+    }
+    40% {
+        transform: translateX(calc(40vw)) rotate(0deg); 
+    }
+    60% {
+        transform: translateX(calc(60vw)) rotate(-45deg); 
+    }
+    80% {
+        transform: translateX(calc(80vw)) rotate(0deg); 
+    }
+    100% {
+        transform: translateX(calc(100vw)); 
+    }
+}
+
+
 .car {
     width: 50px; /* Adjust size as needed */
     position: absolute;
     bottom: 20px; /* Adjust position as needed */
-    animation: walk 20s linear infinite; /* Adjust speed as needed */
+    animation: wheelie 20s linear infinite; /* Adjust speed as needed */
 }
 
 .stopped {
