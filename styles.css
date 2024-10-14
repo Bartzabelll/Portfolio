@@ -37,6 +37,23 @@
     }
 }
 
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-counter {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
 
 .car {
     width: 50px; /* Adjust size as needed */
@@ -61,16 +78,44 @@
     animation: reverseWalk 20s linear infinite;
 }
 
+.shine {
+    filter: drop-shadow(0 0 20px rgb(52, 39, 167));
+} 
 
-
-/* .big-shape {
-    width: 150px;
-    height: 100px;
-    opacity: 0.8;
+.image1{ 
+    position: relative;
+    height: auto;
+    width: 64px;
+    background-image: url(img/face-button.png);
+    background-size: cover;
 }
 
-.small-shape {
-    width: 100px;
-    height: 70px;
-    opacity: 0.5;
-} */
+.image2 {
+    position: absolute;
+    height: 80vh;
+    width: 90%;
+    background-image: url(img/circle.png);
+    background-position: center;
+    background-size: cover;
+    animation: rotate 10s linear infinite; /* Adjust the duration as needed */
+}
+
+.image3 {
+    position: absolute;
+    background-image: url(img/circle2.png);
+    background-position: center;
+    background-size: cover;
+    animation: rotate-counter 10s linear infinite;
+}
+
+.image4 {
+    position: absolute;
+    background-image: url(img/face-button.png);
+    background-position: center;
+    background-size: cover;
+    animation: rotate 1s linear infinite;
+}
+
+.transition-umbrella {
+    transform-origin: center; /* Ensures the transformation starts from the center */
+}

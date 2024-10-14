@@ -9,12 +9,12 @@
         <title>JDR Portfolio</title>
     </head>
     <body class="z-10 font-roboto" 
-        x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: true, gallery:false, isModalOpen: false, project1: false, project2:false, jumpingCar: true }">
-        <div class="bg-gradient-to-b from-violet-500 via-fuchsia-300 to-fuchsia-100 w-full h-full flex justify-center items-center relative">
+        x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: true, gallery:false, isModalOpen: false, project1: false, project2:false }">
+        <div class="bg-gradient-to-b from-violet-500 via-fuchsia-300 to-fuchsia-100 w-full h-full flex justify-center items-center relative">  
             <button 
-                :class="move ? 'fixed m-5 transition-transform duration-1000 transform translate-y-[-300px] translate-x-[-5px]' 
-                    : 'relative transition-transform duration-1000 transform rotate-0 px-16 py-14 rounded-full bg-gradient-to-b from-indigo-900 via-violet-500 to-violet-200 shadow-md shadow-fuchsia-100'"
-                class="z-10"
+                :class="move ? ' transition-transform duration-1000 transform translate-y-[-300px] translate-x-[-5px]' 
+                    : ' transition-transform duration-1000 transform px-16 py-14 rounded-full    shadow-fuchsia-100'"
+                class="z-20"
                 @click="move = !move">
                 <img 
                     src="img/face-button.png" 
@@ -22,71 +22,62 @@
                     :class="move ? 'w-16 h-auto' : 'relative'"
                     class="ml-3 w-40 h-auto">
             </button>
-            
-            <!-- Rotating Germ Shapes -->
-            <div x-show="!move" class="z-0 grid grid-cols-4 pl-20 absolute inset-0 flex justify-center items-center">
-                <div class="">
-                    <div class="germ-shape z-20">
-                        <img src="img/ufo.svg"  class="size-10">
-                    </div>
-                    <div class="to-left z-10">
-
-                    </div>
-                </div>
+            <div x-show='!move' class="image2 z-10 w-80 ml-4 h-72 absolute">
+                <img src="img/satellite.svg" class=" size-10">
+                <img src="img/moon.svg" class="ml-3 size-10 p-2">
             </div>
+            <div x-show='!move' class="image3 z-10 w-96 ml-3 h-72 absolute shine"> </div>
         </div>
-        <div x-show="move" class="grid grid-cols-2 fixed inset-0 bg-gradient-to-r from-fuchsia-100 via-fuchsia-300 to-violet-500"
-            x-transition:enter="transition ease-in-out duration-1000" x-transition:enter-start="transform scale-x-50 scale-y-0 opacity-0" 
-            x-transition:enter-end="transform scale-x-100 scale-y-100 opacity-100" x-transition:leave="transition ease-in-out duration-500" 
-            x-transition:leave-start="transform scale-x-100 scale-y-100 opacity-100" x-transition:leave-end="transform scale-x-50 scale-y-0 opacity-0">
+        <div x-show="move" class="grid grid-cols-2 fixed inset-0 bg-gradient-to-r from-fuchsia-100 via-fuchsia-300 to-violet-500 transition-umbrella">
             <div class="m-10">
-                <div x-show="move">
+                <div x-show="move" class="transition duration-700 ease-in-out">
                     <h3 class="font-bold text-2xl mb-2 text-violet-500">Hello, I'm</h3>
                     <h1 class="font-black font-engravers text-indigo-900 text-4xl mb-1 tracking-widest">Jhenrich D. Roquios</h1>
                     <h3 class="mb-5 text-violet-700 pl-10 font-bold">I am a Web Developer</h3>
-                    <div class="indent-5 text-justify py-3 px-5 text-xl leading-loose bg-white bg-opacity-75 rounded-xl" x-show="!drop && !drop2 && !drop3"  x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
+                    <div class=" space-x-5 mb-2 items-center justify-center flex" x-data="{ activeButton: null }">
+                        <button 
+                            @click="activeButton = (activeButton === 'aboutMe') ? null : 'aboutMe'; drop = !drop; drop2 = false; drop3 = false"
+                            title="About Me"
+                            :class="activeButton === 'aboutMe' ? 'bg-violet-600' : 'bg-white'"
+                            class="p-2 rounded-full hover:bg-indigo-900 transition-colors duration-300">
+                            <img src="img/expand-icon.svg" class="size-6">
+                        </button>
+                    
+                        <button 
+                            @click="activeButton = (activeButton === 'education') ? null : 'education'; drop2 = !drop2; drop = false; drop3 = false"
+                            title="Education"
+                            :class="activeButton === 'education' ? 'bg-violet-600' : 'bg-white'"
+                            class="p-2 rounded-full hover:bg-indigo-900 transition-colors duration-300">
+                            <img src="img/graduation-icon.svg" class="size-8">
+                        </button>
+                    
+                        <button 
+                            @click="activeButton = (activeButton === 'experiences') ? null : 'experiences'; drop3 = !drop3; drop = false; drop2 = false"
+                            title="Experiences"
+                            :class="activeButton === 'experiences' ? 'bg-violet-600' : 'bg-white'"
+                            class="p-2 rounded-full hover:bg-indigo-900 transition-colors duration-300 mt-2">
+                            <img src="img/experience-icon.svg" class="size-8">
+                        </button>
+                    </div>
+                    <div class="indent-5 text-justify py-3 px-5 text-xl leading-loose bg-white bg-opacity-75 rounded-xl" 
+                         x-show="!drop && !drop2 && !drop3">
                         <p class="font-arial font-medium">
                             <span class="text-5xl font-bold font-engravers">A</span> graduate with a <span class="font-bold text-indigo-900">Bachelor's Degree in Computer Science</span>, has a strong passion for the field of development. Currently working as a web developer, with extensive experience in collaborative development and version control. Eager to learn new technologies and continuously adapting to updates in technologies and AI, aiming to expand my knowledge in development and contribute significantly to innovative projects.
                         </p>
                         <div class="items-center justify-center flex">
                             <a href="Resume_.pdf" target="_blank">
                                 <button class="m-5 flex items-center space-x-2 bg-violet-500 hover:bg-indigo-900 rounded-full font-bold p-1">
-                                    <img src="img/resume-icon.svg"  class="size-10">
+                                    <img src="img/resume-icon.svg" class="size-10">
                                 </button>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="mt-5 space-x-5 mx-2 items-center justify-center flex" x-data="{ activeButton: null }">
-                    <button 
-                        @click="activeButton = (activeButton === 'aboutMe') ? null : 'aboutMe'; drop = !drop; drop2 = false; drop3 = false"
-                        title="About Me"
-                        :class="activeButton === 'aboutMe' ? 'bg-violet-600' : 'bg-white'"
-                        class="p-2 rounded-full hover:bg-indigo-900 transition-colors duration-300">
-                        <img src="img/expand-icon.svg" class="size-6">
-                    </button>
-
-                    <button 
-                        @click="activeButton = (activeButton === 'education') ? null : 'education'; drop2 = !drop2; drop = false; drop3 = false"
-                        title="Education"
-                        :class="activeButton === 'education' ? 'bg-violet-600' : 'bg-white'"
-                        class="p-2 rounded-full hover:bg-indigo-900 transition-colors duration-300">
-                        <img src="img/graduation-icon.svg" class="size-8">
-                    </button>
                 
-                    <button 
-                        @click="activeButton = (activeButton === 'experiences') ? null : 'experiences'; drop3 = !drop3; drop = false; drop2 = false"
-                        title="Experiences"
-                        :class="activeButton === 'experiences' ? 'bg-violet-600' : 'bg-white'"
-                        class="p-2 rounded-full hover:bg-indigo-900 transition-colors duration-300 mt-2">
-                        <img src="img/experience-icon.svg" class="size-8">
-                    </button>
-                </div>                
-                
-                <div x-show="drop" class="bg-white p-3 mt-2 rounded-lg bg-opacity-75" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5" >
-                    <p class="indent-5 text-justify leading-relaxed ">
+                <div x-show="drop" class="bg-white p-3 mt-2 rounded-lg bg-opacity-75">
+                    <p class="indent-5 text-justify leading-relaxed">
                         <span class="text-3xl font-black font-engravers">M</span>y interest in the IT field began in high school when I took ICT as my TLE subject in 9th grade. That’s where I learned my first IT skills, such as computer troubleshooting, hardware basics, and gained insights into various areas of IT.
-                
+                        
                         When I went to college, I chose to study Computer Science to further expand my knowledge in software development and programming. There, I learned different programming languages like Java and Python, as well as basic HTML, CSS, and some database querying.
                         
                         During my OJT, my journey into web development began. I was introduced to Agile-Scrum development, which involved fast-paced work with weekly reports and deliverables. I also learned Laravel development using the TALL stack, worked with version control, and experienced collaborative development using GitHub. Additionally, I gained skills in database management, migrations, and setting up new projects.
@@ -96,25 +87,25 @@
                     </p>
                 </div>
                 
-                <div x-show="drop2" class=" bg-white rounded-lg grid grid-cols-2 border my-2 pb-5" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
+                <div x-show="drop2" class="bg-white rounded-lg grid grid-cols-2 border my-2 pb-5" >
                     <h1 class="font-black text-3xl border-b-2 border-violet-200 p-2 col-span-2 text-center">Education</h1>
-                    <h2 class="font-black text-xl p-2 ml-10 my-10 ">2020-2024</h2>
+                    <h2 class="font-black text-xl p-2 ml-10 my-10">2020-2024</h2>
                     <div class="mb-2 my-10 mr-10">
-                        <h2 class=" text-xl font-bold text-indigo-900">Cavite State University-Carmona</h2>
+                        <h2 class="text-xl font-bold text-indigo-900">Cavite State University-Carmona</h2>
                         <p>Bachelor of Science in Computer Science</p>
                     </div>
                     <h2 class="font-black text-xl p-2 ml-10 mb-10">2018-2020</h2>
                     <div class="mb-10">
-                        <h2 class=" text-lg font-bold text-indigo-900">Bulihan Integrated National High School</h2>
+                        <h2 class="text-lg font-bold text-indigo-900">Bulihan Integrated National High School</h2>
                         <p class="text-sm">Science Technology Engineering and Mathematics</p>
                     </div>
                     <h2 class="font-black text-xl p-2 ml-10 mb-5">2014-2018</h2>
-                    <h2 class=" text-lg font-bold my-2 mb-5 text-indigo-900">Bulihan Integrated National High School</h2>
+                    <h2 class="text-lg font-bold my-2 mb-5 text-indigo-900">Bulihan Integrated National High School</h2>
                     <h2 class="font-black text-xl p-2 ml-10">2008-2014</h2>
-                    <h2 class=" text-lg font-bold my-2 mr-10 text-indigo-900">San Gabriel II Elementary School</h2>
+                    <h2 class="text-lg font-bold my-2 mr-10 text-indigo-900">San Gabriel II Elementary School</h2>
                 </div>
                 
-                <div x-show="drop3" class=" bg-white rounded-lg border my-2 pb-5" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
+                <div x-show="drop3" class="bg-white rounded-lg border my-2 pb-5" >
                     <h1 class="font-black text-3xl border-b-2 border-violet-200 p-2 text-center">Experience/s</h1>
                     <table class="min-w-full bg-white border border-gray-300">
                         <thead>
@@ -137,8 +128,8 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>            
-            </div>
+                </div>
+            </div>                
             <div class="p-5 mt-4 border-l-2 border-violet-800">
                 <div class="mt-5 space-x-5 mx-2 items-center justify-center flex" x-data="{ activeButton: 'contact' }">
                     <button 
@@ -165,7 +156,7 @@
                         <img src="img/gallery-icon.svg" class="size-8">
                     </button>
                 </div>
-                <div x-show="project" class="bg-white bg-opacity-75 rounded-lg border my-2 pb-5" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
+                <div x-show="project" class="bg-white bg-opacity-75 rounded-lg border my-2 pb-5">
                     <h1 class="font-black text-3xl border-b-2 border-violet-200 p-2 col-span-2 text-center">Project</h1>
                     <div class="overflow-y-auto h-128 grid grid-cols-2">
                         <div class="flex p-2 justify-center align-center items-center">
@@ -189,7 +180,7 @@
                     </div>
                 </div>
                 
-                <div x-show="contact" class=" bg-white rounded-lg grid grid-cols-2 border my-2 pb-5 ml-5 bg-opacity-75" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
+                <div x-show="contact" class=" bg-white rounded-lg grid grid-cols-2 border my-2 pb-5 ml-5 bg-opacity-75" >
                     <h1 class="font-black text-3xl border-b-2 border-violet-200 p-2 col-span-2 text-center">Contact</h1>
                     <div class="m-5 flex items-center space-x-2">
                         <img src="img/gmail-icon.svg" class="size-6">
@@ -217,7 +208,7 @@
                     </div>
                 </div>
                 
-                <div x-show="gallery" class=" bg-white rounded-lg border my-2 pb-5 bg-opacity-75" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-5" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-5">
+                <div x-show="gallery" class=" bg-white rounded-lg border my-2 pb-5 bg-opacity-75">
                     <h1 class="font-black text-3xl border-b-2 border-violet-200 p-2 text-center">Gallery</h1>
                     <div class="p-2 grid grid-cols-2">
                         <img class="h-96 w-auto p-2 bg-fuchsia-200 rounded-full" src="img/toga.png" >
@@ -254,14 +245,7 @@
                 </div>     
             </div>
         </div>
-        <div x-show="isModalOpen" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
-            x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0 transform scale-90"
-            x-transition:enter-end="opacity-100 transform scale-100"
-            x-transition:leave="transition ease-in duration-300"
-            x-transition:leave-start="opacity-100 transform scale-100"
-            x-transition:leave-end="opacity-0 transform scale-90"
-            x-cloak>
+        <div x-show="isModalOpen" x-cloak class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div class="bg-white p-5 rounded-lg shadow-lg h-auto mx-4 overflow-auto max-h-screen">
                 <div x-show="project1">
                     <h2 class="text-2xl text-center font-bold">Quality Assurance System</h2>
@@ -282,15 +266,9 @@
                 <button @click="isModalOpen = false" class="mt-3 bg-violet-600 text-white p-2 rounded-lg">Close</button>
             </div>
         </div>                
-        <div x-show="move">
-            <div x-show="jumpingCar" class="inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                <div class="bg-white p-5 rounded-lg shadow-lg max-w-md h-full w-auto mx-4">
-                </div>
-            </div>
-        </div>
         <div x-show="move" x-data="{ go: true }"
             :class="go ? 'car' : 'car stopped'"
-            @click="go = !go ; jumpingCar = !jumpingCar" >
+            @click="go = !go" >
             <img src="img/motor.svg" alt="car walking" style="width: 120%; height: auto;">
         </div>
     </body> 
