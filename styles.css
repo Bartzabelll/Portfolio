@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'square';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/fonts/upheavtt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'pixel';
+    font-weight: bold;
+    font-style: normal;
+    src: url('/fonts/04B_30__.TTF') format('truetype');
+}
+
+
 @keyframes walk {
     0% {
         transform: translateX(-50px); 
@@ -79,7 +94,7 @@
 }
 
 .shine {
-    filter: drop-shadow(0 0 20px rgb(52, 39, 167));
+    filter: drop-shadow(0 0 0px rgb(255, 255, 255));
 } 
 
 .image1{ 
@@ -97,7 +112,7 @@
     background-image: url(img/circle.png);
     background-position: center;
     background-size: cover;
-    animation: rotate 10s linear infinite; /* Adjust the duration as needed */
+    animation: rotate 10s linear infinite;
 }
 
 .image3 {

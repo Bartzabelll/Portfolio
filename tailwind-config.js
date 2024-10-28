@@ -9,6 +9,8 @@ tailwind.config = {
                 'arial': ['Arial', 'sans-serif'],
                 'roboto': ['Roboto', 'sans-serif'],
                 'engravers': ['"Engravers MT"', 'sans-serif'], 
+                'pixel': ['pixel', 'sans-serif'],
+                'square': ['square', 'sans-serif'],
             }
         }
     }
