@@ -12,14 +12,14 @@
         x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: true, gallery:false, isModalOpen: false, project1: false, project2:false }">
         <div class="bg-neutral-900 w-full h-full flex justify-center items-center relative"> 
             <button 
-                :class="move ? ' transition-transform duration-1000 transform translate-y-[-300px] translate-x-[-5px]' 
+                :class="move ? ' transition-transform duration-1000 transform translate-y-[-300px] translate-x-[690px]' 
                     : ' transition-transform duration-1000 transform px-16 py-14 rounded-full    shadow-fuchsia-100'"
                 class="z-20"
                 @click="move = !move">
                 <img 
                     src="img/jr.png" 
                     alt="Button Face" 
-                    :class="move ? 'w-20 h-auto' : 'relative'"
+                    :class="move ? 'w-24 h-auto' : 'relative'"
                     class="ml-9 mb-5 w-72 h-auto">
             </button>
             <div x-show='!move' class="image2 z-10 w-80 ml-4 h-72 absolute">
