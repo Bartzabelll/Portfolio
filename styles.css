@@ -70,6 +70,14 @@
     }
 }
 
+.bg-half {
+    width: 30vh; 
+    height: 100vh;
+    background-image: url('/img/binary.png');
+    background-size: cover;
+    background-position: center;
+}
+
 .car {
     width: 50px; /* Adjust size as needed */
     position: absolute;
