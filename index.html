@@ -66,7 +66,7 @@
                         </p>
                         <div class="items-center justify-center flex">
                             <a href="Resume_.pdf" target="_blank">
-                                <button class="m-5 flex items-center space-x-2 bg-violet-500 hover:bg-indigo-900 rounded-full font-bold p-1">
+                                <button class="m-5 flex items-center space-x-2 bg-violet-500 hover:bg-[#ffeb0c] rounded-full font-bold p-1">
                                     <img src="img/resume-icon.svg" class="size-10">
                                 </button>
                             </a>
@@ -91,18 +91,18 @@
                     <h1 class="font-black text-3xl border-b-2 border-violet-200 p-2 col-span-2 text-center">Education</h1>
                     <h2 class="font-black text-xl p-2 ml-10 my-10">2020-2024</h2>
                     <div class="mb-2 my-10 mr-10">
-                        <h2 class="text-xl font-bold text-indigo-900">Cavite State University-Carmona</h2>
+                        <h2 class="text-xl font-bold text-[#ffeb0c]">Cavite State University-Carmona</h2>
                         <p>Bachelor of Science in Computer Science</p>
                     </div>
                     <h2 class="font-black text-xl p-2 ml-10 mb-10">2018-2020</h2>
                     <div class="mb-10">
-                        <h2 class="text-lg font-bold text-indigo-900">Bulihan Integrated National High School</h2>
+                        <h2 class="text-lg font-bold text-[#ffeb0c]">Bulihan Integrated National High School</h2>
                         <p class="text-sm">Science Technology Engineering and Mathematics</p>
                     </div>
                     <h2 class="font-black text-xl p-2 ml-10 mb-5">2014-2018</h2>
-                    <h2 class="text-lg font-bold my-2 mb-5 text-indigo-900">Bulihan Integrated National High School</h2>
+                    <h2 class="text-lg font-bold my-2 mb-5 text-[#ffeb0c]">Bulihan Integrated National High School</h2>
                     <h2 class="font-black text-xl p-2 ml-10">2008-2014</h2>
-                    <h2 class="text-lg font-bold my-2 mr-10 text-indigo-900">San Gabriel II Elementary School</h2>
+                    <h2 class="text-lg font-bold my-2 mr-10 text-[#ffeb0c]">San Gabriel II Elementary School</h2>
                 </div>
                 
                 <div x-show="drop3" class="bg-white rounded-lg border my-2 pb-5" >
@@ -136,7 +136,7 @@
                         @click="activeButton = (activeButton === 'project') ? null : 'project'; project = !project; gallery = false; contact = false"
                         title="project"
                         :class="activeButton === 'project' ? 'bg-violet-600' : 'bg-white'"
-                        class="p-2 rounded-full hover:bg-indigo-900 transition-colors duration-300">
+                        class="p-2 rounded-full hover:bg-[#ffeb0c] transition-colors duration-300">
                         <img src="img/project-icon.svg" class="size-8">
                     </button>
                 
@@ -144,7 +144,7 @@
                         @click="activeButton = (activeButton === 'contact') ? null : 'contact'; contact = !contact; project = false; gallery = false"
                         title="contact"
                         :class="activeButton === 'contact' ? 'bg-violet-600' : 'bg-white'"
-                        class="p-2 rounded-full hover:bg-indigo-900 transition-colors duration-300">
+                        class="p-2 rounded-full hover:bg-[#ffeb0c] transition-colors duration-300">
                         <img src="img/contact-icon.svg" class="size-8">
                     </button>
                 
@@ -152,7 +152,7 @@
                         @click="activeButton = (activeButton === 'gallery') ? null : 'gallery'; gallery = !gallery; project = false; contact = false"
                         title="gallery"
                         :class="activeButton === 'gallery' ? 'bg-violet-600' : 'bg-white'"
-                        class="p-2 rounded-full hover:bg-indigo-900 transition-colors duration-300 mt-2">
+                        class="p-2 rounded-full hover:bg-[#ffeb0c] transition-colors duration-300 mt-2">
                         <img src="img/gallery-icon.svg" class="size-8">
                     </button>
                 </div>
