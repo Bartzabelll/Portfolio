@@ -17,16 +17,16 @@
                 class="z-20"
                 @click="move = !move">
                 <img 
-                    src="img/face-button.png" 
+                    src="img/jr.png" 
                     alt="Button Face" 
-                    :class="move ? 'w-16 h-auto' : 'relative'"
-                    class="ml-3 w-40 h-auto">
+                    :class="move ? 'w-20 h-auto' : 'relative'"
+                    class="ml-9 mb-5 w-72 h-auto">
             </button>
             <div x-show='!move' class="image2 z-10 w-80 ml-4 h-72 absolute">
                 <img src="img/satellite.svg" class=" size-10">
                 <img src="img/moon.svg" class="ml-3 size-10 p-2">
             </div>
-            <div x-show='!move' class="image3 z-10 w-96 ml-3 h-72 absolute shine"> </div>
+            <!-- <div x-show='!move' class="image3 z-10 w-96 ml-3 h-72 absolute shine"> </div> -->
         </div>
         <div x-show="move" class="grid grid-cols-2 fixed inset-0 bg-neutral-800 transition-umbrella">
             <div class="m-10">
