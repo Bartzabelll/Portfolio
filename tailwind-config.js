@@ -11,6 +11,7 @@ tailwind.config = {
                 'engravers': ['"Engravers MT"', 'sans-serif'], 
                 'pixel': ['pixel', 'sans-serif'],
                 'square': ['square', 'sans-serif'],
+                'arial' : ['Arial', 'sans-serif'],
             }
         }
     }
