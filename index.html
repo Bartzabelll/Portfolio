@@ -15,18 +15,18 @@
             <div class="w-1/2 z-10  p-4">
                 <div class="dot-grid"></div>
             </div>    
-            <div x-show='!move' @click="move = !move" class="w-1/2 bg-cover bg-center" style="background-image: url('img/bg_55.jpg');">
+            <div x-show='!move' @click="move = !move" class="w-1/2 bg-cover bg-center" style="background-image: url('img/bg_55.png');">
             </div>
         </div>
     
         <div x-show="move" 
-     x-transition:enter="transition ease-out duration-300" 
-     x-transition:enter-start="opacity-0 transform translate-y-4" 
-     x-transition:enter-end="opacity-100 transform translate-y-0" 
-     x-transition:leave="transition ease-in duration-300" 
-     x-transition:leave-start="opacity-100 transform translate-y-0" 
-     x-transition:leave-end="opacity-0 transform translate-y-4" 
-     class="grid grid-cols-2 z-50 fixed inset-0 ">
+        x-transition:enter="transition ease-out duration-300" 
+        x-transition:enter-start="opacity-0 transform translate-y-4" 
+        x-transition:enter-end="opacity-100 transform translate-y-0" 
+        x-transition:leave="transition ease-in duration-300" 
+        x-transition:leave-start="opacity-100 transform translate-y-0" 
+        x-transition:leave-end="opacity-0 transform translate-y-4" 
+        class="grid grid-cols-2 z-50 fixed inset-0 ">
             <div class="m-10">
                 <div x-show="move" class="transition duration-700 ease-in-out">
                     <h3 class="font-pixel text-2xl mb-2 text-[#fff695]">Hello, I'm</h3>
@@ -128,7 +128,7 @@
                     </table>
                 </div>
             </div>                
-            <div class="p-5 overflow-y-auto" style="background-image: url('img/bg_55.jpg'); background-size: cover; background-position: center;" class="overflow-y-auto">
+            <div class="p-5 overflow-y-auto" style="background-image: url('img/bg_55.png'); background-size: cover; background-position: center;" class="overflow-y-auto">
                 <div class="mt-5 space-x-5 mx-2 items-center justify-center flex" x-data="{ activeButton: '' }">
                     <button 
                         @click="activeButton = (activeButton === 'project') ? null : 'project'; project = !project; gallery = false; contact = false"
