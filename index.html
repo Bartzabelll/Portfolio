@@ -11,9 +11,9 @@
     </head>
     <body class="font-lora" 
       x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: false, gallery:false, isModalOpen: false, project1: false, project2:false }">
-        <div class="bg-neutral-950 w-full h-full flex">
+        <div class=" w-full h-full flex" style="background-image: url('img/space.jpg');">
             <div class="w-1/2 z-10  p-4">
-                <div class=" dot-grid "></div>
+                <div class="dot-grid"></div>
             </div>    
             <div x-show='!move' @click="move = !move" class="w-1/2 bg-cover bg-center" style="background-image: url('img/bg_55.jpg');">
             </div>
