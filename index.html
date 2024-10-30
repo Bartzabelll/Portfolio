@@ -9,24 +9,24 @@
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <title>JDR Portfolio</title>
     </head>
-    <body class="z-10 font-arial" 
+    <body class="font-lora" 
       x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: false, gallery:false, isModalOpen: false, project1: false, project2:false }">
-        <div class="bg-neutral-900 w-full h-full flex justify-center items-center relative"> 
-            <button 
-                :class="move ? 'transition-transform duration-1000 transform translate-y-[-300px] translate-x-[690px]' 
-                    : 'transition-transform duration-1000 transform px-16 py-14 rounded-full shadow-[#fff695]'"
-                class="z-20"
-                @click="move = !move">
-                <img 
-                    src="img/jr.png" 
-                    alt="Button Face" 
-                    :class="move ? 'w-24 h-auto' : 'relative'"
-                    class="ml-9 mb-5 w-72 h-auto">
-            </button>
-            <div x-show='!move' class="image2 z-10 w-80 ml-4 h-72 absolute">
+        <div class="bg-neutral-950 w-full h-full flex">
+            <div class="w-1/2 z-10  p-4">
+                <div class=" dot-grid "></div>
+            </div>    
+            <div x-show='!move' @click="move = !move" class="w-1/2 bg-cover bg-center" style="background-image: url('img/bg_55.jpg');">
             </div>
         </div>
-        <div x-show="move" class="grid grid-cols-2 fixed inset-0 bg-neutral-800 transition-umbrella">
+    
+        <div x-show="move" 
+     x-transition:enter="transition ease-out duration-300" 
+     x-transition:enter-start="opacity-0 transform translate-y-4" 
+     x-transition:enter-end="opacity-100 transform translate-y-0" 
+     x-transition:leave="transition ease-in duration-300" 
+     x-transition:leave-start="opacity-100 transform translate-y-0" 
+     x-transition:leave-end="opacity-0 transform translate-y-4" 
+     class="grid grid-cols-2 z-50 fixed inset-0 ">
             <div class="m-10">
                 <div x-show="move" class="transition duration-700 ease-in-out">
                     <h3 class="font-pixel text-2xl mb-2 text-[#fff695]">Hello, I'm</h3>
@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 
-                <div x-show="drop" class="=p-3 mt-2 text-[#fff695] rounded-lg bg-opacity-75">
+                <div x-show="drop" class="=py-2 text-xl mt-2 text-[#fff695] rounded-lg bg-opacity-75">
                     <p class="indent-5 text-justify leading-relaxed">
                         <span class="text-2xl font-pixel">M</span>y interest in the IT field began in high school when I took ICT as my TLE subject in 9th grade. That’s where I learned my first IT skills, such as computer troubleshooting, hardware basics, and gained insights into various areas of IT.
                         
@@ -80,7 +80,7 @@
                         
                         During my OJT, my journey into web development began. I was introduced to Agile-Scrum development, which involved fast-paced work with weekly reports and deliverables. I also learned Laravel development using the TALL stack, worked with version control, and experienced collaborative development using GitHub. Additionally, I gained skills in database management, migrations, and setting up new projects.
                     </p>
-                    <p class="indent-5 justify-center text-center text-2xl font-square text-[#ffeb0c] pt-5">
+                    <p class="indent-5 justify-center text-center text-xl font-square text-[#ffeb0c] pt-5">
                         "This is how I started my journey as a web developer."
                     </p>
                 </div>
@@ -128,8 +128,8 @@
                     </table>
                 </div>
             </div>                
-            <div class="p-5 mt-4 overflow-y-auto">
-                <div class="mt-5 space-x-5 mx-2 items-center justify-center flex" x-data="{ activeButton: 'contact' }">
+            <div class="p-5 overflow-y-auto" style="background-image: url('img/bg_55.jpg'); background-size: cover; background-position: center;" class="overflow-y-auto">
+                <div class="mt-5 space-x-5 mx-2 items-center justify-center flex" x-data="{ activeButton: '' }">
                     <button 
                         @click="activeButton = (activeButton === 'project') ? null : 'project'; project = !project; gallery = false; contact = false"
                         title="project"
@@ -154,10 +154,8 @@
                         <img src="img/gallery-icon.svg" class="size-8">
                     </button>
                 </div>
-                <div x-show="!project && !contact && !gallery" class=" overflow-y-auto">
-                    <!-- <div id="knowledgeLevelsChart" class="bg-neutral-900 shadow-lg rounded-lg m-2 p-2 col-span-2"></div> -->
+                <div x-show="!project && !contact && !gallery" class=" overflow-y-auto font-pixel">
                     <div id="skillProficiencyChart" class=" shadow-lg rounded-lg m-2"></div>
-                    <!-- <div id="experienceDistributionChart" class="bg-neutral-900 shadow-lg shadow-md rounded-lg m-2"></div> -->
                 </div>
                 <div x-show="project" class=" rounded-lg my-2 pb-5">
                     <h1 class="font-black text-3xl border-b-2 border-[#fff695] mb-2 text-[ffeb0c] font-pixel p-2 col-span-2 text-center">Project</h1>
@@ -268,6 +266,6 @@
                 </div>
                 <button @click="isModalOpen = false" class="mt-3 bg-[#ffeb0c] text-white p-2 rounded-lg">Close</button>
             </div>
-        </div>                
+        </div>              
     </body> 
 </html>

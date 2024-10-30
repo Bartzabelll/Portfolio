@@ -12,45 +12,14 @@
     src: url('/fonts/04B_30__.TTF') format('truetype');
 }
 
-
 @keyframes walk {
     0% {
-        transform: translateX(-50px); 
+      left: 0;
     }
     100% {
-        transform: translateX(calc(100vw));
+      left: calc(100vw - 50px);
     }
-}
-
-@keyframes reverseWalk {
-    0% {
-        transform: translateX(calc(100vw)); 
-    }
-    100% {
-        transform: translateX(-50px);
-    }
-}
-
-@keyframes wheelie {
-    0% {
-        transform: translateX(-50px) rotate(0deg);
-    }
-    20% {
-        transform: translateX(calc(20vw)) rotate(-45deg); 
-    }
-    40% {
-        transform: translateX(calc(40vw)) rotate(0deg); 
-    }
-    60% {
-        transform: translateX(calc(60vw)) rotate(-45deg); 
-    }
-    80% {
-        transform: translateX(calc(80vw)) rotate(0deg); 
-    }
-    100% {
-        transform: translateX(calc(100vw)); 
-    }
-}
+  }
 
 @keyframes rotate {
     from {
@@ -68,37 +37,6 @@
     to {
         transform: rotate(0deg);
     }
-}
-
-.bg-half {
-    width: 30vh; 
-    height: 100vh;
-    background-image: url('/img/binary.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.car {
-    width: 50px; /* Adjust size as needed */
-    position: absolute;
-    bottom: 20px; /* Adjust position as needed */
-    animation: wheelie 20s linear infinite; /* Adjust speed as needed */
-}
-
-.stopped {
-    animation: none; /* Stop animation */
-}
-
-.germ-shape {
-    /* border-radius: 50%; 
-    background: radial-gradient(circle at 50% 50%, rgba(110, 19, 138, 0.8) 30%, rgba(10, 64, 243, 0) 100%); */
-    animation: walk 20s linear infinite;
-}
-
-.to-left {
-    /* border-radius: 50%; 
-    background: radial-gradient(circle at 50% 50%, rgba(110, 19, 138, 0.8) 30%, rgba(10, 64, 243, 0) 100%); */
-    animation: reverseWalk 20s linear infinite;
 }
 
 .shine {
@@ -139,6 +77,19 @@
     animation: rotate 1s linear infinite;
 }
 
-.transition-umbrella {
-    transform-origin: center; /* Ensures the transformation starts from the center */
+.dot-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); 
+    grid-template-rows: repeat(10, 1fr); 
+    width: 300px; 
+    height: 300px;
+    position: relative;
+    z-index: -1;
+}
+
+.dot-grid div {
+    background-image: url('icons/pattern-dot-grid.svg'); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    /* background-position: center;  */
 }

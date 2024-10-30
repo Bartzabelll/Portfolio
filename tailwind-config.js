@@ -11,13 +11,19 @@ tailwind.config = {
                 'engravers': ['"Engravers MT"', 'sans-serif'], 
                 'pixel': ['pixel', 'sans-serif'],
                 'square': ['square', 'sans-serif'],
-                'arial' : ['Arial', 'sans-serif'],
+                'lora' : ['Lora', 'serif'],
             }
         }
     }
 };
 
 document.addEventListener("DOMContentLoaded", function() {
+    const dotGrid = document.querySelector('.dot-grid');
+
+    for (let i = 0; i < 100; i++) { 
+        const dot = document.createElement('div'); 
+        dotGrid.appendChild(dot); 
+    }
     var options1 = {
         chart: {
             type: 'radar',
@@ -35,11 +41,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 polygons: {
                     strokeColor: '#e9e9e9',
                     fill: {
-                        colors: ['#969696', '#7f8aad']
+                        colors: ['rgba(255, 238, 12, 0.5)', 'rgba(255, 246, 149, 0.5)']
                     }
                 }
             }
-        },
+        },        
         yaxis: {
             show: false,
         },
@@ -55,15 +61,15 @@ document.addEventListener("DOMContentLoaded", function() {
         stroke: {
             show: true,
             width: 2,
-            colors: ['#FFEB0C']
+            colors: ['#1853e7']
         },
         markers: {
             size: 4,
-            colors: ['#FFEB0C'],
-            strokeColor: '#FFEB0C',
+            colors: ['#1853e7'],
+            strokeColor: '#1853e7',
             strokeWidth: 2
         },
-        colors: ['#FFF695'],
+        colors: ['#1853e7'],
         title: {
             text: 'Skill Proficiency',
             align: 'center',
