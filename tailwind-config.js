@@ -12,7 +12,10 @@ tailwind.config = {
                 'pixel': ['pixel', 'sans-serif'],
                 'square': ['square', 'sans-serif'],
                 'lora' : ['Lora', 'serif'],
-            }
+            },
+            screens: {
+                'mobile-custom': '375px',
+            },
         }
     }
 };

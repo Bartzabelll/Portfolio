@@ -12,13 +12,12 @@
     <body class="font-lora" 
       x-data="{ open: false, drop:false, drop2:false, drop3: false, project: false, contact: false, gallery:false, isModalOpen: false, project1: false, project2:false }">
         <div class="w-full h-full flex flex-col md:flex-row" style="background-image: url('img/space.jpg');">
-            <!-- This part will be hidden on mobile view -->
+
             <div class="hidden md:w-1/2 z-10 p-4 relative md:block">
                 <div class="dot-grid"></div>
                 <div class="dot-grid absolute bottom-0 left-0"></div>
             </div>
         
-            <!-- This part will be full on mobile view -->
             <div x-show='!open' class="w-full md:w-1/2 bg-cover bg-center" style="background-image: url('img/bg_55.png');">
             </div>
         
@@ -26,16 +25,20 @@
                 @click="open = !open" 
                 @mouseenter="hover = true" 
                 @mouseleave="hover = false"
-                class="absolute z-50 text-white rounded-full border-solid border-4 border-[#ffeb0c]" 
+                class="absolute z-50 text-white rounded-full border-solid border-4 border-[#ffeb0c] transition-transform duration-500"
                 :style="{
                     top: open ? '0.5%' : '50%',  
                     left: '50%',
                     transform: 'translate(-50%, -50%)' + (open ? ' rotate(180deg)' : ''),
-                    transition: 'top 3.0s ease, transform 0.5s ease'  
+                    transition: 'top 3.0s ease'  
                 }"
                 x-data="{ hover: false }"
+                :class="{'h-52 w-52': window.innerWidth <= 375, 'h-16 w-16': window.innerWidth > 375}" 
             >
-                <img :src="hover ? 'img/kilroy.svg' : 'img/line.svg'" class="size-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-500">
+                <img :src="hover ? 'img/kilroy.svg' : 'img/line.svg'" 
+                    class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-500"
+                    :class="{'h-52 w-52': window.innerWidth <= 375, 'h-16 w-16': window.innerWidth > 375}" 
+                >
             </button>
         </div>    
     
