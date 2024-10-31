@@ -10,25 +10,34 @@
         <title>JDR Portfolio</title>
     </head>
     <body class="font-lora" 
-      x-data="{ move: false, drop:false, drop2:false, drop3: false, project: false, contact: false, gallery:false, isModalOpen: false, project1: false, project2:false }">
-        <div class=" w-full h-full flex" style="background-image: url('img/space.jpg');">
-            <div class="w-1/2 z-10  p-4">
-                <div class="dot-grid"></div>
+      x-data="{ open: false, drop:false, drop2:false, drop3: false, project: false, contact: false, gallery:false, isModalOpen: false, project1: false, project2:false }">
+        <div class="w-full h-full flex" style="background-image: url('img/space.jpg');">
+            <div class="w-1/2 z-10 p-4">
+                    <div class="dot-grid"></div>
+                    <div class="dot-grid absolute bottom-0 left-0"></div>
             </div>    
-            <div x-show='!move' @click="move = !move" class="w-1/2 bg-cover bg-center" style="background-image: url('img/bg_55.png');">
+            <div x-show='!open' class="w-1/2 bg-cover bg-center" style="background-image: url('img/bg_55.png');">
             </div>
+            <button 
+                @click="open = !open" 
+                @mouseenter="hover = true" 
+                @mouseleave="hover = false"
+                class="absolute z-50 text-white rounded-full border-solid border-4 border-[#ffeb0c]" 
+                :style="{
+                    top: open ? '0.5%' : '50%',  
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)' + (open ? ' rotate(180deg)' : ''),
+                    transition: 'top 3.0s ease, transform 0.5s ease'  
+                }"
+                x-data="{ hover: false }"
+            >
+                <img :src="hover ? 'img/kilroy.svg' : 'img/line.svg'" class="size-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-500">
+            </button>
         </div>
     
-        <div x-show="move" 
-        x-transition:enter="transition ease-out duration-300" 
-        x-transition:enter-start="opacity-0 transform translate-y-4" 
-        x-transition:enter-end="opacity-100 transform translate-y-0" 
-        x-transition:leave="transition ease-in duration-300" 
-        x-transition:leave-start="opacity-100 transform translate-y-0" 
-        x-transition:leave-end="opacity-0 transform translate-y-4" 
-        class="grid grid-cols-2 z-50 fixed inset-0 ">
+        <div x-show="open" x-transition class="grid grid-cols-2 z-40 fixed inset-0 transition-opacity duration-500 overflow-y-auto">
             <div class="m-10">
-                <div x-show="move" class="transition duration-700 ease-in-out">
+                <div x-show="open" class="transition duration-700 ease-in-out">
                     <h3 class="font-pixel text-2xl mb-2 text-[#fff695]">Hello, I'm</h3>
                     <h1 class="font-black font-square text-[#ffeb0c] text-6xl mb-1 tracking-wider">Jhenrich D. Roquios</h1>
                     <h3 class="mb-5 text-[#fff695] pl-10 font-pixel">I am a Web Developer</h3>
@@ -37,7 +46,7 @@
                             @click="activeButton = (activeButton === 'aboutMe') ? null : 'aboutMe'; drop = !drop; drop2 = false; drop3 = false"
                             title="About Me"
                             :class="activeButton === 'aboutMe' ? 'bg-[#ffeb0c]' : 'bg-[#fff695]'"
-                            class="p-2.5 rounded-full hover:bg-[#ffeb0c] transition-colors duration-300">
+                            class="p-2.5 rounded-full hover:bg-[#ffeb0c] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200">
                             <img src="img/expand-icon.svg" class="size-6">
                         </button>
                     
@@ -45,7 +54,7 @@
                             @click="activeButton = (activeButton === 'education') ? null : 'education'; drop2 = !drop2; drop = false; drop3 = false"
                             title="Education"
                             :class="activeButton === 'education' ? 'bg-[#ffeb0c]' : 'bg-[#fff695]'"
-                            class="p-2 rounded-full hover:bg-[#ffeb0c] transition-colors duration-300">
+                            class="p-2.5 rounded-full hover:bg-[#ffeb0c] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200">
                             <img src="img/graduation-icon.svg" class="size-8">
                         </button>
                     
@@ -53,7 +62,7 @@
                             @click="activeButton = (activeButton === 'experiences') ? null : 'experiences'; drop3 = !drop3; drop = false; drop2 = false"
                             title="Experiences"
                             :class="activeButton === 'experiences' ? 'bg-[#ffeb0c]' : 'bg-[#fff695]'"
-                            class="p-2 rounded-full hover:bg-[#ffeb0c] transition-colors duration-300 mt-2">
+                            class="p-2.5 rounded-full hover:bg-[#ffeb0c] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200">
                             <img src="img/experience-icon.svg" class="size-8">
                         </button>
                     </div>
@@ -128,13 +137,13 @@
                     </table>
                 </div>
             </div>                
-            <div class="p-5 overflow-y-auto" style="background-image: url('img/bg_55.png'); background-size: cover; background-position: center;" class="overflow-y-auto">
+            <div style="background-image: url('img/bg_55.png'); background-size: cover; background-position: center;">
                 <div class="mt-5 space-x-5 mx-2 items-center justify-center flex" x-data="{ activeButton: '' }">
                     <button 
                         @click="activeButton = (activeButton === 'project') ? null : 'project'; project = !project; gallery = false; contact = false"
                         title="project"
                         :class="activeButton === 'project' ? 'bg-[#ffeb0c]' : 'bg-[#fff695]'"
-                        class="p-2 rounded-full hover:bg-[#ffeb0c] transition-colors duration-300">
+                        class="p-2.5 rounded-full hover:bg-[#ffeb0c] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200">
                         <img src="img/project-icon.svg" class="size-8">
                     </button>
                 
@@ -142,7 +151,7 @@
                         @click="activeButton = (activeButton === 'contact') ? null : 'contact'; contact = !contact; project = false; gallery = false"
                         title="contact"
                         :class="activeButton === 'contact' ? 'bg-[#ffeb0c]' : 'bg-[#fff695]'"
-                        class="p-2 rounded-full hover:bg-[#ffeb0c] transition-colors duration-300">
+                        class="p-2.5 rounded-full hover:bg-[#ffeb0c] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200">
                         <img src="img/contact-icon.svg" class="size-8">
                     </button>
                 
@@ -150,11 +159,12 @@
                         @click="activeButton = (activeButton === 'gallery') ? null : 'gallery'; gallery = !gallery; project = false; contact = false"
                         title="gallery"
                         :class="activeButton === 'gallery' ? 'bg-[#ffeb0c]' : 'bg-[#fff695]'"
-                        class="p-2 rounded-full hover:bg-[#ffeb0c] transition-colors duration-300 mt-2">
+                        class="p-2.5 rounded-full hover:bg-[#ffeb0c] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200">
                         <img src="img/gallery-icon.svg" class="size-8">
                     </button>
                 </div>
                 <div x-show="!project && !contact && !gallery" class=" overflow-y-auto font-pixel">
+                    <h1 class="text-center pt-5 text-[#ffeb0c] text-2xl">Skill Proficiency</h1>
                     <div id="skillProficiencyChart" class=" shadow-lg rounded-lg m-2"></div>
                 </div>
                 <div x-show="project" class=" rounded-lg my-2 pb-5">

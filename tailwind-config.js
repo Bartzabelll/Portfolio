@@ -70,13 +70,6 @@ document.addEventListener("DOMContentLoaded", function() {
             strokeWidth: 2
         },
         colors: ['#1853e7'],
-        title: {
-            text: 'Skill Proficiency',
-            align: 'center',
-            style: {
-                color: '#ffeb0c',
-            }
-        },
         tooltip: {
             enabled: true,
             custom: function({ series, seriesIndex, dataPointIndex, w }) {

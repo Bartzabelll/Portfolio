@@ -39,6 +39,21 @@
     }
 }
 
+@keyframes blackHole {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(5); 
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 .shine {
     filter: drop-shadow(0 0 0px rgb(255, 255, 255));
 } 
@@ -90,7 +105,15 @@
 .dot-grid div {
     background-image: url('icons/pattern-dot-grid.svg'); 
     background-size: contain; 
-    background-repeat: no-repeat; 
+    /* background-repeat: no-repeat;  */
     /* background-position: center;  */
+}
+
+.black-hole {
+    animation: blackHole 1s forwards; 
+}
+
+.hidden {
+    display: none; 
 }
 
