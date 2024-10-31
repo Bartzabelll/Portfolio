@@ -105,8 +105,6 @@
 .dot-grid div {
     background-image: url('icons/pattern-dot-grid.svg'); 
     background-size: contain; 
-    /* background-repeat: no-repeat;  */
-    /* background-position: center;  */
 }
 
 .black-hole {
@@ -116,4 +114,18 @@
 .hidden {
     display: none; 
 }
+
+@media (max-width: 500px) {
+    .custom-hidden {
+        display: none;
+    }
+}
+
+@media (min-width: 500px) {
+    .custom-full {
+        display: block;
+    }
+}
+
+
 

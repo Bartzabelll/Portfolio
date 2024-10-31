@@ -11,16 +11,15 @@
     </head>
     <body class="font-lora" 
       x-data="{ open: false, drop:false, drop2:false, drop3: false, project: false, contact: false, gallery:false, isModalOpen: false, project1: false, project2:false }">
-        <div class="w-full h-full flex flex-col md:flex-row" style="background-image: url('img/space.jpg');">
-
-            <div class="hidden md:w-1/2 z-10 p-4 relative md:block">
-                <div class="dot-grid"></div>
-                <div class="dot-grid absolute bottom-0 left-0"></div>
+        <div class="w-full h-full flex flex-col md:grid md:grid-cols-2" style="background-image: url('img/space.jpg');">
+            <div class="z-10 relative">
+                <div class=" m-4 dot-grid"></div>
             </div>
-        
-            <div x-show='!open' class="w-full md:w-1/2 bg-cover bg-center" style="background-image: url('img/bg_55.png');">
+            <div x-show='!open' class="bg-cover bg-center" style="background-image: url('img/bg_55.png');">
             </div>
-        
+        </div>
+      
+        <div>
             <button 
                 @click="open = !open" 
                 @mouseenter="hover = true" 
@@ -40,7 +39,7 @@
                     :class="{'h-52 w-52': window.innerWidth <= 375, 'h-16 w-16': window.innerWidth > 375}" 
                 >
             </button>
-        </div>    
+        </div> 
     
         <div x-show="open" x-transition class="grid grid-cols-2 z-40 fixed inset-0 transition-opacity duration-500 overflow-y-auto">
             <div class="m-10">
