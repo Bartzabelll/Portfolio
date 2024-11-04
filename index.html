@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
@@ -9,15 +10,8 @@
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <title>JDR Portfolio</title>
     </head>
-    <body class="font-lora" 
+    <body class="font-lora" style="background-image: url('img/space.jpg');"
       x-data="{ open: false, drop:false, drop2:false, drop3: false, project: false, contact: false, gallery:false, isModalOpen: false, project1: false, project2:false }">
-        <div class="w-full h-full flex flex-col md:grid md:grid-cols-2" style="background-image: url('img/space.jpg');">
-            <div class="z-10 relative">
-                <div class=" m-4 dot-grid"></div>
-            </div>
-            <div x-show='!open' class="bg-cover bg-center" style="background-image: url('img/bg_55.png');">
-            </div>
-        </div>
       
         <div>
             <button 
@@ -29,17 +23,25 @@
                     top: open ? '0.5%' : '50%',  
                     left: '50%',
                     transform: 'translate(-50%, -50%)' + (open ? ' rotate(180deg)' : ''),
-                    transition: 'top 3.0s ease'  
+                    transition: 'top 3.0s ease'
                 }"
                 x-data="{ hover: false }"
-                :class="{'h-52 w-52': window.innerWidth <= 375, 'h-16 w-16': window.innerWidth > 375}" 
+                :class="{
+                    'h-16 w-16': open, 
+                    'h-52 w-52': !open && window.innerWidth <= 375, 
+                    'border-8 h-52 w-52': !open && window.innerWidth > 375
+                }"
             >
                 <img :src="hover ? 'img/kilroy.svg' : 'img/line.svg'" 
                     class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-500"
-                    :class="{'h-52 w-52': window.innerWidth <= 375, 'h-16 w-16': window.innerWidth > 375}" 
+                    :class="{
+                        'h-16 w-16': open, 
+                        'h-52 w-52': !open && window.innerWidth <= 375, 
+                        'h-52 w-52': !open && window.innerWidth > 375
+                    }"
                 >
             </button>
-        </div> 
+        </div>        
     
         <div x-show="open" x-transition class="grid grid-cols-2 z-40 fixed inset-0 transition-opacity duration-500 overflow-y-auto">
             <div class="m-10">
