@@ -12,52 +12,6 @@
     src: url('/fonts/04B_30__.TTF') format('truetype');
 }
 
-@keyframes walk {
-    0% {
-      left: 0;
-    }
-    100% {
-      left: calc(100vw - 50px);
-    }
-  }
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes rotate-counter {
-    from {
-        transform: rotate(360deg);
-    }
-    to {
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes blackHole {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(5); 
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.shine {
-    filter: drop-shadow(0 0 0px rgb(255, 255, 255));
-} 
-
 .image1{ 
     position: relative;
     height: auto;
@@ -126,6 +80,35 @@
         display: block;
     }
 }
+
+.pillow-shape {
+    height: 80px;
+    width: 80px;  
+    background: linear-gradient(135deg, rgba(173, 216, 230, 0.7), rgba(135, 206, 250, 0.5)); /* Light blue gradient */
+    border-radius: 40px; 
+    box-shadow: 
+        inset -25px -5px 25px rgba(255, 255, 255, 0.599), /* Light inner shadow */
+        inset 5px 5px 10px rgba(0, 0, 0, 0.1), /* Dark inner shadow */
+        0 5px 15px rgba(0, 0, 0, 0.2); /* Outer shadow for depth */
+    position: relative;
+    animation: spin 6s linear infinite; /* Spin animation */
+    transition: transform 0.5s ease; /* Transition for movement */
+}
+
+/* Keyframes for dodge animation */
+@keyframes dodge {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(var(--x1), var(--y1)); }
+    50% { transform: translate(var(--x2), var(--y2)); }
+    75% { transform: translate(var(--x3), var(--y3)); }
+    100% { transform: translate(0, 0); }
+}
+
+
+
+
+
+
 
 
 

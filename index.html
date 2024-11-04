@@ -12,13 +12,12 @@
     </head>
     <body class="font-lora" style="background-image: url('img/space.jpg');"
       x-data="{ open: false, drop:false, drop2:false, drop3: false, project: false, contact: false, gallery:false, isModalOpen: false, project1: false, project2:false }">
-      
         <div>
             <button 
                 @click="open = !open" 
                 @mouseenter="hover = true" 
                 @mouseleave="hover = false"
-                class="absolute z-50 text-white rounded-full border-solid border-4 border-[#ffeb0c] transition-transform duration-500"
+                class="absolute z-50 text-white rounded-full border-solid border-4 border-[#ffeb0c] transition-all duration-500"
                 :style="{
                     top: open ? '0.5%' : '50%',  
                     left: '50%',
@@ -33,7 +32,7 @@
                 }"
             >
                 <img :src="hover ? 'img/kilroy.svg' : 'img/line.svg'" 
-                    class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-500"
+                    class="transition-all duration-500 ease-in-out hover:-translate-y-1 hover:scale-110"
                     :class="{
                         'h-16 w-16': open, 
                         'h-52 w-52': !open && window.innerWidth <= 375, 
@@ -41,8 +40,11 @@
                     }"
                 >
             </button>
-        </div>        
-    
+            <div class="p-10 grid grid-cols-10">
+                <div class="pillow-shape bg-white animate-spin bg-opacity-10"></div>
+            </div>           
+        </div>
+      
         <div x-show="open" x-transition class="grid grid-cols-2 z-40 fixed inset-0 transition-opacity duration-500 overflow-y-auto">
             <div class="m-10">
                 <div x-show="open" class="transition duration-700 ease-in-out">

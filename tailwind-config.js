@@ -22,6 +22,37 @@ tailwind.config = {
 
 document.addEventListener("DOMContentLoaded", function() {
     const dotGrid = document.querySelector('.dot-grid');
+    const pillowShape = document.querySelector('.pillow-shape');
+
+    pillowShape.addEventListener('click', () => {
+        // Generate random x and y offsets
+        const randomX = (Math.random() - 0.5) * 100; // Adjust the multiplier for distance
+        const randomY = (Math.random() - 0.5) * 100; // Adjust the multiplier for distance
+        
+        // Set CSS variables for dodge animation
+        pillowShape.style.setProperty('--x1', `${randomX}px`);
+        pillowShape.style.setProperty('--y1', `${randomY}px`);
+        
+        const randomX2 = (Math.random() - 0.5) * 100;
+        const randomY2 = (Math.random() - 0.5) * 100;
+        
+        pillowShape.style.setProperty('--x2', `${randomX2}px`);
+        pillowShape.style.setProperty('--y2', `${randomY2}px`);
+        
+        const randomX3 = (Math.random() - 0.5) * 100;
+        const randomY3 = (Math.random() - 0.5) * 100;
+        
+        pillowShape.style.setProperty('--x10', `${randomX3}px`);
+        pillowShape.style.setProperty('--y3', `${randomY3}px`);
+    
+        // Trigger the dodge animation
+        pillowShape.style.animation = 'dodge 0.5s forwards';
+    
+        // Reset the animation after it finishes to allow re-triggering
+        pillowShape.addEventListener('animationend', () => {
+            pillowShape.style.animation = ''; // Reset the animation
+        }, { once: true });
+    });
 
     for (let i = 0; i < 100; i++) { 
         const dot = document.createElement('div'); 
