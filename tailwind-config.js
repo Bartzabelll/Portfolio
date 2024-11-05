@@ -94,6 +94,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
     animate();
 
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+    });
+
+    const container = document.querySelector('.container');
+
+    container.addEventListener('mouseover', () => {
+        cursor.style.backgroundColor = 'rgba(255, 0, 0, 0.7)';
+        cursor.style.transform = 'scale(1.5)';
+    });
+
+    container.addEventListener('mouseout', () => {
+        cursor.style.backgroundColor = 'rgba(0, 123, 255, 0.7)';
+        cursor.style.transform = 'scale(1)';
+    });
+
     var options1 = {
         chart: {
             type: 'radar',
