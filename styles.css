@@ -48,9 +48,9 @@
 
 .floating {
     position: absolute;
-    width: 100px; /* Adjust based on your astronaut's size */
+    width: 100px; 
     height: auto;
-    pointer-events: none; /* Prevent mouse events */
+    pointer-events: none; 
 }
 
 @keyframes float {

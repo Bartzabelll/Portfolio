@@ -22,39 +22,36 @@ tailwind.config = {
 
 document.addEventListener("DOMContentLoaded", function() {
     const astronaut = document.createElement('img');
-    astronaut.src = 'img/astronaut.svg'; // Path to your astronaut SVG
+    astronaut.src = 'img/astronaut.svg';
     astronaut.classList.add('floating');
     document.body.appendChild(astronaut);
 
-    const boundaryPadding = 40; // Define padding in pixels (p-5 equivalent)
-    const astronautWidth = 100; // Adjust based on your astronaut's width
-    const astronautHeight = 100; // Adjust based on your astronaut's height
+    const boundaryPadding = 150;
+    const astronautWidth = 100;
+    const astronautHeight = 100;
 
-    let posX = Math.random() * window.innerWidth; // Random starting X position
-    let posY = Math.random() * window.innerHeight; // Random starting Y position
-    let deltaX = (Math.random() - 1) * 2; // Random speed in X direction
-    let deltaY = (Math.random() - 1) * 2; // Random speed in Y direction
+    let posX = Math.random() * window.innerWidth;
+    let posY = Math.random() * window.innerHeight; 
+    let deltaX = (Math.random() - 1) * 2; 
+    let deltaY = (Math.random() - 1) * 2; 
 
     function animate() {
         posX += deltaX;
         posY += deltaY;
 
-        // Boundary checking
-        if (posX < 0 || posX > window.innerWidth - 100) { // Adjust for astronaut's width
-            deltaX = -deltaX; // Reverse direction
+        if (posX < 0 || posX > window.innerWidth - 100) { 
+            deltaX = -deltaX;
         }
-        if (posY < 0 || posY > window.innerHeight - 100) { // Adjust for astronaut's height
-            deltaY = -deltaY; // Reverse direction
+        if (posY < 0 || posY > window.innerHeight - 100) { 
+            deltaY = -deltaY; 
         }
 
-        // Update astronaut's position
         astronaut.style.left = `${posX}px`;
         astronaut.style.top = `${posY}px`;
 
-        requestAnimationFrame(animate); // Request the next frame
+        requestAnimationFrame(animate); 
     }
 
-    // Start the floating animation
     animate();
 
     var options1 = {

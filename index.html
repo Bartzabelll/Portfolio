@@ -44,7 +44,15 @@
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#ffeb0c] to-indigo-500">
                     "Building seamless digital experiences with a focus on functionality and design."
                 </span>
-            </div>          
+            </div>     
+            <div class="absolute right-0 top-1/4 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full px-2 py-4 mr-2 shadow-lg">
+                <a href="mailto:jhenrichroquios000@gmail.com" class="text-red-500 hover:underline mr-4"><img src="img/gmail-icon.svg" class="size-6"></a>
+                <a href="https://www.facebook.com/bartzabell.bartzabel" class="text-sky-300 hover:underline mr-4"><img src="img/facebook-icon.svg" class="size-6"></a>  
+                <a href="https://www.instagram.com/bulbasau_r_r/profilecard/?igsh=ODI4Mm1iand6bWZ3" class="text-pink-300 hover:underline mr-4"><img src="img/instagram-icon.svg" class="size-6"></a>
+                <a href="https://github.com/Bartzabell" class="text-white hover:underline mr-4"><img src="img/github-icon.svg" class="size-6"></a>  
+                <a href="https://www.linkedin.com" class="text-blue-400 hover:underline mr-4"><img src="img/linkedin-icon.svg" class="size-6"></a>
+                <a href="tel:+63 950-473-8498" class="text-[#fff695] hover:underline"><img src="img/phone-icon.svg" class="size-6"></a>
+            </div>            
         </div>
       
         <div x-show="open" x-transition class="grid grid-cols-2 z-40 fixed inset-0 transition-opacity duration-500 overflow-y-auto">
@@ -125,22 +133,22 @@
                 </div>
                 
                 <div x-show="drop3" class="bg-neutral-800 rounded-lg my-2 pb-5" >
-                    <h1 class="font-black font-pixel text-[ffeb0c] text-3xl border-b-2 border-[#fff695] p-2 text-center">Experience/s</h1>
+                    <h1 class="font-black font-pixel text-[#ffeb0c] text-3xl border-b-2 border-[#fff695] p-2 text-center">Experience/s</h1>
                     <table class="min-w-full">
                         <thead>
-                            <tr class=" uppercase text-md text-[ffeb0c] font-pixel ">
+                            <tr class=" uppercase text-md text-[#ffeb0c] font-pixel ">
                                 <th class="py-2 px-4">Year</th>
                                 <th class="py-2 px-4">Company</th>
                                 <th class="py-2 px-4">Position</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="hover:bg-white text-center text-[ffeb0c]">
+                            <tr class="hover:bg-white text-center text-[#ffeb0c]">
                                 <td class="py-2 px-4 font-pixel">2023</td>
                                 <td class="py-2 px-4">Philippian Marketing Corporation</td>
                                 <td class="py-2 px-4">OJT - Web Developer (Back End)</td>
                             </tr>
-                            <tr class="hover:bg-gray-100 text-center text-[ffeb0c]">
+                            <tr class="hover:bg-gray-100 text-center text-[#ffeb0c]">
                                 <td class="py-2 px-4 font-pixel">2024</td>
                                 <td class="py-2 px-4">Betafoam Corporation</td>
                                 <td class="py-2 px-4">IT Programmer</td>
@@ -180,10 +188,10 @@
                     <div id="skillProficiencyChart" class=" shadow-lg rounded-lg m-2"></div>
                 </div>
                 <div x-show="project" class=" rounded-lg my-2 pb-5">
-                    <h1 class="font-black text-3xl border-b-2 border-[#fff695] mb-2 text-[ffeb0c] font-pixel p-2 col-span-2 text-center">Project</h1>
+                    <h1 class="font-black text-3xl border-b-2 border-[#fff695] mb-2 text-[#ffeb0c] font-pixel p-2 col-span-2 text-center">Project</h1>
                     <div class="overflow-y-auto h-128 grid grid-cols-2">
                         <div class="flex p-2 justify-center align-center items-center">
-                            <h1 class="font-bold font-pixel text-[ffeb0c]">Appointment Scheduling System</h1>
+                            <h1 class="font-bold font-pixel text-[#ffeb0c]">Appointment Scheduling System</h1>
                         </div>
                         <div class="bg-[#fff695] p-5 ">
                             <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true ; project1 = true ; project2 = false">
@@ -192,10 +200,10 @@
                             <img src="img/EPR.png" alt="QA - System" @click="isModalOpen = true ; project2 = true ; project1 = false">
                         </div>
                         <div class="flex p-2 justify-center align-center items-center">
-                            <h1 class="font-bold font-pixel text-[ffeb0c]">Production Report System</h1>
+                            <h1 class="font-bold font-pixel text-[#ffeb0c]">Production Report System</h1>
                         </div>
                         <div class="flex p-2 justify-center align-center items-center">
-                            <h1 class="font-bold font-pixel text-[ffeb0c]">Quality Assurance System</h1>
+                            <h1 class="font-bold font-pixel text-[#ffeb0c]">Quality Assurance System</h1>
                         </div>
                         <div class="bg-[#fff695] p-5 ">
                             <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true ; project1 = true ; project2 = false">
@@ -204,7 +212,7 @@
                 </div>
                 
                 <div x-show="contact" class="rounded-lg grid grid-cols-2 my-2 pb-5 ml-5" >
-                    <h1 class="font-black font-pixel text-[ffeb0c] text-3xl border-b-2 border-[#fff695] p-2 col-span-2 text-center">Contact</h1>
+                    <h1 class="font-black font-pixel text-[#ffeb0c] text-3xl border-b-2 border-[#fff695] p-2 col-span-2 text-center">Contact</h1>
                     <div class="m-5 flex items-center space-x-2">
                         <img src="img/gmail-icon.svg" class="size-6">
                         <a href="mailto:jhenrichroquios000@gmail.com" class="text-red-500 hover:underline">jhenrichroquios000@gmail.com</a>
@@ -227,21 +235,21 @@
                     </div>
                     <div class="m-5 flex items-center space-x-2">
                         <img src="img/phone-icon.svg" class="size-6">                         
-                        <a class="text-[fff695] hover:underline">+63 950-473-8498</a>
+                        <a class="text-[#fff695] hover:underline">+63 950-473-8498</a>
                     </div>
                 </div>
                 
-                <div x-show="gallery" class=" bg-white rounded-lg border my-2 pb-5 bg-opacity-75">
-                    <h1 class="font-black text-3xl border-b-2 border-[#fff695] p-2 text-center">Gallery</h1>
+                <div x-show="gallery" class=" bg-white rounded-lg border my-2 pb-5 bg-opacity-50">
+                    <h1 class="font-black font-pixel text-[#ffeb0c] text-3xl border-b-2 border-[#fff695] p-2 text-center">Gallery</h1>
                     <div class="p-2 grid grid-cols-2">
                         <img class="h-96 w-auto p-2 bg-[#fff695] rounded-full" src="img/toga.png" >
                         <table class="min-w-full bg-white border border-gray-300">
                             <thead>
                                 <tr class="text-black uppercase text-sm bg-[#fff695]">
-                                    <th class="py-2 px-4 border" colspan="2">Personal Information</th>
+                                    <th class="py-2 font-square tracking-widest px-4 border" colspan="2">Personal Information</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="font-arial">
                                 <tr class="hover:bg-gray-100 text-center">
                                     <td class="border">Name</td>
                                     <td class="border">Jhenrich D. Roquios</td>
