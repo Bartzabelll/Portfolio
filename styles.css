@@ -46,62 +46,23 @@
     animation: rotate 1s linear infinite;
 }
 
-.dot-grid {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr); 
-    grid-template-rows: repeat(10, 1fr); 
-    width: 300px; 
-    height: 300px;
-    position: relative;
-    z-index: -1;
+.floating {
+    position: absolute;
+    width: 100px; /* Adjust based on your astronaut's size */
+    height: auto;
+    pointer-events: none; /* Prevent mouse events */
 }
 
-.dot-grid div {
-    background-image: url('icons/pattern-dot-grid.svg'); 
-    background-size: contain; 
-}
-
-.black-hole {
-    animation: blackHole 1s forwards; 
-}
-
-.hidden {
-    display: none; 
-}
-
-@media (max-width: 500px) {
-    .custom-hidden {
-        display: none;
+@keyframes float {
+    0% {
+        transform: translateY(0px);
     }
-}
-
-@media (min-width: 500px) {
-    .custom-full {
-        display: block;
+    50% {
+        transform: translateY(-10px); /* Adjust the float height */
     }
-}
-
-.pillow-shape {
-    height: 80px;
-    width: 80px;  
-    background: linear-gradient(135deg, rgba(173, 216, 230, 0.7), rgba(135, 206, 250, 0.5)); /* Light blue gradient */
-    border-radius: 40px; 
-    box-shadow: 
-        inset -25px -5px 25px rgba(255, 255, 255, 0.599), /* Light inner shadow */
-        inset 5px 5px 10px rgba(0, 0, 0, 0.1), /* Dark inner shadow */
-        0 5px 15px rgba(0, 0, 0, 0.2); /* Outer shadow for depth */
-    position: relative;
-    animation: spin 6s linear infinite; /* Spin animation */
-    transition: transform 0.5s ease; /* Transition for movement */
-}
-
-/* Keyframes for dodge animation */
-@keyframes dodge {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(var(--x1), var(--y1)); }
-    50% { transform: translate(var(--x2), var(--y2)); }
-    75% { transform: translate(var(--x3), var(--y3)); }
-    100% { transform: translate(0, 0); }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 

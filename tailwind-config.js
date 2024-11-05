@@ -21,43 +21,42 @@ tailwind.config = {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-    const dotGrid = document.querySelector('.dot-grid');
-    const pillowShape = document.querySelector('.pillow-shape');
+    const astronaut = document.createElement('img');
+    astronaut.src = 'img/astronaut.svg'; // Path to your astronaut SVG
+    astronaut.classList.add('floating');
+    document.body.appendChild(astronaut);
 
-    pillowShape.addEventListener('click', () => {
-        // Generate random x and y offsets
-        const randomX = (Math.random() - 0.5) * 100; // Adjust the multiplier for distance
-        const randomY = (Math.random() - 0.5) * 100; // Adjust the multiplier for distance
-        
-        // Set CSS variables for dodge animation
-        pillowShape.style.setProperty('--x1', `${randomX}px`);
-        pillowShape.style.setProperty('--y1', `${randomY}px`);
-        
-        const randomX2 = (Math.random() - 0.5) * 100;
-        const randomY2 = (Math.random() - 0.5) * 100;
-        
-        pillowShape.style.setProperty('--x2', `${randomX2}px`);
-        pillowShape.style.setProperty('--y2', `${randomY2}px`);
-        
-        const randomX3 = (Math.random() - 0.5) * 100;
-        const randomY3 = (Math.random() - 0.5) * 100;
-        
-        pillowShape.style.setProperty('--x10', `${randomX3}px`);
-        pillowShape.style.setProperty('--y3', `${randomY3}px`);
-    
-        // Trigger the dodge animation
-        pillowShape.style.animation = 'dodge 0.5s forwards';
-    
-        // Reset the animation after it finishes to allow re-triggering
-        pillowShape.addEventListener('animationend', () => {
-            pillowShape.style.animation = ''; // Reset the animation
-        }, { once: true });
-    });
+    const boundaryPadding = 40; // Define padding in pixels (p-5 equivalent)
+    const astronautWidth = 100; // Adjust based on your astronaut's width
+    const astronautHeight = 100; // Adjust based on your astronaut's height
 
-    for (let i = 0; i < 100; i++) { 
-        const dot = document.createElement('div'); 
-        dotGrid.appendChild(dot); 
+    let posX = Math.random() * window.innerWidth; // Random starting X position
+    let posY = Math.random() * window.innerHeight; // Random starting Y position
+    let deltaX = (Math.random() - 1) * 2; // Random speed in X direction
+    let deltaY = (Math.random() - 1) * 2; // Random speed in Y direction
+
+    function animate() {
+        posX += deltaX;
+        posY += deltaY;
+
+        // Boundary checking
+        if (posX < 0 || posX > window.innerWidth - 100) { // Adjust for astronaut's width
+            deltaX = -deltaX; // Reverse direction
+        }
+        if (posY < 0 || posY > window.innerHeight - 100) { // Adjust for astronaut's height
+            deltaY = -deltaY; // Reverse direction
+        }
+
+        // Update astronaut's position
+        astronaut.style.left = `${posX}px`;
+        astronaut.style.top = `${posY}px`;
+
+        requestAnimationFrame(animate); // Request the next frame
     }
+
+    // Start the floating animation
+    animate();
+
     var options1 = {
         chart: {
             type: 'radar',
