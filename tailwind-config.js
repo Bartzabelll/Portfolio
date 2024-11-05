@@ -84,10 +84,12 @@ document.addEventListener("DOMContentLoaded", function() {
     button.addEventListener('mouseenter', () => {
         floating = false; 
         moveToButton(button); 
+        button.classList.add('expand');
     });
 
     button.addEventListener('mouseleave', () => {
         floating = true; 
+        button.classList.remove('expand');
     });
 
     animate();

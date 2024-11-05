@@ -65,6 +65,26 @@
     }
 }
 
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgb(88, 200, 234) 30%, rgba(0, 0, 0, 0) 50%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 3s ease, height 3s ease;
+    z-index: -1; 
+    opacity: 0.8;
+}
+
+button.expand::before {
+    width: 100vw;
+    height: 100vh;
+}
+
 
 
 
