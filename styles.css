@@ -65,6 +65,15 @@
     }
 }
 
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
 button::before {
     content: '';
     position: absolute;
@@ -72,7 +81,7 @@ button::before {
     left: 50%;
     width: 0;
     height: 0;
-    background: radial-gradient(circle, rgb(88, 200, 234) 30%, rgba(0, 0, 0, 0) 50%);
+    background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(255, 0, 255) 40%, rgb(128, 0, 128) 70%, rgba(0, 0, 0, 0.7) 100%);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 3s ease, height 3s ease;
@@ -81,9 +90,11 @@ button::before {
 }
 
 button.expand::before {
-    width: 100vw;
-    height: 100vh;
+    width: 30vw;
+    height: 60vh;
+    animation: rotate 1s linear infinite; /* Adjust duration as needed */
 }
+
 
 
 
