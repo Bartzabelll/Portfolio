@@ -12,15 +12,18 @@
     src: url('/fonts/04B_30__.TTF') format('truetype');
 }
 
-#cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(0, 123, 255, 0.7);
+#water {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 123, 255, 0.7);
     border-radius: 50%;
     pointer-events: none;
-    transition: transform 0.1s ease;
     transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+    filter: blur(10px);
+    opacity: 0.5;
+    z-index: 10;
 }
 
 .image1{ 

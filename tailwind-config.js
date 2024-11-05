@@ -94,23 +94,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     animate();
 
-    const cursor = document.getElementById('cursor');
+    const water = document.getElementById('water');
 
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = `${e.pageX}px`;
-        cursor.style.top = `${e.pageY}px`;
+        water.style.left = `${e.pageX}px`;
+        water.style.top = `${e.pageY}px`;
     });
 
     const container = document.querySelector('.container');
 
     container.addEventListener('mouseover', () => {
-        cursor.style.backgroundColor = 'rgba(255, 0, 0, 0.7)';
-        cursor.style.transform = 'scale(1.5)';
+        water.style.transition = 'transform 0.3s ease';
     });
 
     container.addEventListener('mouseout', () => {
-        cursor.style.backgroundColor = 'rgba(0, 123, 255, 0.7)';
-        cursor.style.transform = 'scale(1)';
+        water.style.transition = 'none';
     });
 
     var options1 = {
