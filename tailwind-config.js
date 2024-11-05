@@ -94,22 +94,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
     animate();
 
-    const water = document.getElementById('water');
+    const cursor = document.getElementById("cursor");
+    const trails = [];
 
-    document.addEventListener('mousemove', (e) => {
-        water.style.left = `${e.pageX}px`;
-        water.style.top = `${e.pageY}px`;
+    // Track mouse movement and update cursor position
+    document.addEventListener("mousemove", (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+        
+        // Move the main cursor
+        cursor.style.transform = `translate(${x - cursor.offsetWidth / 2}px, ${y - cursor.offsetHeight / 2}px)`;
+        
+        // Create trailing effect
+        createTrail(x, y);
     });
 
-    const container = document.querySelector('.container');
+    // Create trail elements
+    function createTrail(x, y) {
+        const trail = document.createElement("div");
+        trail.classList.add("trail");
+        trail.style.left = `${x}px`;
+        trail.style.top = `${y}px`;
 
-    container.addEventListener('mouseover', () => {
-        water.style.transition = 'transform 0.3s ease';
-    });
+        document.body.appendChild(trail);
+        trails.push(trail);
 
-    container.addEventListener('mouseout', () => {
-        water.style.transition = 'none';
-    });
+        // Remove trail after animation ends
+        setTimeout(() => {
+            trail.remove();
+            trails.shift();
+        }, 500);
+    }
 
     var options1 = {
         chart: {

@@ -12,20 +12,6 @@
     src: url('/fonts/04B_30__.TTF') format('truetype');
 }
 
-#water {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: rgba(0, 123, 255, 0.7);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease;
-    filter: blur(10px);
-    opacity: 0.5;
-    z-index: 10;
-}
-
 .image1{ 
     position: relative;
     height: auto;
@@ -95,18 +81,52 @@ button::before {
     left: 50%;
     width: 0;
     height: 0;
-    background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(255, 0, 255) 40%, rgb(128, 0, 128) 70%, rgba(0, 0, 0, 0.7) 100%);
+    /* background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(255, 0, 255) 40%, rgb(128, 0, 128) 70%, rgba(0, 0, 0, 0.7) 100%); */
+    background-image: url(img/black-hole.svg);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 3s ease, height 3s ease;
     z-index: -1; 
-    opacity: 0.8;
+    opacity: 1;
 }
 
 button.expand::before {
-    width: 30vw;
+    width: 28.5vw;
     height: 60vh;
-    animation: rotate 1s linear infinite; /* Adjust duration as needed */
+    animation: rotate 3s linear infinite; /* Adjust duration as needed */
+}
+
+#cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.1s ease;
+    z-index: 1000;
+}
+
+.trail {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0;
+    animation: fade 0.5s ease-out forwards;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
 }
 
 
