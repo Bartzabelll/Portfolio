@@ -96,22 +96,11 @@ button.expand::before {
     animation: rotate 3s linear infinite; /* Adjust duration as needed */
 }
 
-#cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background-color: yellow;
-    border-radius: 50%;
-    pointer-events: none;
-    transition: transform 0.1s ease;
-    z-index: 1000;
-}
-
 .trail {
     position: fixed;
     width: 20px;
     height: 20px;
-    background-color: yellow;
+    background: linear-gradient(to left, yellow, rgb(28, 0, 128));
     border-radius: 50%;
     pointer-events: none;
     z-index: 999;

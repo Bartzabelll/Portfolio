@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     animate();
 
+    //CURSOR TRAIL
     const cursor = document.getElementById("cursor");
     const trails = [];
 
