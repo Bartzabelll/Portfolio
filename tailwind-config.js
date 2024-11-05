@@ -26,31 +26,69 @@ document.addEventListener("DOMContentLoaded", function() {
     astronaut.classList.add('floating');
     document.body.appendChild(astronaut);
 
-    const boundaryPadding = 150;
-    const astronautWidth = 100;
-    const astronautHeight = 100;
-
     let posX = Math.random() * window.innerWidth;
-    let posY = Math.random() * window.innerHeight; 
-    let deltaX = (Math.random() - 1) * 2; 
-    let deltaY = (Math.random() - 1) * 2; 
+    let posY = Math.random() * window.innerHeight;
+    let deltaX = (Math.random() - 0.5) * 2;
+    let deltaY = (Math.random() - 0.5) * 2;
+    let floating = true; 
+    let animationInterval;
 
     function animate() {
-        posX += deltaX;
-        posY += deltaY;
+        if (floating) { 
+            posX += deltaX;
+            posY += deltaY;
 
-        if (posX < 0 || posX > window.innerWidth - 100) { 
-            deltaX = -deltaX;
+            if (posX < 0 || posX > window.innerWidth - 100) {
+                deltaX = -deltaX;
+            }
+            if (posY < 0 || posY > window.innerHeight - 100) {
+                deltaY = -deltaY;
+            }
         }
-        if (posY < 0 || posY > window.innerHeight - 100) { 
-            deltaY = -deltaY; 
-        }
-
         astronaut.style.left = `${posX}px`;
         astronaut.style.top = `${posY}px`;
 
-        requestAnimationFrame(animate); 
+        requestAnimationFrame(animate);
     }
+
+    // Function to smoothly move astronaut toward the button over 3 seconds
+    function moveToButton(button) {
+        const buttonRect = button.getBoundingClientRect();
+        const targetX = buttonRect.left + buttonRect.width / 2 - 50;
+        const targetY = buttonRect.top + buttonRect.height / 2 - 50;
+
+        const steps = 180; // Total steps for a 3-second animation (60 FPS * 3 seconds)
+        let currentStep = 0;
+
+        clearInterval(animationInterval);
+        animationInterval = setInterval(() => {
+            if (currentStep >= steps || floating) {
+                clearInterval(animationInterval);
+                return;
+            }
+
+            // Calculate incremental movement
+            posX += (targetX - posX) / (steps - currentStep);
+            posY += (targetY - posY) / (steps - currentStep);
+
+            astronaut.style.left = `${posX}px`;
+            astronaut.style.top = `${posY}px`;
+
+            currentStep++;
+        }, 1000 / 60); // Run at 60 FPS
+    }
+
+    // Event listeners on the button
+    const button = document.querySelector('button');
+
+    button.addEventListener('mouseenter', () => {
+        floating = false; 
+        moveToButton(button); 
+    });
+
+    button.addEventListener('mouseleave', () => {
+        floating = true; 
+    });
 
     animate();
 
