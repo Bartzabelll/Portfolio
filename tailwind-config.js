@@ -98,19 +98,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const cursor = document.getElementById("cursor");
     const trails = [];
 
-    // Track mouse movement and update cursor position
     document.addEventListener("mousemove", (e) => {
         const x = e.clientX;
         const y = e.clientY;
         
-        // Move the main cursor
         cursor.style.transform = `translate(${x - cursor.offsetWidth / 2}px, ${y - cursor.offsetHeight / 2}px)`;
-        
-        // Create trailing effect
+    
         createTrail(x, y);
     });
 
-    // Create trail elements
     function createTrail(x, y) {
         const trail = document.createElement("div");
         trail.classList.add("trail");
@@ -120,13 +116,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.appendChild(trail);
         trails.push(trail);
 
-        // Remove trail after animation ends
         setTimeout(() => {
             trail.remove();
             trails.shift();
-        }, 500);
+        }, 200);
     }
 
+    //Apex chart
     var options1 = {
         chart: {
             type: 'radar',

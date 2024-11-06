@@ -51,6 +51,7 @@
     width: 100px; 
     height: auto;
     pointer-events: none; 
+    z-index: -1;
 }
 
 @keyframes float {
@@ -93,14 +94,14 @@ button::before {
 button.expand::before {
     width: 28.5vw;
     height: 60vh;
-    animation: rotate 3s linear infinite; /* Adjust duration as needed */
+    animation: rotate 5s linear infinite; 
 }
 
 .trail {
     position: fixed;
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(to left, yellow, rgb(28, 0, 128));
+    width: 20px;
+    height: 20px;
+    background: rgb(234, 208, 7);
     border-radius: 50%;
     pointer-events: none;
     z-index: 999;
