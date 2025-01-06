@@ -12,6 +12,9 @@ tailwind.config = {
                 'pixel': ['pixel', 'sans-serif'],
                 'square': ['square', 'sans-serif'],
                 'lora' : ['Lora', 'serif'],
+                'inter': ['Inter', 'sans-serif'],
+                'academy': ['academy', 'sans-serif'],
+                'doergon': ['doergon', 'sans-serif'],
             },
             screens: {
                 'mobile-custom': '375px',
@@ -21,106 +24,6 @@ tailwind.config = {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-    const astronaut = document.createElement('img');
-    astronaut.src = 'img/astronaut.svg';
-    astronaut.classList.add('floating');
-    document.body.appendChild(astronaut);
-
-    let posX = Math.random() * window.innerWidth;
-    let posY = Math.random() * window.innerHeight;
-    let deltaX = (Math.random() - 0.5) * 2;
-    let deltaY = (Math.random() - 0.5) * 2;
-    let floating = true; 
-    let animationInterval;
-
-    function animate() {
-        if (floating) { 
-            posX += deltaX;
-            posY += deltaY;
-
-            if (posX < 0 || posX > window.innerWidth - 100) {
-                deltaX = -deltaX;
-            }
-            if (posY < 0 || posY > window.innerHeight - 100) {
-                deltaY = -deltaY;
-            }
-        }
-        astronaut.style.left = `${posX}px`;
-        astronaut.style.top = `${posY}px`;
-
-        requestAnimationFrame(animate);
-    }
-
-    // Function to smoothly move astronaut toward the button over 3 seconds
-    function moveToButton(button) {
-        const buttonRect = button.getBoundingClientRect();
-        const targetX = buttonRect.left + buttonRect.width / 2 - 50;
-        const targetY = buttonRect.top + buttonRect.height / 2 - 50;
-
-        const steps = 180; // Total steps for a 3-second animation (60 FPS * 3 seconds)
-        let currentStep = 0;
-
-        clearInterval(animationInterval);
-        animationInterval = setInterval(() => {
-            if (currentStep >= steps || floating) {
-                clearInterval(animationInterval);
-                return;
-            }
-
-            // Calculate incremental movement
-            posX += (targetX - posX) / (steps - currentStep);
-            posY += (targetY - posY) / (steps - currentStep);
-
-            astronaut.style.left = `${posX}px`;
-            astronaut.style.top = `${posY}px`;
-
-            currentStep++;
-        }, 1000 / 60); // Run at 60 FPS
-    }
-
-    // Event listeners on the button
-    const button = document.querySelector('button');
-
-    button.addEventListener('mouseenter', () => {
-        floating = false; 
-        moveToButton(button); 
-        button.classList.add('expand');
-    });
-
-    button.addEventListener('mouseleave', () => {
-        floating = true; 
-        button.classList.remove('expand');
-    });
-
-    animate();
-
-    //CURSOR TRAIL
-    const cursor = document.getElementById("cursor");
-    const trails = [];
-
-    document.addEventListener("mousemove", (e) => {
-        const x = e.clientX;
-        const y = e.clientY;
-        
-        cursor.style.transform = `translate(${x - cursor.offsetWidth / 2}px, ${y - cursor.offsetHeight / 2}px)`;
-    
-        createTrail(x, y);
-    });
-
-    function createTrail(x, y) {
-        const trail = document.createElement("div");
-        trail.classList.add("trail");
-        trail.style.left = `${x}px`;
-        trail.style.top = `${y}px`;
-
-        document.body.appendChild(trail);
-        trails.push(trail);
-
-        setTimeout(() => {
-            trail.remove();
-            trails.shift();
-        }, 200);
-    }
 
     //Apex chart
     var options1 = {

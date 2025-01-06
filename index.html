@@ -1,302 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
-        <script src="tailwind-config.js"></script>
-        <link rel="icon" href="img/face-button.png" type="image/png">
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-        <title>JDR Portfolio</title>
-    </head>
-    <body class="font-lora" style="background-color: #151f28;"
-      x-data="{ open: false, drop:false, drop2:false, drop3: false, project: false, contact: false, gallery:false, isModalOpen: false, project1: false, project2:false }">
-        <div>
-            <button 
-                @click="open = !open" 
-                @mouseenter="hover = true" 
-                @mouseleave="hover = false"
-                class="absolute z-50 text-white rounded-full border-solid bg-gradient-to-t from-indigo-500  border-4 border-[#ffeb0c] transition-all duration-500"
-                :style="{
-                    top: open ? '0.5%' : '50%',  
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)' + (open ? ' rotate(180deg)' : ''),
-                    transition: 'top 3.0s ease'
-                }"
-                x-data="{ hover: false }"
-                :class="{
-                    'h-16 w-16': open, 
-                    'h-52 w-52': !open && window.innerWidth <= 375, 
-                    'border-8 h-52 w-52': !open && window.innerWidth > 375
-                }"
-            >
-                <img :src="hover ? 'img/kilroy.svg' : 'img/line.svg'" 
-                    class="transition-all duration-500 ease-in-out hover:-translate-y-1 hover:scale-110"
-                    :class="{
-                        'h-16 w-16': open, 
-                        'h-52 w-52': !open && window.innerWidth <= 375, 
-                        'h-52 w-52': !open && window.innerWidth > 375
-                    }"
-                >
-            </button>
-            <div x-show="!open" class="text-white font-black text-7xl w-1/3 py-5 pl-10 font-square tracking-wide">
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#ffeb0c] to-indigo-500">
-                    "Building seamless digital experiences with a focus on functionality and design."
-                </span>
-            </div>     
-            <div class="absolute right-0 top-1/4 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full px-2 py-4 mr-2 shadow-lg">
-                <a href="mailto:jhenrichroquios000@gmail.com" class="text-red-500 hover:underline mr-4"><img src="img/gmail-icon.svg" class="size-6"></a>
-                <a href="https://www.facebook.com/bartzabell.bartzabel" class="text-sky-300 hover:underline mr-4"><img src="img/facebook-icon.svg" class="size-6"></a>  
-                <a href="https://www.instagram.com/bulbasau_r_r/profilecard/?igsh=ODI4Mm1iand6bWZ3" class="text-pink-300 hover:underline mr-4"><img src="img/instagram-icon.svg" class="size-6"></a>
-                <a href="https://github.com/Bartzabell" class="text-white hover:underline mr-4"><img src="img/github-icon.svg" class="size-6"></a>  
-                <a href="https://www.linkedin.com" class="text-blue-400 hover:underline mr-4"><img src="img/linkedin-icon.svg" class="size-6"></a>
-                <a href="tel:+63 950-473-8498" class="text-[#fff695] hover:underline"><img src="img/phone-icon.svg" class="size-6"></a>
+<head>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="button-style.css">
+    <script src="tailwind-config.js"></script>
+    <link rel="icon" href="img/face-button.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <title>JDR Portfolio</title>
+</head>
+<body class="font-inter bg-[#818181] h-screen">
+    <!-- Section 1 -->
+    <div class="h-screen flex items-center justify-center">
+
+        <a @click="document.querySelector('#next-section').scrollIntoView({ behavior: 'smooth' })" class="button hover:font-doergon font-bold" x-data>
+            <div class="button__content">
+               <span class="button__text">Let's Go!</span>
+              
+
+               <div class="button__reflection-1"></div>
+               <div class="button__reflection-2"></div>
             </div>
-            <div x-show="!open" id="cursor"></div>          
+
+            <img src="img/star.png" alt="" class="button__star-1">
+            <img src="img/star.png" alt="" class="button__star-2">
+            <img src="img/circle.png" alt="" class="button__circle-1">
+            <img src="img/circle.png" alt="" class="button__circle-2">
+            <img src="img/diamond.png" alt="" class="button__diamond">
+            <img src="img/triangle.png" alt="" class="button__triangle">
+            
+            <div class="button__shadow"></div>
+         </a>
+    </div>
+
+    <!-- Section 2 -->
+    <div id="next-section" class="h-screen bg-[#D9D9D9]">
+        <div class="p-5">
+            <h1 class="text-8xl font-bold font-academy">JHENRICH D ROQUIOS</h1>
+            <div class="flex justify-between">
+                <div class="">
+                    <p class="text-3xl font-bold py-5">BS Computer Science Graduate</p>
+                    <p class="text-3xl font-bold">IT Programmer at Betafoam Corporation</p>
+                </div>
+                <img src="img/toga.png" alt="Toga" class="max-w-full max-h-80 ml-4 m-5">
+            </div>            
         </div>
-      
-        <div x-show="open" x-transition class="grid grid-cols-2 z-40 fixed inset-0 transition-opacity duration-500 overflow-y-auto">
-            <div class="m-10">
-                <div x-show="open" class="transition duration-700 ease-in-out">
-                    <h3 class="font-pixel text-2xl mb-2 text-[#fff695]">Hello, I'm</h3>
-                    <h1 class="font-black font-square text-[#ffeb0c] text-6xl mb-1 tracking-wider">Jhenrich D. Roquios</h1>
-                    <h3 class="mb-5 text-[#fff695] pl-10 font-pixel">I am a Web Developer</h3>
-                    <div class=" space-x-5 mb-2 items-center justify-center flex" x-data="{ activeButton: null }">
-                        <button 
-                            @click="activeButton = (activeButton === 'aboutMe') ? null : 'aboutMe'; drop = !drop; drop2 = false; drop3 = false"
-                            title="About Me"
-                            :class="activeButton === 'aboutMe' ? 'bg-[#ffeb0c]' : 'bg-[#fff695]'"
-                            class="p-2.5 rounded-full hover:bg-[#ffeb0c] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200">
-                            <img src="img/expand-icon.svg" class="size-6">
-                        </button>
-                    
-                        <button 
-                            @click="activeButton = (activeButton === 'education') ? null : 'education'; drop2 = !drop2; drop = false; drop3 = false"
-                            title="Education"
-                            :class="activeButton === 'education' ? 'bg-[#ffeb0c]' : 'bg-[#fff695]'"
-                            class="p-2.5 rounded-full hover:bg-[#ffeb0c] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200">
-                            <img src="img/graduation-icon.svg" class="size-8">
-                        </button>
-                    
-                        <button 
-                            @click="activeButton = (activeButton === 'experiences') ? null : 'experiences'; drop3 = !drop3; drop = false; drop2 = false"
-                            title="Experiences"
-                            :class="activeButton === 'experiences' ? 'bg-[#ffeb0c]' : 'bg-[#fff695]'"
-                            class="p-2.5 rounded-full hover:bg-[#ffeb0c] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200">
-                            <img src="img/experience-icon.svg" class="size-8">
-                        </button>
-                    </div>
-                    <div class="indent-5 text-justify py-3 px-5 text-xl leading-loose bg-opacity-75 rounded-xl" 
-                         x-show="!drop && !drop2 && !drop3">
-                        <p class="text-[#fff695] ">
-                            <span class="text-5xl font-square font-engravers">A</span> graduate with a <span class="font-pixel text-[#ffeb0c]">Bachelor's Degree in Computer Science</span>, has a strong passion for the field of development. Currently working as a web developer, with extensive experience in collaborative development and version control. Eager to learn new technologies and continuously adapting to updates in technologies and AI, aiming to expand my knowledge in development and contribute significantly to innovative projects.
-                        </p>
-                        <div class="items-center justify-center flex">
-                            <a href="Resume_.pdf" target="_blank">
-                                <button class="m-5 flex items-center space-x-2 bg-[#ffeb0c] hover:bg-[#ffeb0c] rounded-full font-bold p-1">
-                                    <img src="img/resume-icon.svg" class="size-10">
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div x-show="drop" class="=py-2 text-xl mt-2 text-[#fff695] rounded-lg bg-opacity-75">
-                    <p class="indent-5 text-justify leading-relaxed">
-                        <span class="text-2xl font-pixel">M</span>y interest in the IT field began in high school when I took ICT as my TLE subject in 9th grade. That’s where I learned my first IT skills, such as computer troubleshooting, hardware basics, and gained insights into various areas of IT.
-                        
-                        When I went to college, I chose to study Computer Science to further expand my knowledge in software development and programming. There, I learned different programming languages like Java and Python, as well as basic HTML, CSS, and some database querying.
-                        
-                        During my OJT, my journey into web development began. I was introduced to Agile-Scrum development, which involved fast-paced work with weekly reports and deliverables. I also learned Laravel development using the TALL stack, worked with version control, and experienced collaborative development using GitHub. Additionally, I gained skills in database management, migrations, and setting up new projects.
-                    </p>
-                    <p class="indent-5 justify-center text-center text-xl font-square text-[#ffeb0c] pt-5">
-                        "This is how I started my journey as a web developer."
-                    </p>
-                </div>
-                
-                <div x-show="drop2" class="bg-neutral-800 rounded-lg grid grid-cols-2 my-2 pb-5" >
-                    <h1 class="font-black text-3xl border-b-2 border-[#fff695] text-[#ffeb0c] font-pixel p-2 col-span-2 text-center">Education</h1>
-                    <h2 class="font-black text-[#ffeb0c] font-pixel text-xl p-2 ml-10 my-10">2020-2024</h2>
-                    <div class="mb-2 my-10 mr-10">
-                        <h2 class="text-xl font-bold text-[#ffeb0c]">Cavite State University-Carmona</h2>
-                        <p class="text-[#fff695]">Bachelor of Science in Computer Science</p>
-                    </div>
-                    <h2 class="font-black text-xl text-[#ffeb0c] font-pixel p-2 ml-10 mb-10">2018-2020</h2>
-                    <div class="mb-10">
-                        <h2 class="text-lg font-bold text-[#ffeb0c]">Bulihan Integrated National High School</h2>
-                        <p class="text-sm text-[#fff695]">Science Technology Engineering and Mathematics</p>
-                    </div>
-                    <h2 class="font-black text-xl text-[#ffeb0c] font-pixel p-2 ml-10 mb-5">2014-2018</h2>
-                    <h2 class="text-lg font-bold my-2 mb-5 text-[#ffeb0c]">Bulihan Integrated National High School</h2>
-                    <h2 class="font-black text-[#ffeb0c] font-pixel text-xl p-2 ml-10">2008-2014</h2>
-                    <h2 class="text-lg font-bold my-2 mr-10 text-[#ffeb0c]">San Gabriel II Elementary School</h2>
-                </div>
-                
-                <div x-show="drop3" class="bg-neutral-800 rounded-lg my-2 pb-5" >
-                    <h1 class="font-black font-pixel text-[#ffeb0c] text-3xl border-b-2 border-[#fff695] p-2 text-center">Experience/s</h1>
-                    <table class="min-w-full">
-                        <thead>
-                            <tr class=" uppercase text-md text-[#ffeb0c] font-pixel ">
-                                <th class="py-2 px-4">Year</th>
-                                <th class="py-2 px-4">Company</th>
-                                <th class="py-2 px-4">Position</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="hover:bg-white text-center text-[#ffeb0c]">
-                                <td class="py-2 px-4 font-pixel">2023</td>
-                                <td class="py-2 px-4">Philippian Marketing Corporation</td>
-                                <td class="py-2 px-4">OJT - Web Developer (Back End)</td>
-                            </tr>
-                            <tr class="hover:bg-gray-100 text-center text-[#ffeb0c]">
-                                <td class="py-2 px-4 font-pixel">2024</td>
-                                <td class="py-2 px-4">Betafoam Corporation</td>
-                                <td class="py-2 px-4">IT Programmer</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>                
-            <div style="background-image: url('img/bg_55.png'); background-size: cover; background-position: center;">
-                <div class="mt-5 space-x-5 mx-2 items-center justify-center flex" x-data="{ activeButton: '' }">
-                    <button 
-                        @click="activeButton = (activeButton === 'project') ? null : 'project'; project = !project; gallery = false; contact = false"
-                        title="project"
-                        :class="activeButton === 'project' ? 'bg-[#ffeb0c]' : 'bg-[#fff695]'"
-                        class="p-2.5 rounded-full hover:bg-[#ffeb0c] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200">
-                        <img src="img/project-icon.svg" class="size-8">
-                    </button>
-                
-                    <button 
-                        @click="activeButton = (activeButton === 'contact') ? null : 'contact'; contact = !contact; project = false; gallery = false"
-                        title="contact"
-                        :class="activeButton === 'contact' ? 'bg-[#ffeb0c]' : 'bg-[#fff695]'"
-                        class="p-2.5 rounded-full hover:bg-[#ffeb0c] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200">
-                        <img src="img/contact-icon.svg" class="size-8">
-                    </button>
-                
-                    <button 
-                        @click="activeButton = (activeButton === 'gallery') ? null : 'gallery'; gallery = !gallery; project = false; contact = false"
-                        title="gallery"
-                        :class="activeButton === 'gallery' ? 'bg-[#ffeb0c]' : 'bg-[#fff695]'"
-                        class="p-2.5 rounded-full hover:bg-[#ffeb0c] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200">
-                        <img src="img/gallery-icon.svg" class="size-8">
-                    </button>
-                </div>
-                <div x-show="!project && !contact && !gallery" class=" overflow-y-auto font-pixel">
-                    <h1 class="text-center pt-5 text-[#ffeb0c] text-2xl">Skill Proficiency</h1>
-                    <div id="skillProficiencyChart" class=" shadow-lg rounded-lg m-2"></div>
-                </div>
-                <div x-show="project" class=" rounded-lg my-2 pb-5">
-                    <h1 class="font-black text-3xl border-b-2 border-[#fff695] mb-2 text-[#ffeb0c] font-pixel p-2 col-span-2 text-center">Project</h1>
-                    <div class="overflow-y-auto h-128 grid grid-cols-2">
-                        <div class="flex p-2 justify-center align-center items-center">
-                            <h1 class="font-bold font-pixel text-[#ffeb0c]">Appointment Scheduling System</h1>
-                        </div>
-                        <div class="bg-[#fff695] p-5 ">
-                            <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true ; project1 = true ; project2 = false">
-                        </div>
-                        <div class="bg-[#fff695] p-5 ">
-                            <img src="img/EPR.png" alt="QA - System" @click="isModalOpen = true ; project2 = true ; project1 = false">
-                        </div>
-                        <div class="flex p-2 justify-center align-center items-center">
-                            <h1 class="font-bold font-pixel text-[#ffeb0c]">Production Report System</h1>
-                        </div>
-                        <div class="flex p-2 justify-center align-center items-center">
-                            <h1 class="font-bold font-pixel text-[#ffeb0c]">Quality Assurance System</h1>
-                        </div>
-                        <div class="bg-[#fff695] p-5 ">
-                            <img src="img/qa-system.png" alt="QA - System" @click="isModalOpen = true ; project1 = true ; project2 = false">
-                        </div>
-                    </div>
-                </div>
-                
-                <div x-show="contact" class="rounded-lg grid grid-cols-2 my-2 pb-5 ml-5" >
-                    <h1 class="font-black font-pixel text-[#ffeb0c] text-3xl border-b-2 border-[#fff695] p-2 col-span-2 text-center">Contact</h1>
-                    <div class="m-5 flex items-center space-x-2">
-                        <img src="img/gmail-icon.svg" class="size-6">
-                        <a href="mailto:jhenrichroquios000@gmail.com" class="text-red-500 hover:underline">jhenrichroquios000@gmail.com</a>
-                    </div>
-                    <div class="m-5 flex items-center space-x-2">
-                        <img src="img/facebook-icon.svg"  class="size-6">
-                        <a href="https://www.facebook.com/bartzabell.bartzabel" class="text-sky-300 hover:underline">Jhenrich Roquios</a>
-                    </div>
-                    <div class="m-5 flex items-center space-x-2">
-                        <img src="img/instagram-icon.svg"  class="size-6">
-                        <a href="https://www.instagram.com/bulbasau_r_r/profilecard/?igsh=ODI4Mm1iand6bWZ3" class="text-pink-300 hover:underline">@bulbasau_r_r</a>
-                    </div>
-                    <div class="m-5 flex items-center space-x-2">
-                        <img src="img/github-icon.svg"  class="size-6">
-                        <a href="https://github.com/Bartzabell" class="text-white hover:underline">Bartzabell</a>
-                    </div>
-                    <div class="m-5 flex items-center space-x-2">
-                        <img src="img/linkedin-icon.svg"  class="size-6">
-                        <a href="www.linkiedin.com" class="text-blue-400 hover:underline">www.linkedin.com</a>
-                    </div>
-                    <div class="m-5 flex items-center space-x-2">
-                        <img src="img/phone-icon.svg" class="size-6">                         
-                        <a class="text-[#fff695] hover:underline">+63 950-473-8498</a>
-                    </div>
-                </div>
-                
-                <div x-show="gallery" class=" bg-white rounded-lg border my-2 pb-5 bg-opacity-50">
-                    <h1 class="font-black font-pixel text-[#ffeb0c] text-3xl border-b-2 border-[#fff695] p-2 text-center">Gallery</h1>
-                    <div class="p-2 grid grid-cols-2">
-                        <img class="h-96 w-auto p-2 bg-[#fff695] rounded-full" src="img/toga.png" >
-                        <table class="min-w-full bg-white border border-gray-300">
-                            <thead>
-                                <tr class="text-black uppercase text-sm bg-[#fff695]">
-                                    <th class="py-2 font-square tracking-widest px-4 border" colspan="2">Personal Information</th>
-                                </tr>
-                            </thead>
-                            <tbody class="font-arial">
-                                <tr class="hover:bg-gray-100 text-center">
-                                    <td class="border">Name</td>
-                                    <td class="border">Jhenrich D. Roquios</td>
-                                </tr>
-                                <tr class="hover:bg-gray-100 text-center">
-                                    <td class="border">Birthday</td>
-                                    <td class="border">07 July 2002</td>
-                                </tr>
-                                <tr class="hover:bg-gray-100 text-center">
-                                    <td class="border">Address</td>
-                                    <td class="border">Cavite</td>
-                                </tr>
-                                <tr class="hover:bg-gray-100 text-center">
-                                    <td class="border">College Program</td>
-                                    <td class="border">BS Computer Science</td>
-                                </tr>
-                                <tr class="hover:bg-gray-100 text-center">
-                                    <td class="border">Job Positions</td>
-                                    <td class="border">IT Programmer</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>     
-            </div>
-        </div>
-        <div x-show="isModalOpen" x-cloak class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <div class="bg-white p-5 rounded-lg shadow-lg h-auto mx-4 overflow-auto max-h-screen">
-                <div x-show="project1">
-                    <h2 class="text-2xl text-center font-bold">Quality Assurance System</h2>
-                    <div class="overflow-y-auto h-96 p-5">
-                        <h1 class="text-center font-bold">Dashboard</h1>
-                        <img src="img/qa-system.png" class="max-w-2xl h-auto border border-black">
-                        <h1 class="text-center">Create</h1>
-                        <img src="img/qa-system.png" class="max-w-2xl h-auto border border-black">
-                    </div>
-                </div>
-                <div x-show="project2">
-                    <h2 class="text-2xl text-center font-bold">Production Report System</h2>
-                    <div class="overflow-y-auto h-96 p-5">
-                        <h1 class="text-center font-bold">Dashboard</h1>
-                        <img src="img/EPR.png" class="max-w-2xl h-auto border border-black">
-                    </div>
-                </div>
-                <button @click="isModalOpen = false" class="mt-3 bg-[#ffeb0c] text-white p-2 rounded-lg">Close</button>
-            </div>
-        </div>              
-    </body> 
+    </div>
+</body>
 </html>
