@@ -15,6 +15,7 @@ tailwind.config = {
                 'inter': ['Inter', 'sans-serif'],
                 'academy': ['academy', 'sans-serif'],
                 'doergon': ['doergon', 'sans-serif'],
+                'actionj': ['actionj', 'sans-serif'],
             },
             screens: {
                 'mobile-custom': '375px',

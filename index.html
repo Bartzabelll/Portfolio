@@ -11,13 +11,13 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <title>JDR Portfolio</title>
 </head>
-<body class="font-inter bg-[#818181] h-screen">
+<body class="font-inter bg-white h-screen">
     <!-- Section 1 -->
     <div class="h-screen flex items-center justify-center">
 
-        <a @click="document.querySelector('#next-section').scrollIntoView({ behavior: 'smooth' })" class="button hover:font-doergon font-bold" x-data>
+        <a @click="document.querySelector('#next-section').scrollIntoView({ behavior: 'smooth' })" class="button font-doergon text-xl hover:font-actionj hover:text-2xl hover:font-bold" x-data>
             <div class="button__content">
-               <span class="button__text">Let's Go!</span>
+               <span>Let's Go!</span>
               
 
                <div class="button__reflection-1"></div>
@@ -36,15 +36,22 @@
     </div>
 
     <!-- Section 2 -->
-    <div id="next-section" class="h-screen bg-[#D9D9D9]">
+    <div id="next-section" class="h-screen bg-white">
         <div class="p-5">
-            <h1 class="text-8xl font-bold font-academy">JHENRICH D ROQUIOS</h1>
+            <div class="bg-[#FFCC00] border-2 border-black shadow-xl pl-2">
+                <h1 class="text-8xl font-bold font-doergon">JHENRICH D. ROQUIOS</h1>
+            </div>
+            
             <div class="flex justify-between">
-                <div class="">
+                <div>
                     <p class="text-3xl font-bold py-5">BS Computer Science Graduate</p>
                     <p class="text-3xl font-bold">IT Programmer at Betafoam Corporation</p>
                 </div>
-                <img src="img/toga.png" alt="Toga" class="max-w-full max-h-80 ml-4 m-5">
+                <div class="bg-black m-2 border-2 border-black">
+                    <div class="bg-[#FFCC00] p-4 ml-2 mb-2">
+                        <img src="img/toga.png" alt="Toga" class="max-w-full max-h-80">
+                    </div>
+                </div>
             </div>            
         </div>
     </div>

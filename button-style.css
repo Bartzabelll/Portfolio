@@ -61,10 +61,6 @@ a {
   overflow: hidden;
 }
 
-.button__text {
-  font-weight: 700;
-}
-
 .button__icon {
   font-size: 1.5rem;
 }
@@ -225,7 +221,6 @@ a {
 .button:hover .button__triangle {
   transform: rotate(-12deg) scale(1.1);
 }/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -241,7 +236,6 @@ a {
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat", sans-serif;
-  --normal-font-size: 1rem;
 }
 
 /*=============== BASE ===============*/
@@ -255,10 +249,6 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
-}
-
-a {
-  text-decoration: none;
 }
 
 /*=============== BUTTON ===============*/
@@ -285,11 +275,6 @@ a {
   align-items: center;
   column-gap: .5rem;
   overflow: hidden;
-}
-
-.button__text {
-  font-weight: 700;
-  font-size: 20px;
 }
 
 .button__icon {

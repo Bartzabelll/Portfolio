@@ -26,6 +26,13 @@
     src: url('/fonts/DoergonShift.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'actionj';
+    font-weight: bold;
+    font-style: normal;
+    src: url('/fonts/actionj.ttf') format('truetype');
+}
+
 
 
 
