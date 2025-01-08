@@ -2,7 +2,7 @@ tailwind.config = {
     theme: {
         extend: {
             height: {
-                '128': '30rem', 
+                '128': '30rem',  
                 '144': '36rem',
             },
             fontFamily: {
