@@ -2,35 +2,35 @@
     font-family: 'square';
     font-weight: normal;
     font-style: normal;
-    src: url('/fonts/upheavtt.ttf') format('truetype');
+    src: url('fonts/upheavtt.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'pixel';
     font-weight: bold;
     font-style: normal;
-    src: url('/fonts/04B_30__.TTF') format('truetype');
+    src: url('fonts/04B_30__.TTF') format('truetype');
 }
 
 @font-face {
     font-family: 'academy';
     font-weight: bold;
     font-style: normal;
-    src: url('/fonts/AcademyFilled3D.ttf') format('truetype');
+    src: url('fonts/AcademyFilled3D.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'doergon';
     font-weight: bold;
     font-style: normal;
-    src: url('/fonts/DoergonShift.ttf') format('truetype');
+    src: url('fonts/DoergonShift.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'actionj';
     font-weight: bold;
     font-style: normal;
-    src: url('/fonts/actionj.ttf') format('truetype');
+    src: url('fonts/actionj.ttf') format('truetype');
 }
 
 
