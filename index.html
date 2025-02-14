@@ -100,29 +100,27 @@
                     </button>
                 </div>
                 <div class="col-span-4 flex justify-center h-36">
-                    <button class="group relative overflow-visible">
-                        <a 
-                            x-data 
-                            @click="document.querySelector('#third-section').scrollIntoView({ behavior: 'smooth' })" 
-                            class="p-2 font-actionj flex items-center justify-center relative z-10">
-                            <!-- Arrow image -->
-                            <img 
-                                src="img/arrow-down.svg" 
-                                alt="Arrow Down" 
-                                class="w-10 h-10 rounded-full bg-black transition-opacity duration-300 hover:opacity-0">
-                            <!-- Hover text -->
-                            <span 
-                                class="hidden hover:inline-block font-black text-xl rounded-xl p-3">
-                                Go Ahead!
-                            </span>
-                        </a>
+                    <button 
+                        x-data 
+                        @click="document.querySelector('#third-section').scrollIntoView({ behavior: 'smooth' })" 
+                        class="group relative overflow-visible p-2 font-actionj flex items-center justify-center">
+                        <!-- Arrow image -->
+                        <img 
+                            src="img/arrow-down.svg" 
+                            alt="Arrow Down" 
+                            class="w-10 h-10 rounded-full bg-black transition-all group-hover:opacity-0">
+                        <!-- Hover text -->
+                        <span 
+                            class="hidden group-hover:inline-block font-black text-xl rounded-xl p-3 z-50">
+                            Go Ahead!
+                        </span>
                         <!-- Background image appears only on hover -->
                         <div 
-                            class="absolute inset-0 bg-cover bg-center scale-0 hover:scale-150 transition-transform duration-300 z-0" 
-                            style="background-image: url('img/boom-box.png'); z-index: 0; pointer-events: none; object-fit: contain;">
+                            class="absolute inset-0 bg-cover bg-center scale-0 group-hover:scale-150 transition-transform duration-700 z-0" 
+                            style="background-image: url('img/boom-box.png'); z-index: 0; pointer-events: none;">
                         </div>
                     </button>                                          
-                </div>
+                </div>                
             </div>                             
         </div>
     </div>
