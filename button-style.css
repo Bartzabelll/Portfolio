@@ -45,395 +45,95 @@ a {
 
 .button {
   position: relative;
-  transition: transform .4s;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  padding: 1rem 3rem;
+  transition: 0.2s;
 }
 
-.button__content {
+.button:hover {
+  letter-spacing: 0.2rem;
+  padding: 1.1rem 3.1rem;
+  background: var(--clr);
+  color: var(--clr);
+  /* box-shadow: 0 0 35px var(--clr); */
+  /* animation: box 3s infinite; */
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #272822;
+}
+
+.button span {
   position: relative;
-  background: var(--gradient-color);
-  padding: 1.25rem 3rem;
-  border-radius: 4rem;
-  border: 3px solid var(--black-color);
-  color: var(--black-color);
-  display: flex;
-  align-items: center;
-  column-gap: .5rem;
-  overflow: hidden;
+  z-index: 1;
 }
 
-.button__icon {
-  font-size: 1.5rem;
-}
-
-.button__text, 
-.button__icon {
-  position: relative;
-  z-index: 2;
-}
-
-/* Reflection shapes */
-.button__reflection-1, 
-.button__reflection-2 {
-  width: 8px;
-  height: 120px;
-  background-color: var(--reflection-color);
-  rotate: 30deg;
+.button i {
   position: absolute;
   inset: 0;
-  top: 0;
-  left: -180%;
-  margin: auto;
-  transition: left .6s cubic-bezier(.2, .5, .2, 1.2);
+  display: block;
 }
 
-.button__reflection-1::after {
+.button i::before {
   content: "";
-  width: 26px;
-  height: 100%;
-  background-color: var(--reflection-color);
   position: absolute;
-  top: -1rem;
-  left: 1.25rem;
-}
-
-.button__reflection-2::after {
-  content: "";
-  width: 40px;
-  height: 100%;
-  background-color: var(--reflection-color);
-  position: absolute;
-  top: -1rem;
-  left: .8rem;
-}
-
-/* Moving geometric shapes */
-.button img {
-  position: absolute;
-  opacity: 0;
-  transition: transform .5s, opacity .5s;
-}
-
-.button__star-1 {
-  width: 20px;
-  top: -14px;
-  left: -16px;
-  transform: rotate(48deg) scale(.1);
-}
-
-.button__star-2 {
-  width: 40px;
-  right: -10px;
-  top: -4px;
-  transform: rotate(-48deg) scale(.1);
-}
-
-.button__circle-1, 
-.button__circle-2 {
-  width: 8px;
-}
-
-.button__circle-1 {
+  width: 15px;
+  height: 20px;
+  left: 80%;
   top: -8px;
-  left: 58px;
-  transform: scale(.1);
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
 }
 
-.button__circle-2 {
-  right: 34px;
-  bottom: -8px;
-  transform: scale(.1);
+.button:hover i::before {
+  width: 15px;
+  height: 20px;
+  left: 20%;
+  background: #ffc401;
+  animation: move 3s infinite;
 }
 
-.button__diamond {
-  width: 18px;
-  top: -18px;
-  right: 62px;
-  transform: scale(.1);
-}
-
-.button__triangle {
-  width: 30px;
-  left: 15px;
-  bottom: -16px;
-  transform: rotate(-48deg) scale(.1);
-}
-
-/* Gradient shadow */
-.button__shadow {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: var(--gradient-color);
-  padding: 1.25rem 3rem;
-  border-radius: 4rem;
-  border: 3px solid var(--black-color);
-  z-index: -1;
-  transition: transform .3s;
-}
-
-/* View shadow gradient */
-.button:hover .button__shadow {
-  transform: translate(-.5rem, .5rem);
-}
-
-/* Move reflection */
-.button:hover .button__reflection-1 {
-  left: 120%;
-}
-
-.button:hover .button__reflection-2 {
-  left: -70%;
-}
-
-/* View geometric shapes */
-.button:hover {
-  transform: rotate(-4deg) scale(1.1);
-}
-
-.button:hover img {
-  opacity: 1;
-}
-
-.button:hover .button__star-1 {
-  transform: scale(1.1);
-  transition-delay: .1s;
-}
-
-.button:hover .button__star-2 {
-  transform: scale(1.1);
-}
-
-.button:hover .button__circle-1 {
-  transform: translateY(-8px) scale(1.1);
-  transition-delay: .1s;
-}
-
-.button:hover .button__circle-2 {
-  transform: translate(-20px, 20px) scale(1.1);
-}
-
-.button:hover .button__diamond {
-  transform: translateY(7px) rotate(-24deg) scale(1.1);
-}
-
-.button:hover .button__triangle {
-  transform: rotate(-12deg) scale(1.1);
-}/*=============== GOOGLE FONTS ===============*/
-
-/*=============== VARIABLES CSS ===============*/
-:root {
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --gradient-color: linear-gradient(90deg,
-                    hsl(48, 100%, 50%) 0%,
-                    hsl(28, 100%, 54%, 100%));
-  --black-color: hsl(225, 15%, 6%);
-  --reflection-color: hsla(48, 30%, 95%, .3);
-  --body-color: hsl(48, 100%, 98%);
-
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: "Montserrat", sans-serif;
-}
-
-/*=============== BASE ===============*/
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  background-color: var(--body-color);
-}
-
-/*=============== BUTTON ===============*/
-.container {
-  height: 100vh;
-  margin-inline: 1.5rem;
-  display: grid;
-  place-items: center;
-}
-
-.button {
-  position: relative;
-  transition: transform .4s;
-}
-
-.button__content {
-  position: relative;
-  background: var(--gradient-color);
-  padding: 1.25rem 3rem;
-  border-radius: 4rem;
-  border: 3px solid var(--black-color);
-  color: var(--black-color);
-  display: flex;
-  align-items: center;
-  column-gap: .5rem;
-  overflow: hidden;
-}
-
-.button__icon {
-  font-size: 1.5rem;
-}
-
-.button__text, 
-.button__icon {
-  position: relative;
-  z-index: 2;
-}
-
-/* Reflection shapes */
-.button__reflection-1, 
-.button__reflection-2 {
-  width: 8px;
-  height: 120px;
-  background-color: var(--reflection-color);
-  rotate: 30deg;
-  position: absolute;
-  inset: 0;
-  top: 0;
-  left: -180%;
-  margin: auto;
-  transition: left .6s cubic-bezier(.2, .5, .2, 1.2);
-}
-
-.button__reflection-1::after {
+.button i::after {
   content: "";
-  width: 26px;
-  height: 100%;
-  background-color: var(--reflection-color);
   position: absolute;
-  top: -1rem;
-  left: 1.25rem;
+  width: 10px;
+  height: 2px;
+  left: 20%;
+  bottom: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
 }
 
-.button__reflection-2::after {
-  content: "";
-  width: 40px;
-  height: 100%;
-  background-color: var(--reflection-color);
-  position: absolute;
-  top: -1rem;
-  left: .8rem;
+.button:hover i::after {
+  width: 15px;
+  left: 80%;
+  animation: move 3s infinite;
 }
 
-/* Moving geometric shapes */
-.button img {
-  position: absolute;
-  opacity: 0;
-  transition: transform .5s, opacity .5s;
+@keyframes box {
+  0% {
+    /* box-shadow: #27272c; */
+  }
+  50% {
+    /* box-shadow: 0 0 25px var(--clr); */
+  }
+  100% {
+    /* box-shadow: #27272c; */
+  }
 }
 
-.button__star-1 {
-  width: 20px;
-  top: -14px;
-  left: -16px;
-  transform: rotate(48deg) scale(.1);
-}
 
-.button__star-2 {
-  width: 40px;
-  right: -10px;
-  top: -4px;
-  transform: rotate(-48deg) scale(.1);
-}
 
-.button__circle-1, 
-.button__circle-2 {
-  width: 8px;
-}
 
-.button__circle-1 {
-  top: -8px;
-  left: 58px;
-  transform: scale(.1);
-}
 
-.button__circle-2 {
-  right: 34px;
-  bottom: -8px;
-  transform: scale(.1);
-}
-
-.button__diamond {
-  width: 18px;
-  top: -18px;
-  right: 62px;
-  transform: scale(.1);
-}
-
-.button__triangle {
-  width: 30px;
-  left: 15px;
-  bottom: -16px;
-  transform: rotate(-48deg) scale(.1);
-}
-
-/* Gradient shadow */
-.button__shadow {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: var(--gradient-color);
-  padding: 1.25rem 3rem;
-  border-radius: 4rem;
-  border: 3px solid var(--black-color);
-  z-index: -1;
-  transition: transform .3s;
-}
-
-/* View shadow gradient */
-.button:hover .button__shadow {
-  transform: translate(-.5rem, .5rem);
-}
-
-/* Move reflection */
-.button:hover .button__reflection-1 {
-  left: 120%;
-}
-
-.button:hover .button__reflection-2 {
-  left: -70%;
-}
-
-/* View geometric shapes */
-.button:hover {
-  transform: rotate(-4deg) scale(1.1);
-}
-
-.button:hover img {
-  opacity: 1;
-}
-
-.button:hover .button__star-1 {
-  transform: scale(1.1);
-  transition-delay: .1s;
-}
-
-.button:hover .button__star-2 {
-  transform: scale(1.1);
-}
-
-.button:hover .button__circle-1 {
-  transform: translateY(-8px) scale(1.1);
-  transition-delay: .1s;
-}
-
-.button:hover .button__circle-2 {
-  transform: translate(-20px, 20px) scale(1.1);
-}
-
-.button:hover .button__diamond {
-  transform: translateY(7px) rotate(-24deg) scale(1.1);
-}
-
-.button:hover .button__triangle {
-  transform: rotate(-12deg) scale(1.1);
-}
