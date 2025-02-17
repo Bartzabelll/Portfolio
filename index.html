@@ -9,6 +9,9 @@
     <script src="tailwind-config.js"></script>
     <link rel="icon" href="img/face-button.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+
     <title>JDR Portfolio</title>
 </head>
 <body class="font-inter bg-slate-800 h-screen">
@@ -38,17 +41,31 @@
             
             <div class="grid grid-cols-4">
                 <div class="col-span-3">
-                    <p class="text-3xl font-bold py-5">BS Computer Science Graduate</p>
-                    <p class="text-3xl font-bold">IT Programmer at Betafoam Corporation</p>
+                    <div class="flex flex-col lg:flex-row w-full">
+                        <!-- Calendar - top on mobile, right on desktop -->
+                        <div class="order-1 lg:order-2 w-full lg:w-auto font-roboto text-sm my-2 lg:ml-5">
+                            <div id="github-calendar" class="github-calendar"></div>
+                        </div>
+                        
+                        <!-- Text content - bottom on mobile, left on desktop -->
+                        <div class="order-2 lg:order-1 w-full lg:flex-1">
+                            <p class="text-3xl font-bold py-5">BS Computer Science Graduate</p>
+                            <p class="text-xl font-bold">IT Programmer at Betafoam Corporation (Current)</p>
+                        </div>
+                    </div>
+                  
+                    <!-- Third paragraph (unaffected by reordering) -->
                     <p class="text-2xl pt-5">
-                        <span class="ml-20 font-academy text-6xl">A</span> graduate with a <span class="font-bold">Bachelor's Degree in Computer Science</span>, has a strong passion for the field of development. Currently working as an <span class="font-bold">IT Programmer</span>, with extensive experience in collaborative development and version control. Eager to learn new technologies and continuously adapting to updates in technologies and AI, aiming to expand my knowledge in development and contribute significantly to innovative projects.
-                    </p>                    
+                      <span class="ml-20 font-academy text-6xl">A</span> graduate with a <span class="font-bold">Bachelor's Degree in Computer Science</span>, has a strong passion for the field of development. Currently working as an <span class="font-bold">IT Programmer</span>, with extensive experience in collaborative development and version control. Eager to learn new technologies and continuously adapting to updates in technologies and AI, aiming to expand my knowledge in development and contribute significantly to innovative projects.
+                    </p>
                 </div>
-                <div class="bg-black m-2 border-2 border-black max-h-96">
-                    <div class="bg-[#FFCC00] px-6 py-3 ml-2 mb-2">
+                <div class="relative m-2 max-w-[300px] w-full aspect-[1]">
+                    <div class="absolute top-1 left-1 bg-black w-full h-full rounded-lg shadow-lg"></div>
+                    <div class="relative bg-[#FFCC00] px-6 py-3 border-2 border-black rounded-lg shadow-lg">
                         <img src="img/toga.png" alt="Toga" class="max-w-full max-h-72">
                     </div>
-                </div>  
+                </div>                
+                
                 <div class="col-span-4">
                     <div class="flex justify-center mr-6">
                         <p class="text-3xl font-bold font-doergon hover:font-academy hover:text-[#FFCC00] hover:text-4xl hover:tracking-widest">
@@ -98,6 +115,7 @@
                         </a>
                     </button>
                 </div>
+
                 <div class="col-span-4 flex justify-center h-36">
                     <button 
                         x-data 
@@ -186,4 +204,7 @@
         </div>
     </div>
 </body>
+<script>
+    GitHubCalendar("#github-calendar", "Bartzabell", { responsive: false });
+</script>
 </html>

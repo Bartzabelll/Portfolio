@@ -162,6 +162,23 @@
   }
 }
 
+.github-calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.github-calendar {
+  max-width: 100%;
+  background: #FFCC00; /* Yellow background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  padding: 10px; /* Optional: Add padding if needed */
+}
+
+
 
 
 
