@@ -30,121 +30,134 @@
             </a>
         </div>
 
-        <!-- Section 2 -->
-        <div id="next-section" class="h-screen bg-white">
-            <div class="p-5">
+        <!-- Combined Section 2 & 3 - Mobile Optimized -->
+        <div id="next-section" class="min-h-screen lg:h-screen bg-white">
+            <div class="p-3 lg:p-5">
+                <!-- Header -->
                 <div class="border-2 border-black bg-black pl-1 pb-1">
                     <div class="bg-[#B8CFCE] pl-2">
-                        <h1 class="text-3xl font-bold font-doergon">JHENRICH D. ROQUIOS</h1>
+                        <h1 class="text-2xl lg:text-3xl font-bold font-doergon">JHENRICH D. ROQUIOS</h1>
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-4">
-                    <div class="col-span-4">
-                        <div class="flex flex-col lg:flex-row items-start lg:items-center m-2 ">
-                            <!-- GitHub Calendar and Text Content Container -->
-                            <div class="order-2 lg:order-1 w-full lg:flex-1">
-                                <!-- GitHub Calendar - first row on both mobile and PC -->
-                                <div class="w-full github-calendar-container mt-5 font-roboto text-sm flex justify-center relative">
-                                    <div class="absolute top-1 left-1 bg-black w-full h-full rounded-lg shadow-lg"></div>
-                                    <div id="github-calendar" class="github-calendar w-full relative p-4 border-2 border-black rounded-lg shadow-lg bg-white"></div>
-                                </div>
-                        
-                                <!-- Text content - second row on both mobile and PC -->
-                                <div class="w-full mt-5 text-center">
-                                    <p class="text-3xl font-bold py-5">BS Computer Science Graduate</p>
-                                    <p class="text-xl font-bold">IT Programmer at Betafoam Corporation (Current)</p>
-                                </div>                                
-                            </div>
-                        
-                            <!-- Toga Picture Container - top-right corner on PC -->
-                            <div class="relative w-full lg:max-w-[300px] aspect-[1] order-1 lg:order-2 lg:ml-5">
+                <!-- Main Content Container -->
+                <div class="space-y-6 lg:space-y-8">
+                    <!-- Profile Section -->
+                    <div class="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-6 pt-4 lg:pt-2">
+                        <!-- GitHub Calendar and Text Content Container -->
+                        <div class="order-2 lg:order-1 w-full lg:flex-1">
+                            <!-- GitHub Calendar -->
+                            <div class="w-full github-calendar-container font-roboto text-sm flex justify-center relative">
                                 <div class="absolute top-1 left-1 bg-black w-full h-full rounded-lg shadow-lg"></div>
-                                <div class="relative bg-[#B8CFCE] px-6 py-3 border-2 border-black rounded-lg shadow-lg">
-                                    <img src="img/toga.png" alt="Toga" class="w-full h-auto lg:max-w-full lg:max-h-72">
-                                </div>
+                                <div id="github-calendar" class="github-calendar w-full relative p-3 lg:p-4 border-2 border-black rounded-lg shadow-lg bg-white overflow-x-auto"></div>
+                            </div>
+
+                            <!-- Text content -->
+                            <div class="w-full mt-4 lg:mt-5 text-center px-2 lg:px-0">
+                                <p class="text-2xl lg:text-3xl font-bold py-3 lg:py-5 leading-tight">BS Computer Science Graduate</p>
+                                <p class="text-lg lg:text-xl font-bold leading-relaxed">IT Programmer at Betafoam Corporation (Current)</p>
+                            </div>                                
+                        </div>
+
+                        <!-- Toga Picture Container -->
+                        <div class="relative w-full max-w-[280px] lg:max-w-[300px] aspect-square order-1 lg:order-2 mx-auto lg:mx-0 lg:flex-shrink-0">
+                            <div class="absolute top-1 left-1 bg-black w-full h-full rounded-lg shadow-lg"></div>
+                            <div class="relative bg-[#B8CFCE] p-4 lg:px-6 lg:py-3 border-2 border-black rounded-lg shadow-lg h-full flex items-center justify-center">
+                                <img src="img/toga.png" alt="Toga" class="w-full h-auto max-h-full object-contain">
                             </div>
                         </div>
+                    </div>
                     
-                        <!-- Third paragraph -->
-                        <p class="text-xl lg:w-full order-4">
-                            <span class="ml-20 font-academy text-6xl">A</span> graduate with a 
+                    <!-- Bio Paragraph -->
+                    <div class="px-2 lg:px-0">
+                        <p class="text-lg lg:text-xl leading-relaxed">
+                            <span class="ml-8 lg:ml-20 font-academy text-4xl lg:text-6xl">A</span> graduate with a 
                             <span class="font-bold">Bachelor's Degree in Computer Science</span>, has a strong 
                             passion for the field of development. Currently working as an 
-                            <span class="font-bold">IT Programmer</span>, with extensive experience in 
-                            collaborative development and version control. Eager to learn new technologies and 
-                            continuously adapting to updates in technologies and AI, aiming to expand my knowledge 
-                            in development and contribute significantly to innovative projects.
+                            <span class="font-bold">IT Programmer</span>, with expertise in back-end development and database management, plus a working knowledge of data analysis and version control using Git and GitHub.
                         </p>
-                    </div>             
-                    
-                    <div class="col-span-4">
-                        <div class="flex justify-center mr-6">
-                            <p class="text-2xl font-bold font-doergon hover:font-academy hover:text-[#333446] hover:text-3xl hover:tracking-widest">
-                                Socials and Contact
-                            </p>   
-                        </div> 
-                    </div>
-                    <div>
-                        <div class="mx-5 inline-flex gap-x-5">
-                            <img src="img/facebook-icon.svg" alt="" class="size-6">
-                            <p class="font-bold">facebook.com</p>
-                        </div>
-                        <div class="mx-5 inline-flex gap-x-5">
-                            <img src="img/instagram-icon.svg" alt="" class="size-6">
-                            <p class="font-bold">instagram.com</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mx-5 inline-flex gap-x-5">
-                            <img src="img/github-icon.svg" alt="" class="size-6">
-                            <p class="font-bold">https://github.com/Bartzabell</p>
-                        </div>
-                        <div class="mx-5 inline-flex gap-5">
-                            <img src="img/linkedin-icon.svg" alt="" class="size-6">
-                            <p class="font-bold">linkedIn.com</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mx-5 inline-flex gap-x-5">
-                            <img src="img/gmail-icon.svg" alt="" class="size-6">
-                            <p class="font-bold">jhenrichroquios000@gmail.com</p>
-                        </div>
-                        <div class="mx-5 inline-flex gap-5">
-                            <img src="img/phone-icon.svg" alt="" class="size-6">
-                            <p class="font-bold">+63-950-473-8498</p>
-                        </div>
-                    </div>
-                    <div class="flex justify-center gap-x-5 font-doergon text-sm">
-                        <button class="border rounded-lg bg-[#7F8CAA] hover:text-[#B8CFCE] hover:bg-[#333446] hover:p-2 hover:outline">
-                            <a href="Jhenrich De Vera Roquios - cv.pdf" download class="p-2">
-                                CV Download
-                            </a>
-                        </button>
-                        <button class="border rounded-lg bg-[#7F8CAA] hover:bg-[#333446] hover:text-[#B8CFCE] hover:p-2 hover:outline">
-                            <a href="resume_.pdf" download class="p-2">
-                                Resume Download
-                            </a>
-                        </button>
                     </div>
 
-                    <div class="col-span-4 flex justify-center h-24">
+                    <!-- Contact Section -->
+                    <div class="space-y-4 lg:space-y-6">
+                        <div class="text-center">
+                            <h2 class="text-xl lg:text-2xl font-bold font-doergon hover:font-academy hover:text-[#333446] hover:text-2xl lg:hover:text-3xl hover:tracking-widest transition-all duration-300">
+                                Socials and Contact
+                            </h2>   
+                        </div> 
+
+                        <!-- Contact Grid - Mobile Friendly -->
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 px-2 lg:px-0">
+                            <!-- Column 1 -->
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="img/facebook-icon.svg" alt="" class="w-6 h-6 flex-shrink-0">
+                                    <p class="font-bold text-sm lg:text-base break-all">facebook.com</p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <img src="img/instagram-icon.svg" alt="" class="w-6 h-6 flex-shrink-0">
+                                    <p class="font-bold text-sm lg:text-base break-all">instagram.com</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Column 2 -->
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="img/github-icon.svg" alt="" class="w-6 h-6 flex-shrink-0">
+                                    <p class="font-bold text-sm lg:text-base break-all">https://github.com/Bartzabell</p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <img src="img/linkedin-icon.svg" alt="" class="w-6 h-6 flex-shrink-0">
+                                    <p class="font-bold text-sm lg:text-base break-all">linkedIn.com</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Column 3 -->
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="img/gmail-icon.svg" alt="" class="w-6 h-6 flex-shrink-0">
+                                    <p class="font-bold text-sm lg:text-base break-all">jhenrichroquios000@gmail.com</p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <img src="img/phone-icon.svg" alt="" class="w-6 h-6 flex-shrink-0">
+                                    <p class="font-bold text-sm lg:text-base">+63-950-473-8498</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Download Buttons -->
+                        <div class="flex flex-col sm:flex-row justify-center gap-3 font-doergon text-sm px-2 lg:px-0">
+                            <button class="border rounded-lg bg-[#7F8CAA] hover:text-[#B8CFCE] hover:bg-[#333446] hover:scale-105 transition-all duration-300">
+                                <a href="Jhenrich De Vera Roquios - cv.pdf" download class="block p-3">
+                                    CV Download
+                                </a>
+                            </button>
+                            <button class="border rounded-lg bg-[#7F8CAA] hover:bg-[#333446] hover:text-[#B8CFCE] hover:scale-105 transition-all duration-300">
+                                <a href="resume_.pdf" download class="block p-3">
+                                    Resume Download
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Arrow -->
+                    <div class="flex justify-center py-6 lg:py-8">
                         <button 
                             x-data 
                             @click="document.querySelector('#third-section').scrollIntoView({ behavior: 'smooth' })" 
                             class="group relative overflow-visible p-2 font-actionj flex items-center justify-center">
-                            <!-- Arrow image -->
                             <img 
                                 src="img/arrow-down.svg" 
                                 alt="Arrow Down" 
-                                class="w-10 h-10 hover:w-12 hover:h-12">
+                                class="w-8 h-8 lg:w-10 lg:h-10 hover:w-10 hover:h-10 lg:hover:w-12 lg:hover:h-12 transition-all duration-300">
                         </button>                                          
-                    </div>                
+                    </div>
                 </div>                             
             </div>
         </div>
-        
-        <div id="third-section" class=" box-area-bottom h-screen bg-[#B8CFCE] flex items-center justify-center">
+
+        <!-- Skills/Portfolio Section (Third Section) -->
+        <div id="third-section" class="box-area-bottom min-h-screen bg-[#B8CFCE] flex items-center justify-center py-8 lg:py-0">
             <ul class="absolute top-0 left-0 w-full z-0">
                 <li class="box-area-bottom"></li>
                 <li class="box-area-bottom"></li>
@@ -153,53 +166,50 @@
                 <li class="box-area-bottom"></li>
                 <li class="box-area-bottom"></li>
             </ul>
-            <div class="w-[70%] bg-[#333446] max-w-[8000vh] h-[500px] px-5 flex justify-center items-stretch gap-5 transition-all duration-[400ms] group">
-                <div class="relative group bg-black border-4 border-white card flex-1 h-full cursor-pointer transition-all duration-400 odd:-translate-y-5 even:translate-y-5 hover:grayscale-0 hover:flex-[3]">
+            
+            <!-- Mobile: Stack cards vertically, Desktop: Keep horizontal -->
+            <div class="flex flex-col lg:flex-row w-[90%] lg:w-[70%] bg-[#333446] max-w-[800px] lg:max-w-[8000vh] lg:h-[500px] p-4 lg:px-5 gap-4 lg:gap-5 transition-all duration-[400ms] group">
+                <div class="relative group bg-black border-4 border-[#B8CFCE] card lg:flex-1 h-48 lg:h-full cursor-pointer transition-all duration-400 lg:odd:-translate-y-5 lg:even:translate-y-5 hover:grayscale-0 lg:hover:flex-[3] hover:h-full lg:hover:h-full">
                     <img src="img/bg_55.png" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity hover:duration-700 hover:opacity-100">
-                        <p class="text-white text-center px-4 max-w-[80%] max-h-[80%] overflow-auto hide-scrollbar">
-                            My interest in the IT field began in high school when I took ICT as my TLE subject in 9th grade. That’s where I learned my first IT skills, such as computer troubleshooting, hardware basics, and gained insights into various areas of IT. When I went to college, I chose to study Computer Science to further expand my knowledge in software development and programming. There, I learned different programming languages like Java and Python, as well as basic HTML, CSS, and some database querying. During my OJT, my journey into web development began. I was introduced to Agile-Scrum development, which involved fast-paced work with weekly reports and deliverables. I also learned Laravel development using the TALL stack, worked with version control, and experienced collaborative development using GitHub. Additionally, I gained skills in database management, migrations, and setting up new projects.
+                        <p class="text-white text-center px-4 text-sm lg:text-base max-w-[90%] max-h-[90%] overflow-auto hide-scrollbar">
+                            My interest in the IT field began in high school when I took ICT as my TLE subject in 9th grade. That's where I learned my first IT skills, such as computer troubleshooting, hardware basics, and gained insights into various areas of IT. When I went to college, I chose to study Computer Science to further expand my knowledge in software development and programming.
                         </p>
                     </div>
-                </div>            
+                </div>           
 
-                <div
-                    class=" border-4 border-white card flex-1 h-full cursor-pointer transition-all duration-[400ms] odd:-translate-y-5 even:translate-y-5 hover:grayscale-0 hover:grayscale-0 hover:flex-[3]"
-                >
+                <div class="relative border-4 border-[#B8CFCE] card lg:flex-1 h-48 lg:h-full cursor-pointer transition-all duration-[400ms] lg:odd:-translate-y-5 lg:even:translate-y-5 hover:grayscale-0 lg:hover:flex-[3] hover:h-full lg:hover:h-full">
                     <img src="img/laravel.png" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity hover:duration-700 hover:opacity-100">
-                        <p class="text-white text-center px-4">
-                            I have strong experience in web development using Laravel, including the TALL stack and the Inertia Vue approach. While my focus is on backend development, I am also proficient in Livewire, Tailwind CSS, and Alpine.js for dynamic functionality and UI design.
+                        <p class="text-white text-center px-4 text-sm lg:text-base">
+                            I have strong experience in web development using Laravel, including the TALL stack and the Inertia Vue approach. While my focus is on backend development, I am also proficient in Livewire, Tailwind CSS, and Alpine.js.
                         </p>
                     </div>
                 </div>
-                <div
-                    class="border-4 border-white card flex-1 h-full cursor-pointer transition-all duration-[400ms] odd:-translate-y-5 even:translate-y-5 hover:grayscale-0 hover:grayscale-0 hover:flex-[3]"
-                >
+                
+                <div class="relative border-4 border-[#B8CFCE] card lg:flex-1 h-48 lg:h-full cursor-pointer transition-all duration-[400ms] lg:odd:-translate-y-5 lg:even:translate-y-5 hover:grayscale-0 lg:hover:flex-[3] hover:h-full lg:hover:h-full">
                     <img src="img/toga.png" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity hover:duration-700 hover:opacity-100">
-                        <p class="text-white text-center px-4 max-w-[80%] max-h-[80%] overflow-auto hide-scrollbar">
-                            I graduated with a Bachelor of Science in Computer Science in 2024, focusing on the development field. Since then, I have been continuously honing my skills through hands-on experience, practical projects, and ongoing learning. My passion for technology drives me to stay updated with the latest advancements, ensuring that I can develop efficient, scalable, and innovative solutions. Through my journey, I have gained expertise in web development, database management, and software engineering, allowing me to contribute effectively to various projects and challenges in the tech industry.
+                        <p class="text-white text-center px-4 text-sm lg:text-base max-w-[90%] max-h-[90%] overflow-auto hide-scrollbar">
+                            I graduated with a Bachelor of Science in Computer Science in 2024, focusing on the development field. Since then, I have been continuously honing my skills through hands-on experience and practical projects.
                         </p>
                     </div>
                 </div>
-                <div
-                    class="border-4 border-white card flex-1 h-full cursor-pointer transition-all duration-[400ms] odd:-translate-y-5 even:translate-y-5 hover:grayscale-0 hover:grayscale-0 hover:flex-[3]"
-                >
-                    <img src="img/backend.png" class=" bg-blue-500 w-full h-full object-cover" />
+                
+                <div class="relative border-4 border-[#B8CFCE] card lg:flex-1 h-48 lg:h-full cursor-pointer transition-all duration-[400ms] lg:odd:-translate-y-5 lg:even:translate-y-5 hover:grayscale-0 lg:hover:flex-[3] hover:h-full lg:hover:h-full">
+                    <img src="img/backend.png" class="bg-blue-500 w-full h-full object-cover" />
                     <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity hover:duration-700 hover:opacity-100">
-                        <p class="text-white text-center px-4">
-                            I specialize in backend development, with expertise in designing and managing databases using SQL Server, MySQL, and SQLite. I have experience in data analytics, creating ERDs and process flows to optimize system architecture. Additionally, I can take on QA tasks when needed, ensuring application functionality through testing and debugging.
+                        <p class="text-white text-center px-4 text-sm lg:text-base">
+                            I specialize in backend development, with expertise in designing and managing databases using SQL Server, MySQL, and SQLite. I have experience in data analytics and creating ERDs to optimize system architecture.
                         </p>
                     </div>
                 </div>
-                <div
-                    class="border-4 border-white card flex-1 h-full cursor-pointer transition-all duration-[400ms] odd:-translate-y-5 even:translate-y-5 hover:grayscale-0 hover:grayscale-0 hover:flex-[3]"
-                >
+                
+                <div class="relative border-4 border-[#B8CFCE] card lg:flex-1 h-48 lg:h-full cursor-pointer transition-all duration-[400ms] lg:odd:-translate-y-5 lg:even:translate-y-5 hover:grayscale-0 lg:hover:flex-[3] hover:h-full lg:hover:h-full">
                     <img src="img/office.jpg" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity hover:duration-700 hover:opacity-100">
-                        <p class="text-white text-center px-4">
-                            I work as part of a team in a corporate company, developing systems for different departments and gradually integrating them into a unified ERP. Our goal is to streamline operations and enhance efficiency through advanced technology.
+                        <p class="text-white text-center px-4 text-sm lg:text-base">
+                            I work as part of a team in a corporate company, developing systems for different departments and gradually integrating them into a unified ERP system.
                         </p>
                     </div>
                 </div>
