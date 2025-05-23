@@ -14,7 +14,7 @@
 
         <title>JDR Portfolio</title>
     </head>
-    <body class="font-inter bg-slate-800 h-screen">
+    <body class="font-inter bg-[#EAEFEF] h-screen">
         <!-- Section 1 -->
         <ul class="box-area">
             <li></li>
@@ -26,7 +26,7 @@
         </ul>
         <div class="h-screen flex items-center justify-center">
             <a @click="document.querySelector('#next-section').scrollIntoView({ behavior: 'smooth' })" class="font-doergon font-black" x-data>
-                <button style="--clr:#FFCC00" class="button"><span>START</span><i></i></button>
+                <button style=" --clr:#7F8CAA" class="button"><span>START</span><i></i></button>
             </a>
         </div>
 
@@ -34,7 +34,7 @@
         <div id="next-section" class="h-screen bg-white">
             <div class="p-5">
                 <div class="border-2 border-black bg-black pl-1 pb-1">
-                    <div class="bg-[#FFCC00] pl-2">
+                    <div class="bg-[#B8CFCE] pl-2">
                         <h1 class="text-3xl font-bold font-doergon">JHENRICH D. ROQUIOS</h1>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                             <!-- Toga Picture Container - top-right corner on PC -->
                             <div class="relative w-full lg:max-w-[300px] aspect-[1] order-1 lg:order-2 lg:ml-5">
                                 <div class="absolute top-1 left-1 bg-black w-full h-full rounded-lg shadow-lg"></div>
-                                <div class="relative bg-[#FFCC00] px-6 py-3 border-2 border-black rounded-lg shadow-lg">
+                                <div class="relative bg-[#B8CFCE] px-6 py-3 border-2 border-black rounded-lg shadow-lg">
                                     <img src="img/toga.png" alt="Toga" class="w-full h-auto lg:max-w-full lg:max-h-72">
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
                     
                     <div class="col-span-4">
                         <div class="flex justify-center mr-6">
-                            <p class="text-2xl font-bold font-doergon hover:font-academy hover:text-[#FFCC00] hover:text-3xl hover:tracking-widest">
+                            <p class="text-2xl font-bold font-doergon hover:font-academy hover:text-[#333446] hover:text-3xl hover:tracking-widest">
                                 Socials and Contact
                             </p>   
                         </div> 
@@ -116,12 +116,12 @@
                         </div>
                     </div>
                     <div class="flex justify-center gap-x-5 font-doergon text-sm">
-                        <button class="border rounded-lg bg-[#FFCC00] hover:bg-[#FFAA1D] hover:p-2 hover:outline">
+                        <button class="border rounded-lg bg-[#7F8CAA] hover:text-[#B8CFCE] hover:bg-[#333446] hover:p-2 hover:outline">
                             <a href="Jhenrich De Vera Roquios - cv.pdf" download class="p-2">
                                 CV Download
                             </a>
                         </button>
-                        <button class="border rounded-lg bg-[#FFCC00] hover:bg-[#FFAA1D] hover:p-2 hover:outline">
+                        <button class="border rounded-lg bg-[#7F8CAA] hover:bg-[#333446] hover:text-[#B8CFCE] hover:p-2 hover:outline">
                             <a href="resume_.pdf" download class="p-2">
                                 Resume Download
                             </a>
@@ -137,24 +137,14 @@
                             <img 
                                 src="img/arrow-down.svg" 
                                 alt="Arrow Down" 
-                                class="w-10 h-10 rounded-full bg-black transition-all group-hover:opacity-0">
-                            <!-- Hover text -->
-                            <span 
-                                class="hidden group-hover:inline-block font-black text-xl rounded-xl p-3 z-50">
-                                Go Ahead!
-                            </span>
-                            <!-- Background image appears only on hover -->
-                            <div 
-                                class="absolute inset-0 bg-cover bg-center scale-0 group-hover:scale-150 transition-transform duration-700 z-0" 
-                                style="background-image: url('img/boom-box.png'); z-index: 0; pointer-events: none;">
-                            </div>
+                                class="w-10 h-10 hover:w-12 hover:h-12">
                         </button>                                          
                     </div>                
                 </div>                             
             </div>
         </div>
         
-        <div id="third-section" class=" box-area-bottom h-screen bg-slate-800 flex items-center justify-center">
+        <div id="third-section" class=" box-area-bottom h-screen bg-[#B8CFCE] flex items-center justify-center">
             <ul class="absolute top-0 left-0 w-full z-0">
                 <li class="box-area-bottom"></li>
                 <li class="box-area-bottom"></li>
@@ -163,7 +153,7 @@
                 <li class="box-area-bottom"></li>
                 <li class="box-area-bottom"></li>
             </ul>
-            <div class="w-[70%] bg-[#FFCC00] max-w-[8000vh] h-[500px] px-5 flex justify-center items-stretch gap-5 transition-all duration-[400ms] group">
+            <div class="w-[70%] bg-[#333446] max-w-[8000vh] h-[500px] px-5 flex justify-center items-stretch gap-5 transition-all duration-[400ms] group">
                 <div class="relative group bg-black border-4 border-white card flex-1 h-full cursor-pointer transition-all duration-400 odd:-translate-y-5 even:translate-y-5 hover:grayscale-0 hover:flex-[3]">
                     <img src="img/bg_55.png" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity hover:duration-700 hover:opacity-100">

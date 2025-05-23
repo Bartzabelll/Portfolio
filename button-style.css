@@ -45,7 +45,7 @@ a {
 
 .button {
   position: relative;
-  background: #444;
+  background: #333446;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
@@ -99,7 +99,7 @@ a {
   width: 15px;
   height: 20px;
   left: 20%;
-  background: #ffc401;
+  background: #7F8CAA;
   animation: move 3s infinite;
 }
 

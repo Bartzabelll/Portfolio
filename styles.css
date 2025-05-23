@@ -39,7 +39,7 @@
     list-style: none;
     width: 25px;
     height: 25px;
-    background: rgba(255, 206, 44, 0.903);
+    background: #333446;
     animation: animate 20s linear infinite;
     top: -150px;
   }
@@ -109,7 +109,7 @@
   list-style: none;
   width: 25px;
   height: 25px;
-  background: rgba(255, 206, 44, 0.903);
+  background:#B8CFCE;
   animation: animate 10s linear infinite;
   top: -150;
 }
@@ -172,7 +172,7 @@
 
 .github-calendar {
   max-width: 100%;
-  background: #FFCC00; /* Yellow background */
+  background: #7F8CAA; /* Yellow background */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
   padding: 10px; /* Optional: Add padding if needed */
