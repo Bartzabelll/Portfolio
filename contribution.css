@@ -255,10 +255,10 @@ button:hover {
 /* Theme Variations */
 .theme-github {
     --level-0: #ebedf0;
-    --level-1: #9be9a8;
-    --level-2: #40c463;
-    --level-3: #30a14e;
-    --level-4: #216e39;
+    --level-1: 		#3ff5ff;
+    --level-2: 			#00d5e1;
+    --level-3: 		#009ea7;
+    --level-4: 			#006b71;
 }
 
 .theme-ocean {
