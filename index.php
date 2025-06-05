@@ -12,7 +12,7 @@
 
         <title>JDR Portfolio</title>
     </head>
-    <body class="font-inter bg-[#EAEFEF] h-screen">
+    <body class="font-inter bg-slate-200 h-screen">
         <!-- Section 1 -->
         <ul class="box-area">
             <li></li>
@@ -47,7 +47,7 @@
                             <!-- GitHub Calendar -->
                             <div class="w-full github-calendar-container font-roboto text-sm flex justify-center relative">
                                 <div class="absolute top-1 left-1 bg-black w-full h-full rounded-lg shadow-lg"></div>
-                                <div class="w-full relative p-3 lg:p-4 border-2 border-black rounded-lg shadow-lg bg-white overflow-x-auto">
+                                <div class="w-full relative p-3 lg:p-4 border-2 border-black rounded-lg shadow-lg bg-zinc-50 bg-opacity-95 overflow-x-auto ">
                                     <img src="https://ghchart.rshah.org/Bartzabell?timestamp=20250605" alt="GitHub chart" class="w-full">
                                 </div>
                             </div>
