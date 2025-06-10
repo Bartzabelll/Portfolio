@@ -56,6 +56,12 @@ a {
   transition: 0.2s;
 }
 
+@media (max-width: 1000px) {
+  .button {
+    font-size: 10rem;
+  }
+}
+
 .button:hover {
   letter-spacing: 0.2rem;
   padding: 1.1rem 3.1rem;
