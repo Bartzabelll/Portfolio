@@ -109,7 +109,9 @@
 .day {
     width: 16px;
     height: 16px;
-    border-radius: 100%;
+    border-radius: 20%;
+    border-color: black;
+    border-width: 1px;
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
@@ -117,8 +119,8 @@
 
 @media (max-width: 1000px) {
   .day {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
   }
 }
 
