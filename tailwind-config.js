@@ -16,6 +16,7 @@ tailwind.config = {
                 'academy': ['academy', 'sans-serif'],
                 'doergon': ['doergon', 'sans-serif'],
                 'actionj': ['actionj', 'sans-serif'],
+                'rockwell': ['rockwell', '  serif'],
             },
             screens: {
                 'mobile-custom': '375px',

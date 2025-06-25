@@ -33,6 +33,13 @@
     src: url('./fonts/actionj.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'rockwell';
+    font-weight: bold;
+    font-style: normal;
+    src: url('./fonts/rockwell-bold.ttf') format('truetype');
+}
+
 .box-area li {
     position: absolute;
     display: block;
