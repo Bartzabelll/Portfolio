@@ -811,3 +811,12 @@ function showDayContextMenu(event) {
         }, { once: true });
     }, 10);
 }
+
+const image = document.getElementById('profileImage');
+    const images = ['img/me.png', 'img/biker-me.png'];
+    let index = 0;
+
+    setInterval(() => {
+        index = (index + 1) % images.length;
+        image.src = images[index];
+    }, 3000);
