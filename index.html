@@ -107,7 +107,7 @@
                 <!-- Header -->
                 <div class="border-2 border-black bg-black pl-1 pb-1">
                     <div class="bg-[#B8CFCE] pl-2">
-                        <h1 class="text-6xl text-center p-2 lg:text-left lg:text-3xl font-black font-inter lg:tracking-[1em] tracking-[.2em]">JHENRICH D. ROQUIOS</h1>
+                        <h1 class="text-6xl text-center p-2 lg:text-left lg:text-3xl font-black font-square lg:tracking-[1em] tracking-[.2em]">JHENRICH D. ROQUIOS</h1>
                     </div>
                 </div>
                 
@@ -334,40 +334,72 @@
                 </div>
             </div>
         </div>
-        <div id="fourth-section" class="min-h-screen bg-[#B8CFCE]">
-            <div class="font-black tracking-[.5em] hover:underline text-6xl text-center pb-10 font-inter">TEAM PROJECTS</div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 px-5">
-                <div class="mb-5 p-5 lg:p-2 text-center lg:text-left">
-                    <h1 class="font-bold text-5xl pb-2 lg:text-2xl">Appointment and Scheduling System</h1>
-                    <img src="img/DentalClinic/landing.png" class="w-full h-full object-cover" />
+        <div id="fourth-section" class="min-h-screen bg-[#B8CFCE] py-20">
+            <div class="font-black tracking-[.5em] hover:underline text-6xl text-center pb-10 font-square"> PROJECTS</div>
+            
+            <!-- Project Titles List -->
+            <div class="justify-center text-center mb-10">
+                <ul class="space-y-3 text-2xl">
+                    <li class="hover:text-gray-700 transition-colors cursor-pointer" onclick="showSlide(0)">• Appointment and Scheduling System</li>
+                    <li class="hover:text-gray-700 transition-colors cursor-pointer" onclick="showSlide(1)">• Quality Assurance System</li>
+                    <li class="hover:text-gray-700 transition-colors cursor-pointer" onclick="showSlide(2)">• Performance Management System</li>
+                    <li class="hover:text-gray-700 transition-colors cursor-pointer" onclick="showSlide(3)">• Appraisal System</li>
+                    <li class="hover:text-gray-700 transition-colors cursor-pointer" onclick="showSlide(4)">• Record/Document Management System</li>
+                    <li class="hover:text-gray-700 transition-colors cursor-pointer" onclick="showSlide(5)">• Point of Sale and Appointment System</li>
+                    <li class="hover:text-gray-700 transition-colors cursor-pointer" onclick="showSlide(6)">• Inventory Management System</li>
+                    <li class="hover:text-gray-700 transition-colors cursor-pointer" onclick="showSlide(7)">• Recycling Management System</li>
+                </ul>
+            </div>
+
+            <!-- Carousel Gallery -->
+            <div class="relative max-w-4xl mx-auto px-5">
+                <div class="carousel-container overflow-hidden rounded-lg shadow-lg">
+                    <div class="carousel-wrapper flex transition-transform duration-500 ease-in-out" id="carousel">
+                        <div class="carousel-slide min-w-full">
+                            <img src="img/DentalClinic/landing.png" class="w-full h-96 object-cover" alt="Appointment and Scheduling System">
+                        </div>
+                        <div class="carousel-slide min-w-full">
+                            <img src="img/QA/1.png" class="w-full h-96 object-cover" alt="Quality Assurance System">
+                        </div>
+                        <div class="carousel-slide min-w-full">
+                            <img src="img/ManagementDashboard/sampledata.png" class="w-full h-96 object-cover" alt="Performance Management System">
+                        </div>
+                        <div class="carousel-slide min-w-full">
+                            <img src="img/Appraisal/appraisal.png" class="w-full h-96 object-cover" alt="Appraisal System">
+                        </div>
+                        <div class="carousel-slide min-w-full">
+                            <img src="img/SchoolClinic/clinic.png" class="w-full h-96 object-cover" alt="Record/Document Management System">
+                        </div>
+                        <div class="carousel-slide min-w-full">
+                            <img src="img/Tyremaster/tyremaster.png" class="w-full h-96 object-cover" alt="Point of Sale and Appointment System">
+                        </div>
+                        <div class="carousel-slide min-w-full">
+                            <img src="img/Tyremaster/inventory.png" class="w-full h-96 object-cover" alt="Inventory Management System">
+                        </div>
+                        <div class="carousel-slide min-w-full">
+                            <img src="img/RecyclingManagementSystem/rms.png" class="w-full h-96 object-cover" alt="Recycling Management System">
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-5 p-5 lg:p-2 text-center lg:text-left">
-                     <h1 class="font-bold text-5xl pb-2 lg:text-2xl">Quality Assurance System</h1>
-                    <img src="img/QA/1.png" class="w-full h-full object-cover" />
-                </div>
-                <div class="mb-5 p-5 lg:p-2 text-center lg:text-left">
-                    <h1 class="font-bold text-5xl pb-2 lg:text-2xl">Performance Management System</h1>
-                    <img src="img/ManagementDashboard/sampledata.png" class="w-full h-full object-cover" />
-                </div>
-                <div class="mb-5 p-5 lg:p-2 text-center lg:text-left">
-                    <h1 class="font-bold text-5xl pb-2 lg:text-2xl">Appraisal System</h1>
-                    <img src="img/Appraisal/appraisal.png" alt="appraisal system" class="w-full h-full object-cover" />
-                </div>
-                <div class="mb-5 p-5 lg:p-2 text-center lg:text-left">
-                    <h1 class="font-bold text-5xl pb-2 lg:text-2xl">Record/Document Management System</h1>
-                    <img src="img/SchoolClinic/clinic.png" alt="Document Management System" class="w-full h-full object-cover" />
-                </div>
-                <div class="mb-5 p-5 lg:p-2 text-center lg:text-left">
-                    <h1 class="font-bold text-5xl pb-2 lg:text-2xl">Point of Sale and Appointment System</h1>
-                    <img src="img/Tyremaster/tyremaster.png" alt="Point of Sale and Appointment System" class="w-full h-full object-cover" />
-                </div>
-                <div class="mb-5 p-5 lg:p-2 text-center lg:text-left">
-                    <h1 class="font-bold text-5xl pb-2 lg:text-2xl">Inventory Management System</h1>
-                    <img src="img/Tyremaster/inventory.png" alt="Inventory Management System" class="w-full h-full object-cover" />
-                </div>
-                <div class="mb-5 p-5 lg:p-2 text-center lg:text-left">
-                    <h1 class="font-bold text-5xl pb-2 lg:text-2xl">Recycling Management System</h1>
-                    <img src="img/RecyclingManagementSystem/rms.png" class="w-full h-full object-cover" />
+                
+                <!-- Navigation Buttons -->
+                <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all" onclick="previousSlide()">
+                    &#8249;
+                </button>
+                <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all" onclick="nextSlide()">
+                    &#8250;
+                </button>
+                
+                <!-- Dots Indicator -->
+                <div class="flex justify-center mt-4 space-x-2">
+                    <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer hover:bg-gray-600 transition-colors" onclick="showSlide(0)"></span>
+                    <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer hover:bg-gray-600 transition-colors" onclick="showSlide(1)"></span>
+                    <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer hover:bg-gray-600 transition-colors" onclick="showSlide(2)"></span>
+                    <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer hover:bg-gray-600 transition-colors" onclick="showSlide(3)"></span>
+                    <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer hover:bg-gray-600 transition-colors" onclick="showSlide(4)"></span>
+                    <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer hover:bg-gray-600 transition-colors" onclick="showSlide(5)"></span>
+                    <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer hover:bg-gray-600 transition-colors" onclick="showSlide(6)"></span>
+                    <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer hover:bg-gray-600 transition-colors" onclick="showSlide(7)"></span>
                 </div>
             </div>
         </div>

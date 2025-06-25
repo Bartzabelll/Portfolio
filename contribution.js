@@ -820,3 +820,50 @@ const image = document.getElementById('profileImage');
         index = (index + 1) % images.length;
         image.src = images[index];
     }, 3000);
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const carousel = document.getElementById('carousel');
+    const totalSlides = slides.length;
+
+    // Initialize the carousel
+    function initCarousel() {
+        updateCarousel();
+        updateDots();
+    }
+
+    // Update carousel position
+    function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Update dot indicators
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('bg-gray-600', index === currentSlide);
+            dot.classList.toggle('bg-gray-400', index !== currentSlide);
+        });
+    }
+
+    // Show specific slide
+    function showSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+        updateDots();
+    }
+
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+        updateDots();
+    }
+
+    // Previous slide
+    function previousSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+        updateDots();
+    }
+document.addEventListener('DOMContentLoaded', initCarousel);
