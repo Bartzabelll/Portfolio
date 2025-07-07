@@ -35,6 +35,10 @@ a {
   text-decoration: none;
 }
 
+.text-stroke {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #f59e0b; /* amber-500 */
+}
 
 
 
