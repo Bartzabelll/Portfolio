@@ -40,6 +40,12 @@ a {
   -webkit-text-stroke-color: #f59e0b; /* amber-500 */
 }
 
+.text-stroke-black {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000000; /* amber-500 */
+}
+
+
 
 
 

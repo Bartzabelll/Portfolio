@@ -46,7 +46,7 @@
     list-style: none;
     width: 25px;
     height: 25px;
-    background: #333446;
+    background: #ffd500;
     animation: animate 20s linear infinite;
     top: -150px;
   }
