@@ -12,10 +12,16 @@
 
         <title>JDR Portfolio</title>
     </head>
-    <body class="font-inter bg-gray-950 h-screen" style="background: url('img/jd-bg.png') no-repeat center center fixed; background-size: cover;">
+    <body id="body" class="font-inter bg-gray-950 h-screen bg-[url('img/jd-bg-halloween.png')] bg-cover bg-center bg-fixed">
+
+        <!-- Floating Toggle Button -->
+        <button id="themeToggle" 
+            class="fixed top-4 right-4 z-[9999] bg-slate-500 text-black px-4 py-2 rounded-full shadow-lg hover:bg-amber-600 transition">
+            🎃
+        </button>
 
         <!-- Section 1 -->
-        <ul class="box-area">
+        <ul id="defaultBox" class="hidden box-area">
             <li></li>
             <li></li>
             <li></li>
@@ -23,14 +29,23 @@
             <li></li>
             <li></li>
         </ul>
-        <div class="h-screen grid grid-cols-3 p-10">
+        <ul id="halloweenBox" class="box-area-halloween">
+            <li>E</li>
+            <li>L</li>
+            <li>T</li>
+            <li>S</li>
+            <li>Y</li>
+            <li>W</li>
+        </ul>
+
+        <div id="defaultTheme" class=" hidden h-screen grid grid-cols-3 p-10">
             <div class="col-span-3 items-center text-center z-50">
                 <h1 class="text-7xl font-square text-amber-500 lg:text-black tracking-[.4em] text-stroke">
                     JHENRICH D. ROQUIOS
                 </h1>
             </div>
             <div class="pl-0 col-span-3 flex justify-center lg:col-span-1 z-50 image-stroke">
-                <img src="img/me.png" class="h-[300px] w-[300px]" />
+                <img id="defaultTheme" src="img/me.png" class="h-[300px] w-[300px]" />
             </div>
             <div class="col-span-3 lg:col-span-2 z-50">
                 <div>
@@ -87,6 +102,76 @@
                 <a @click="document.querySelector('#next-section').scrollIntoView({ behavior: 'smooth' })" x-data>
                     <button class="bg-amber-500 hover:bg-black rounded-bl-full rounded-tl-md rounded-tr-full bg-amber-500 px-5 py-3 hover:text-amber-500 border-2 border-black hover:border-amber-500">
                         <span class="font-inter mx-5 font-black text-2xl tracking-[.1em]">View More</span><i></i>
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div id="halloweenTheme" class="h-screen grid grid-cols-3 p-10">
+            <div class="col-span-3 items-center text-center z-50">
+
+                <h1 class="text-7xl font-halloween text-amber-500 lg:text-black tracking-[.4em] text-stroke-red">
+                    JHENRICH <span class="font-halloween-icon text-8xl"> K </span> 
+                    <span class="text-[#fc0000] text-stroke-black">ROQUIOS</span>
+                </h1>
+            </div>
+            <div class="pl-0 col-span-3 flex justify-center lg:col-span-1 z-50 image-stroke-halloween">
+                <img id="defaultTheme" src="img/me-halloween.png" class="h-[300px] w-[300px]" />
+            </div>
+            <div class="col-span-3 lg:col-span-2 z-50">
+                <div>
+                    <h2 class=" text-7xl lg:text-5xl font-halloween font-black tracking-[.5em] text-black text-stroke-red leading-relaxed">
+                        FULL-STACK<br>
+                        <span class="text-red-600 text-stroke-black">DEVELOPER</span>
+                    </h2>
+                    <p class="text-2xl font-halloween2 font-black text-black mt-2 tracking-[.5em] text-stroke-thinred">
+                        BACKEND-HEAVY
+                    </p>
+                </div>
+                
+                <p class="text-2xl text-white font-halloween2 font-bold leading-relaxed text-stroke-thinred tracking-[.5em]  ">
+                    I'm a full-stack developer mainly focused on back-end development, with some front-end capabilities.
+                </p>
+                <div class="flex justify-center gap-x-5 font-halloween items-center mt-5 ">
+                    <button class="px-2 hover:text-[#fc0000] text-3xl text-stroke-white">
+                        <a href="Jhenrich De Vera Roquios - cv.pdf" download class="block p-3">
+                            <span class="font-halloween-icon text-4xl text-white text-stroke-black">T</span> Curriculum Vitae
+                        </a>
+                    </button>
+                    <button class=" px-2 hover:text-[#fc0000] text-3xl">
+                        <a href="Resume.pdf" download class="block p-3 text-stroke-white">
+                            <span class="font-halloween-icon text-4xl text-white text-stroke-black">T</span>Resume 
+                        </a>
+                    </button>
+                </div>
+            </div>
+            <div class="col-span-3 lg:col-span-2 lg:pl-10 font-halloween2">
+                <div>
+                    <h2 class="text-4xl font-halloween text-stroke-red font-black tracking-[.5em] text-black leading-relaxed">
+                        SERVICES
+                    </h2>
+                </div>
+                
+                <li class="text-lg text-gray-300 leading-relaxed ">
+                    Software Development and Maintenance
+                </li>
+                <li class="text-lg text-gray-300 leading-relaxed ">
+                    Web Development and Maintenance
+                </li>
+                <li class="text-lg text-gray-300 leading-relaxed ">
+                    System Projects / Thesis / Capstones 
+                </li>
+                <li class="text-lg text-gray-300 leading-relaxed ">
+                    Data Analysis / Visualization / Quality Assurance / Documentation
+                </li>
+                <li class="text-lg text-gray-300 leading-relaxed ">
+                    Database Management
+                </li>
+            </div>
+            <div class="flex justify-center col-span-3 lg:col-span-1 lg:justify-end lg:items-end lg:pr-20">
+
+                <a @click="document.querySelector('#next-section').scrollIntoView({ behavior: 'smooth' })" x-data>
+                    <button class="px-2 py-3 text-slate-400 hover:text-[#fc0000] ">
+                        <span class="font-halloween mx-5 text-4xl text-stroke-black tracking-[.1em]">View More...</span><i></i>
                     </button>
                 </a>
             </div>

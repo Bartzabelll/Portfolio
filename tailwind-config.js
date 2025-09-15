@@ -17,6 +17,9 @@ tailwind.config = {
                 'doergon': ['doergon', 'sans-serif'],
                 'actionj': ['actionj', 'sans-serif'],
                 'rockwell': ['rockwell', '  serif'],
+                'halloween': ['halloween', 'sans-serif'],
+                'halloween2': ['halloween2', 'sans-serif'],
+                'halloween-icon': ['halloween-icon', 'sans-serif'],
             },
             screens: {
                 'mobile-custom': '375px',

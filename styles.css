@@ -40,6 +40,27 @@
     src: url('./fonts/rockwell-bold.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'halloween';
+    font-weight: bold;
+    font-style: normal;
+    src: url('./fonts/halloween.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'halloween-icon';
+    font-weight: bold;
+    font-style: normal;
+    src: url('./fonts/halloween-icon.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'halloween2';
+    /* font-weight: bold; */
+    font-style: normal;
+    src: url('./fonts/halloween2.ttf') format('truetype');
+}
+
 .box-area li {
     position: absolute;
     display: block;
@@ -98,6 +119,53 @@
         opacity: 0;
     }
 }
+
+.box-area-halloween li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    font-family: "Halloween-Icon", sans-serif; /* custom font */
+    text-align: center;
+    line-height: 1;
+    color: #ff1100;
+    animation: animate 20s linear infinite;
+    top: -150px;
+}
+
+/* Match sizes with font-size instead of box width/height */
+.box-area-halloween li:nth-child(1) {
+    left: 86%;
+    font-size: 80px;
+    animation-delay: 7s;
+}
+.box-area-halloween li:nth-child(2) {
+    left: 12%;
+    font-size: 30px;
+    animation-delay: 1.5s;
+    animation-duration: 5s;
+}
+.box-area-halloween li:nth-child(3) {
+    left: 70%;
+    font-size: 100px;
+    animation-delay: 5.5s;
+}
+.box-area-halloween li:nth-child(4) {
+    left: 42%;
+    font-size: 150px;
+    animation-delay: 0s;
+    animation-duration: 6s;
+}
+.box-area-halloween li:nth-child(5) {
+    left: 65%;
+    font-size: 40px;
+    animation-delay: 7s;
+}
+.box-area-halloween li:nth-child(6) {
+    left: 15%;
+    font-size: 110px;
+    animation-delay: 3.5s;
+}
+
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
@@ -158,6 +226,7 @@
   height: 110px;
   animation-delay: 3.5s;
 }
+
 @keyframes animate {
   0% {
       transform: translateY(0) rotate(0deg);

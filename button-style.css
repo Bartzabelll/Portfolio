@@ -45,6 +45,31 @@ a {
   -webkit-text-stroke-color: #000000; /* amber-500 */
 }
 
+.text-stroke-white {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffffff; /* amber-500 */
+}
+
+.text-stroke-red {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #c00707; /* amber-500 */
+}
+
+.text-stroke-lightred {
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: #c00707; /* amber-500 */
+}
+
+.text-stroke-thin {
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: #000000; /* amber-500 */
+}
+
+.text-stroke-thinred {
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: #ad0000; /* amber-500 */
+}
+
 .image-stroke {
   filter: drop-shadow(0 0 0px #000000) /* no shadow */
           drop-shadow(2px 0 0 #000000) /* position to the right */
@@ -53,9 +78,11 @@ a {
           drop-shadow(0 -2px 0 #000000); /* position above */
 }
 
-
-
-
-
-
+.image-stroke-halloween {
+  filter: drop-shadow(0 0 0px #000000) /* no shadow */
+          drop-shadow(2px 0 0 #000000) /* position to the right */
+          drop-shadow(-10px 0 0 #000000) /* position to the left */
+          drop-shadow(0 2px 0 #000000) /* position below */
+          drop-shadow(0 -2px 0 #000000); /* position above */
+}
 
