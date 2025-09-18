@@ -239,3 +239,32 @@ class GitHubContributionMap {
 document.addEventListener('DOMContentLoaded', () => {
     window.contributionMap = new GitHubContributionMap();
 });
+
+const toggleBtn = document.getElementById("themeToggle");
+    const defaultTheme = document.getElementById("defaultTheme");
+    const halloweenTheme = document.getElementById("halloweenTheme");
+    const defaultBox = document.getElementById("defaultBox");
+    const halloweenBox = document.getElementById("halloweenBox");
+    const body = document.getElementById("body");
+
+    let isHalloween = true; // default
+
+    toggleBtn.addEventListener("click", () => {
+        isHalloween = !isHalloween;
+
+        if (isHalloween) {
+            halloweenTheme.classList.remove("hidden");
+            defaultTheme.classList.add("hidden");
+            halloweenBox.classList.remove("hidden");
+            defaultBox.classList.add("hidden");
+            body.style.backgroundImage = "url('img/jd-bg-halloween.png')";
+            toggleBtn.textContent = "🎃"; // Halloween icon
+        } else {
+            defaultTheme.classList.remove("hidden");
+            halloweenTheme.classList.add("hidden");
+            defaultBox.classList.remove("hidden");
+            halloweenBox.classList.add("hidden");
+            body.style.backgroundImage = "url('img/jd-bg.png')";
+            toggleBtn.textContent = "🌙"; // Default icon
+        }
+    });
