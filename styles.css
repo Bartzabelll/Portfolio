@@ -28,7 +28,7 @@
 
 @font-face {
     font-family: 'actionj';
-    font-weight: bold;
+    font-weight: bolder;
     font-style: normal;
     src: url('./fonts/actionj.ttf') format('truetype');
 }
@@ -38,6 +38,13 @@
     font-weight: bold;
     font-style: normal;
     src: url('./fonts/rockwell-bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'tallfont';
+    font-weight: bold;
+    font-style: normal;
+    src: url('./fonts/tallfont.otf') format('truetype');
 }
 
 .box-area li {

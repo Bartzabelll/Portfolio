@@ -17,6 +17,7 @@ tailwind.config = {
                 'doergon': ['doergon', 'sans-serif'],
                 'actionj': ['actionj', 'sans-serif'],
                 'rockwell': ['rockwell', '  serif'],
+                'tallfont': ['tallfont', 'sans-serif'],
             },
             screens: {
                 'mobile-custom': '375px',

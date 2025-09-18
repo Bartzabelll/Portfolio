@@ -24,9 +24,9 @@
             <li></li>
         </ul>
         <div class="h-screen grid grid-cols-3 p-10">
-            <div class="col-span-3 items-center text-center z-50">
-                <h1 class="text-7xl font-square text-amber-500 lg:text-black tracking-[.4em] text-stroke">
-                    JHENRICH D. ROQUIOS
+            <div class="col-span-3 items-center text-center z-50 pb-10">
+                <h1 class="text-7xl font-tallfont text-amber-500 text-black tracking-[.2em] lg:tracking-[.5em] text-stroke">
+                    <span class="text-8xl text-amber-500 text-stroke-black">J</span>HENRICH D. <span class="text-stroke-black text-8xl text-amber-500">R</span>OQUIOS
                 </h1>
             </div>
             <div class="pl-0 col-span-3 flex justify-center lg:col-span-1 z-50 image-stroke">
@@ -47,12 +47,12 @@
                     I'm a full-stack developer mainly focused on back-end development, with some front-end capabilities.
                 </p>
                 <div class="flex justify-center gap-x-5 items-center mt-5">
-                    <button class="bg-amber-500 rounded-tl-full rounded-br-full px-2 font-inter font-black border-2 border-black hover:bg-black hover:text-amber-500 hover:border-amber-500">
+                    <button class="bg-amber-500  px-2 font-inter font-black border-2 border-black hover:bg-black hover:text-amber-500 hover:border-amber-500">
                         <a href="Jhenrich De Vera Roquios - cv.pdf" download class="block p-3">
                             Curriculum Vitae (CV)
                         </a>
                     </button>
-                    <button class="bg-amber-500 rounded-tl-full rounded-br-full px-2 font-inter font-black border-2 border-black hover:bg-black hover:text-amber-500 hover:border-amber-500">
+                    <button class="bg-amber-500 px-2 font-inter font-black border-2 border-black hover:bg-black hover:text-amber-500 hover:border-amber-500">
                         <a href="Resume.pdf" download class="block p-3">
                             Resume 
                         </a>
@@ -85,7 +85,7 @@
             <div class="flex justify-center col-span-3 lg:col-span-1 lg:justify-end lg:items-end lg:pr-20">
 
                 <a @click="document.querySelector('#next-section').scrollIntoView({ behavior: 'smooth' })" x-data>
-                    <button class="bg-amber-500 hover:bg-black rounded-bl-full rounded-tl-md rounded-tr-full bg-amber-500 px-5 py-3 hover:text-amber-500 border-2 border-black hover:border-amber-500">
+                    <button class="bg-amber-500 hover:bg-black bg-amber-500 px-5 py-3 hover:text-amber-500 border-2 border-black hover:border-amber-500">
                         <span class="font-inter mx-5 font-black text-2xl tracking-[.1em]">View More</span><i></i>
                     </button>
                 </a>
@@ -93,7 +93,7 @@
         </div>
 
         <!-- Combined Section 2 & 3 - Mobile Optimized -->
-        <div id="next-section" class="min-h-screen lg:h-auto bg-amber-400">
+        <div id="next-section" class="min-h-screen lg:h-auto" style="background: url('img/yellow-emboss.png') no-repeat center; background-size: cover;">
             <div class="p-3 lg:p-5">
                 
                 <!-- Main Content Container -->
