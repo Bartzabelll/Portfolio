@@ -17,6 +17,7 @@ tailwind.config = {
                 'doergon': ['doergon', 'sans-serif'],
                 'actionj': ['actionj', 'sans-serif'],
                 'rockwell': ['rockwell', '  serif'],
+                'tallfont': ['tallfont', 'sans-serif'],
                 'halloween': ['halloween', 'sans-serif'],
                 'halloween2': ['halloween2', 'sans-serif'],
                 'halloween-icon': ['halloween-icon', 'sans-serif'],

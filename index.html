@@ -62,12 +62,12 @@
                     I'm a full-stack developer mainly focused on back-end development, with some front-end capabilities.
                 </p>
                 <div class="flex justify-center gap-x-5 items-center mt-5">
-                    <button class="bg-amber-500 rounded-tl-full rounded-br-full px-2 font-inter font-black border-2 border-black hover:bg-black hover:text-amber-500 hover:border-amber-500">
+                    <button class="bg-amber-500  px-2 font-inter font-black border-2 border-black hover:bg-black hover:text-amber-500 hover:border-amber-500">
                         <a href="Jhenrich De Vera Roquios - cv.pdf" download class="block p-3">
                             Curriculum Vitae (CV)
                         </a>
                     </button>
-                    <button class="bg-amber-500 rounded-tl-full rounded-br-full px-2 font-inter font-black border-2 border-black hover:bg-black hover:text-amber-500 hover:border-amber-500">
+                    <button class="bg-amber-500 px-2 font-inter font-black border-2 border-black hover:bg-black hover:text-amber-500 hover:border-amber-500">
                         <a href="Resume.pdf" download class="block p-3">
                             Resume 
                         </a>
@@ -100,7 +100,7 @@
             <div class="flex justify-center col-span-3 lg:col-span-1 lg:justify-end lg:items-end lg:pr-20">
 
                 <a @click="document.querySelector('#next-section').scrollIntoView({ behavior: 'smooth' })" x-data>
-                    <button class="bg-amber-500 hover:bg-black rounded-bl-full rounded-tl-md rounded-tr-full bg-amber-500 px-5 py-3 hover:text-amber-500 border-2 border-black hover:border-amber-500">
+                    <button class="bg-amber-500 hover:bg-black bg-amber-500 px-5 py-3 hover:text-amber-500 border-2 border-black hover:border-amber-500">
                         <span class="font-inter mx-5 font-black text-2xl tracking-[.1em]">View More</span><i></i>
                     </button>
                 </a>
@@ -178,7 +178,7 @@
         </div>
 
         <!-- Combined Section 2 & 3 - Mobile Optimized -->
-        <div id="next-section" class="min-h-screen lg:h-auto bg-amber-400">
+        <div id="next-section" class="min-h-screen lg:h-auto" style="background: url('img/yellow-emboss.png') no-repeat center; background-size: cover;">
             <div class="p-3 lg:p-5">
                 
                 <!-- Main Content Container -->
@@ -189,26 +189,13 @@
                         <div class="order-2 lg:order-1 w-full lg:flex-1">
                             <!-- GitHub Calendar -->
                             <div class="w-full h-[200px] github-calendar-container font-roboto text-sm flex justify-center relative">
-                                <!-- <div class="absolute top-1 left-1 bg-black w-full h-full rounded-lg shadow-lg"></div> -->
                                 <div class="w-full relative rounded-lg">
                                     <div class="contribution-wrapper">
                                         <div class="contribution-header hidden">
                                             <span class="contribution-count">
                                                 <span id="total-contributions">0</span> contributions in the last year
                                             </span>
-                                            <div class="legend">
-                                                <span>Less</span>
-                                                <div class="legend-colors">
-                                                    <div class="legend-color level-0" title="No contributions"></div>
-                                                    <div class="legend-color level-1" title="1-3 contributions"></div>
-                                                    <div class="legend-color level-2" title="4-6 contributions"></div>
-                                                    <div class="legend-color level-3" title="7-9 contributions"></div>
-                                                    <div class="legend-color level-4" title="10+ contributions"></div>
-                                                </div>
-                                                <span>More</span>
-                                            </div>
                                         </div>
-                                        
                                         <div class="contribution-graph h-[180px]">                                           
                                             <div class="days-container h-[160px]">
                                                 <div class="contribution-days" id="contribution-grid">
@@ -219,41 +206,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="customization-panel hidden">
-                                <h3>Customize Your Map</h3>
-                                <div class="controls">
-                                    <div class="control-group">
-                                        <label for="theme-select">Theme:</label>
-                                        <select id="theme-select">
-                                            <option value="github">GitHub</option>
-                                            <option value="ocean">Ocean</option>
-                                            <option value="sunset">Sunset</option>
-                                            <option value="forest">Forest</option>
-                                            <option value="neon">Neon</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="control-group">
-                                        <label for="animation-toggle">Animations:</label>
-                                        <input type="checkbox" id="animation-toggle" checked>
-                                    </div>
-                                    
-                                    <div class="control-group">
-                                        <label for="size-slider">Size:</label>
-                                        <input type="range" id="size-slider" min="8" max="16" value="12">
-                                    </div>
-                                    
-                                    <button id="generate-data">Generate Demo Data</button>
-                                    <button id="manual-mode">Manual Entry Mode</button>
-                                </div>
-                            </div>
                             <!-- Text content -->
                             <div class="w-full mt-2 lg:mt-0 text-center px-2 lg:px-0">
                                 <p class="text-5xl text-white lg:text-7xl font-bold py-3 lg:pb-5 text-stroke-black leading-tight tracking-[.7em] lg:tracking-[.5em] font-square">IT Programmer</p>
                                 <p class="text-2xl lg:text-xl font-bold leading-relaxed">BS Computer Science Graduate</p>
                             </div>                                
                         </div>
-
                         <!-- Toga Picture Container -->
                         <div class="relative w-full max-w-[800px] lg:max-w-[300px] aspect-square order-1 lg:order-2 mx-auto lg:mx-0 lg:flex-shrink-0">
                             <div class="absolute top-1 left-1 bg-black w-full h-full rounded-lg shadow-lg"></div>
