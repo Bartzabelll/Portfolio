@@ -1,5 +1,3 @@
-
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -246,29 +244,6 @@ input[type="checkbox"] {
     --level-4: #0066cc;
 }
 
-.theme-sunset {
-    --level-0: #fff5e6;
-    --level-1: #ffcc99;
-    --level-2: #ff9933;
-    --level-3: #ff6600;
-    --level-4: #cc3300;
-}
-
-.theme-forest {
-    --level-0: #f0f8e6;
-    --level-1: #c7e6b3;
-    --level-2: #85cc66;
-    --level-3: #4d9933;
-    --level-4: #2d5c1a;
-}
-
-.theme-neon {
-    --level-0: #1a1a1a;
-    --level-1: #ff00ff33;
-    --level-2: #ff00ff66;
-    --level-3: #ff00ff99;
-    --level-4: #ff00ff;
-}
 
 /* Apply theme colors */
 .day.level-0 { background-color: var(--level-0); }
