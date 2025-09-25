@@ -239,3 +239,151 @@ class GitHubContributionMap {
 document.addEventListener('DOMContentLoaded', () => {
     window.contributionMap = new GitHubContributionMap();
 });
+
+// Declare variables in global scope
+let currentSlide = 0;
+let totalSlides = 0;
+let carousel = null;
+let dots = null;
+
+// Initialize carousel
+function initCarousel() {
+    carousel = document.getElementById('carousel');
+    if (!carousel) {
+        console.log('Carousel element not found');
+        return;
+    }
+    
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    totalSlides = slides.length;
+    
+    if (totalSlides === 0) {
+        console.log('No carousel slides found');
+        return;
+    }
+    
+    // Create dot indicators (if you have them)
+    const dotsContainer = document.querySelector('.carousel-dots');
+    if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot', 'w-3', 'h-3', 'rounded-full', 'mx-1');
+            dot.classList.add(i === 0 ? 'bg-gray-600' : 'bg-gray-400');
+            dot.onclick = () => showSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+        dots = dotsContainer.querySelectorAll('.carousel-dot');
+    }
+    
+    // Initialize carousel position
+    updateCarousel();
+    updateDots();
+    
+    console.log(`Carousel initialized with ${totalSlides} slides`);
+}
+
+// Update carousel position
+function updateCarousel() {
+    if (carousel) {
+        const offset = -currentSlide * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
+}
+
+// Update dot indicators
+function updateDots() {
+    if (dots) {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('bg-gray-600', index === currentSlide);
+            dot.classList.toggle('bg-gray-400', index !== currentSlide);
+        });
+    }
+}
+
+// Show specific slide
+function showSlide(index) {
+    if (index >= 0 && index < totalSlides) {
+        currentSlide = index;
+        updateCarousel();
+        updateDots();
+    }
+}
+
+// Next slide
+function nextSlide() {
+    if (totalSlides > 0) {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+        updateDots();
+    }
+}
+
+// Previous slide
+function previousSlide() {
+    if (totalSlides > 0) {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+        updateDots();
+    }
+}
+
+// Explicitly attach functions to window object for onclick handlers
+window.nextSlide = nextSlide;
+window.previousSlide = previousSlide;
+window.showSlide = showSlide;
+
+// Combined DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize GitHub contribution map
+    window.contributionMap = new GitHubContributionMap();
+    
+    // Initialize carousel
+    initCarousel();
+    
+    // Add event listeners for navigation buttons (alternative to onclick)
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+    }
+    if (prevBtn) {
+        prevBtn.addEventListener('click', previousSlide);
+    }
+});
+
+// Optional: Add keyboard navigation
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') {
+        previousSlide();
+    } else if (e.key === 'ArrowRight') {
+        nextSlide();
+    }
+});
+
+// Optional: Add touch/swipe support for mobile
+let startX = 0;
+let endX = 0;
+
+document.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+});
+
+document.addEventListener('touchend', function(e) {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = startX - endX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            nextSlide(); // Swipe left - next slide
+        } else {
+            previousSlide(); // Swipe right - previous slide
+        }
+    }
+}
